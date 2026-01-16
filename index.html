@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coca-cola</title>
+    <!-- swiper css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <!-- my css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- swiper js  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- my js -->
+    <script src="js/swiper.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <header>헤더입니다.</header>
+      <main>
+        <h1>
+          메인 슬라이드입니다.(숨기기)
+        </h1>
+      </main>
+      <!-- 1 -->
+      <section class="main-card">
+        <div class="content-wrapper">
+          <div class="card-block">
+            <div class="image-box">
+              <img src="images/image.png" alt="이미지 1" />
+            </div>
+            <div class="text-box">
+              <div>
+                <h3>제목 1</h3>
+                <p>
+                  안녕. 어렵다 Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Labore distinctio tenetur tempora illo! Sed
+                  quidem assumenda esse sunt repudiandae? Assumenda rerum
+                  accusamus enim culpa tempora voluptate
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-block">
+            <div class="image-box">
+              <img src="https://via.placeholder.com/400x500" alt="이미지 2" />
+            </div>
+            <div class="text-box">
+              <h3>제목 2</h3>
+              <p>
+                이것은 두 번째 텍스트 박스입니다. 동일한 레이아웃으로 반응형
+                구조를 유지합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 2 -->
+      <section class="journey">
+        <div class="journey-wrapper">
+          <div>
+            <h2>안녕. 나는 제목이야</h2>
+            <span> 안녕. 나는 부제목이야. </span>
+            <div class="button">클릭해줘</div>
+          </div>
+        </div>
+      </section>
+      <!-- 3 -->
+      <section class="pick">
+        <h2>난 슬라이드 제목이야.</h2>
+        <!-- Slider main container -->
+        <div class="swiper pick-slide-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper pick-slide-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide pick-slide">
+              <div>
+                <img src="images/image.png" alt="" />
+              </div>
+              <div>안녕.</div>
+            </div>
+            <div class="swiper-slide pick-slide">
+              <div>
+                <img src="" alt="" />
+              </div>
+              <div>안녕2</div>
+            </div>
+            <div class="swiper-slide pick-slide">
+              <div>
+                <img src="" alt="" />
+              </div>
+              <div>안녕3</div>
+            </div>
+            <div class="swiper-slide pick-slide">
+              <div>
+                <img src="" alt="" />
+              </div>
+              <div>안녕3</div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev pic-btn pick-btn-prev"></div>
+          <div class="swiper-button-next pic-btn pick-btn-next"></div> -->
+        </div>
+      </section>
+      <!-- 4 -->
+      <section class="brand">
+        <h2>제목입니다. 브랜드</h2>
+        <div class="brand-slide-all">
+           <div class="swiper brand-slide-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper brand-slide-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide brand-slide">Slide 1</div>
+            <div class="swiper-slide brand-slide">Slide 2</div>
+            <div class="swiper-slide brand-slide">Slide 3</div>
+            <div class="swiper-slide brand-slide">Slide 4</div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev brand-btn-prev"></div>
+          <div class="swiper-button-next brand-btn-next"></div>
+        </div>
+        </div>
+       
+      </section>
+      <!-- footer -->
+      <footer>푸터입니다.</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+}
+body {
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#container {
+  width: 100%;
+  background-color: blue;
+}
+header {
+  width: 100%;
+  border: 1px solid black;
+  background-color: yellow;
+  height: 100px;
+}
+section {
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 1px solid black;
+  margin-top: 100px;
+}
+section:last-child {
+  margin-top: 0;
+}
+section > div {
+  margin: 0 auto;
+}
+/* 모바일 기본 스타일 */
+
+/* ---------- main -------- */
+main {
+  width: 100%;
+  background-color: red;
+  height: 600px;
+  background: url("../images/test.png");
+}
+main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --------- section 1 -------- */
+.all-brand {
+}
+.brand-product-tab {
+  width: 100%;
+  background-color: pink;
+  /* display: flex; */
+  margin-bottom: 50px;
+}
+.brand-product-tab li {
+  /* flex: 1; */
+  text-align: left;
+  margin-bottom: 12px;
+}
+.brand-product-tab li:last-child {
+  margin-bottom: 0;
+}
+.brand-product-tab li a {
+  text-decoration: none;
+  background-color: red;
+  display: block;
+  padding: 10px;
+}
+.tab {
+  background-color: lime;
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.tab .item {
+  border: 1px solid black;
+}
+.tab.active {
+  display: grid;
+}
+/* media query */
+/* tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #container {
+    background-color: yellow;
+    border: 3px solid green;
+  }
+  main {
+    height: 500px;
+  }
+  main img {
+  }
+  section {
+    padding: 0 40px;
+    max-width: 1023px;
+  }
+
+  /* --- tab ---  */
+  .tab {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* pc */
+@media (min-width: 1024px) {
+  #container {
+    width: 100%;
+    background-color: purple;
+    border: 3px solid blue;
+  }
+  main {
+    height: 500px;
+  }
+  section {
+    max-width: 1440px; /* 1280 */
+    padding: 0 80px;
+    background-color: purple;
+  }
+  main img {
+  }
+
+  /* --- tab --- */
+  .tab {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

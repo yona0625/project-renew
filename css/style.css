@@ -1,0 +1,263 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+}
+body {
+}
+#container {
+  width: 100%;
+  background-color: blue;
+}
+header {
+  width: 100%;
+  border: 1px solid black;
+  background-color: yellow;
+  height: 100px;
+}
+section {
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 1px solid black;
+  margin-top: 100px;
+}
+section:last-child {
+  margin-top: 0;
+}
+section > div {
+  margin: 0 auto;
+}
+/* 모바일 기본 스타일 */
+
+/* ---------- main -------- */
+main {
+  width: 100%;
+  background-color: yellowgreen;
+}
+main h1 {
+  text-align: center;
+}
+
+/* --------- section 1 --------- */
+.content-wrapper {
+  width: 100%;
+  /* 전체 틀을 세로 정렬 */
+  display: flex;
+  flex-direction: column;
+}
+.main-card {
+}
+
+.card-block {
+  /* 실제 flex 역할 */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  /* aspect-ratio: 5 / 6; -> 삭제 */
+  /* 전체 비율 가로 500, 세로 500+100 */
+}
+.card-block:last-child {
+  margin-bottom: 0;
+}
+.image-box {
+  /* flex: 5; -> 지워도 될 듯. 이미지 1 / 1로 잡으니 해결 */
+  /* 600만큼 */
+  aspect-ratio: 1 / 1;
+}
+.text-box {
+  /* flex: 1;  -> 삭제 */
+  /* 200만큼 */
+  padding: 30px 20px 30px 20px;
+  box-sizing: border-box;
+}
+.image-box,
+.text-box {
+  border: 2px solid #333;
+  background-color: white;
+}
+.text-box > div {
+  border: 3px solid red;
+  /* max-height: 200px; -> 어차피 많이 들어가지 않으니까 괜찮긴 한데... */
+}
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.text-box h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+.text-box p {
+  line-height: 1.6;
+  color: #555;
+  font-size: 14px;
+}
+
+/* ------ section 2 ------ */
+
+.journey {
+}
+.journey-wrapper {
+  width: 100vw;
+  height: 300px;
+  position: relative;
+  background-color: #fff;
+  left: 50%;
+  margin-left: -50vw;
+}
+.journey-wrapper > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* ------- section 3 ------- */
+.pick {
+  background-color: pink;
+  width: 100%;
+  overflow: hidden;
+}
+.pick h2 {
+  text-align: center;
+  /* background-color: yellow; */
+}
+.pick-slide-container {
+  /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
+  /* 미세 조정을 위해 calc로 px 조금 더함 */
+  /* 여기서 200vw로 하면 100px만 줘도 됨. 밑 마진도 반 토막 (보정값 차이) */
+  width: calc(200% + 200px);
+  position: relative;
+  /* 가운데 정렬된 section에서 벗어나기 (3과 동일.) */
+  left: 50%;
+  margin-left: calc(-100% - 100px);
+}
+.pick-slide-wrapper {
+  margin-top: 50px;
+}
+.pick-slide {
+  /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음*/
+  height: clamp(500px, 80vw, 600px);
+  background-color: yellow;
+}
+.pick-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pick-slide div:first-child {
+  background-color: mintcream;
+  height: 70%;
+}
+.pick-slide div:last-child {
+  height: 30%;
+  border: 1px solid mintcream;
+}
+/* ------- section 4 ------ */
+.brand {
+}
+.brand h2 {
+  text-align: center;
+}
+.brand-slide-all {
+  width: 100%;
+  background-color: red;
+  position: relative;
+}
+.brand-slide-container {
+  /* 버튼의 기준을 여기 container(swiper) 말고 brand-slide-all에 주기 위해 static으로 바꿈 */
+  position: static;
+  width: 80%;
+  background-color: pink;
+  margin-top: 50px;
+}
+.brand-slide-wrapper {
+}
+.brand-slide {
+  background-color: yellow;
+  border: 1px solid black;
+  aspect-ratio: 1 / 1;
+}
+.brand-btn-prev,
+.brand-btn-next {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+}
+
+/* ------- footer ------- */
+
+footer {
+  margin-top: 150px;
+  width: 100%;
+  height: 400px;
+  background-color: dodgerblue;
+}
+
+/* media query */
+/* tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #container {
+    background-color: yellow;
+  }
+  section {
+    padding: 0 40px;
+    max-width: 1023px;
+  }
+  /* 세로 배치 */
+  .card-block {
+    flex-direction: row;
+    aspect-ratio: 2 / 1;
+  }
+  /* 1:1 비율 유지 */
+  .image-box,
+  .text-box {
+    flex: 1;
+  }
+  /* --------- section 3 -------- */
+  .pick-slide-container {
+    width: 100%;
+    margin-left: 0;
+    left: auto;
+  }
+}
+/* pc */
+@media (min-width: 1024px) {
+  #container {
+    width: 100%;
+    background-color: red;
+  }
+  section {
+    max-width: 1440px; /* 1280 */
+    padding: 0 80px;
+    background-color: purple;
+  }
+  /* 세로 배치 */
+  .card-block {
+    flex-direction: row;
+    aspect-ratio: 2 / 1;
+  }
+  /* 1:1 비율 유지 */
+  .image-box,
+  .text-box {
+    flex: 1;
+  }
+  /* --------- section 3 -------- */
+  .pick-slide-container {
+    width: 100%;
+    margin-left: 0;
+    left: auto;
+  }
+}
