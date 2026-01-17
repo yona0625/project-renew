@@ -65,14 +65,34 @@ main img {
 .brand-product-tab li {
   /* flex: 1; */
   text-align: left;
-  margin-bottom: 12px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  /* max 높이로 통일 */
+  max-height: 0;
+  opacity: 0;
 }
 .brand-product-tab li:last-child {
   margin-bottom: 0;
 }
+/* li '이거 하나만' 작동 */
+.brand-product-tab li.active {
+  text-decoration: underline;
+  /* ★ max로 주어야지 그보다 높이가 작아도 딱 알맞게 컴이 계산함. (auto는 transition 안 먹힘) */
+  max-height: 80px;
+  opacity: 1;
+  border: 1px solid red;
+  /* height: auto; */
+}
+/* 작동하면 '나머지 li'를 다 이렇게 작동해 */
+.brand-product-tab.active li {
+  max-height: 200px;
+  /* 펼쳐질 때 여백이 있어야 깔끔함 */
+  margin-bottom: 12px;
+  opacity: 1;
+}
 .brand-product-tab li a {
   text-decoration: none;
-  background-color: red;
+  /* background-color: red; */
   display: block;
   padding: 10px;
 }
@@ -82,11 +102,24 @@ main img {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+.tab + .tab {
+  margin-top: 20px;
+}
 .tab .item {
   border: 1px solid black;
+  /* 내부 요소 정중앙 정렬 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
 }
 .tab.active {
   display: grid;
+  justify-content: center;
+  align-items: center;
+}
+footer {
+  margin-top: 150px;
 }
 /* media query */
 /* tablet */
@@ -104,10 +137,18 @@ main img {
     padding: 0 40px;
     max-width: 1023px;
   }
-
   /* --- tab ---  */
   .tab {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .brand-product-tab {
+    display: flex;
+  }
+  .brand-product-tab li {
+    max-height: none;
+    opacity: 1;
+    text-align: center;
+    flex: 1;
   }
 }
 /* pc */
@@ -131,5 +172,14 @@ main img {
   /* --- tab --- */
   .tab {
     grid-template-columns: repeat(3, 1fr);
+  }
+   .brand-product-tab {
+    display: flex;
+  }
+  .brand-product-tab li {
+    max-height: none;
+    opacity: 1;
+    text-align: center;
+    flex: 1;
   }
 }

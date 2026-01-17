@@ -1,0 +1,140 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+}
+body {
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#container {
+  width: 100%;
+  background-color: blue;
+}
+header {
+  width: 100%;
+  border: 1px solid black;
+  background-color: yellow;
+  height: 100px;
+}
+section {
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 1px solid black;
+  margin-top: 100px;
+}
+section:last-child {
+  margin-top: 0;
+}
+section > div {
+  margin: 0 auto;
+}
+/* 모바일 기본 스타일 */
+
+/* ---------- main -------- */
+main {
+  width: 100%;
+  background-color: red;
+  height: 600px;
+  background: url("../images/test.png");
+}
+main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- section 1 ----- */
+.company-title {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+}
+.company-title h2 {}
+.company-title p {
+  margin-top: 12px;
+}
+.company-card {
+}
+.card {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.card + .card {
+  margin-top: 50px;
+}
+.card .image-box {
+  aspect-ratio: 1 / 1;
+  border: 1px solid red;
+}
+.card .text-box {
+  padding: 30px 20px 30px 20px;
+  box-sizing: border-box;
+  height: clamp(100px, 25vw, 200px);
+  overflow: hidden;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* media query */
+/* tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #container {
+    background-color: yellow;
+    border: 3px solid green;
+  }
+  main {
+    height: 500px;
+  }
+  main img {
+  }
+  section {
+    padding: 0 40px;
+    max-width: 1023px;
+  }
+  /* ---- section 1 ---- */
+  .company-title {
+    display: flex;
+  }
+  .company-title p {
+    text-align: left;
+  }
+}
+/* pc */
+@media (min-width: 1024px) {
+  #container {
+    width: 100%;
+    background-color: purple;
+    border: 3px solid blue;
+  }
+  main {
+    height: 500px;
+  }
+  section {
+    max-width: 1440px; /* 1280 */
+    padding: 0 80px;
+    background-color: purple;
+  }
+  main img {
+  }
+  /* ---- section 1 ---- */
+  .company-title {
+    display: flex;
+  }
+  .company-title p {
+    text-align: left;
+  }
+}
