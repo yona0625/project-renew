@@ -227,13 +227,26 @@ footer {
   /* 1:1 비율 유지 */
   .image-box,
   .text-box {
-    flex: 1;
+    height: 100%;
   }
   /* --------- section 3 -------- */
   .pick-slide-container {
-    width: 100%;
-    margin-left: 0;
-    left: auto;
+    /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
+    /* 미세 조정을 위해 calc로 px 조금 더함 */
+    /* 여기서 200vw로 하면 100px만 줘도 됨. 밑 마진도 반 토막 (보정값 차이) */
+    width: calc(200% + 200px);
+    position: relative;
+    /* 가운데 정렬된 section에서 벗어나기 (3과 동일.) */
+    left: 50%;
+    margin-left: calc(-100% - 100px);
+  }
+  .pick-slide-wrapper {
+    margin-top: 50px;
+  }
+  .pick-slide {
+    /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음 */
+    height: clamp(600px, 70vw, 700px);
+    background-color: yellow;
   }
 }
 /* pc */
@@ -255,12 +268,25 @@ footer {
   /* 1:1 비율 유지 */
   .image-box,
   .text-box {
-    flex: 1;
+    height: 100%;
   }
   /* --------- section 3 -------- */
   .pick-slide-container {
     width: 100%;
+    /* 전체 컨테이너 마진과 left값 삭제 */
     margin-left: 0;
     left: auto;
+  }
+  .pick-slide div:first-child {
+    background-color: mintcream;
+    height: 65%;
+  }
+  .pick-slide div:last-child {
+    height: 35%;
+    border: 1px solid mintcream;
+  }
+  .pick-slide {
+    /* pc에서 반응형으로 늘리거나 줄일 때 가로로만 늘어지는 걸 최대한 방지하기 위해 값을 미세하게 조정하며 바꿈 */
+    height: clamp(370px, 35vw, 520px);
   }
 }

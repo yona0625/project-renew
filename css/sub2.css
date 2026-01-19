@@ -45,7 +45,6 @@ main {
   width: 100%;
   background-color: red;
   height: 600px;
-  background: url("../images/test.png");
 }
 main img {
   width: 100%;
@@ -59,11 +58,13 @@ main img {
   background-color: #fff;
   padding: 20px;
 }
-.company-title h2 {}
+.company-title h2 {
+}
 .company-title p {
   margin-top: 12px;
 }
 .company-card {
+  margin-top: 100px;
 }
 .card {
   border: 1px solid red;
@@ -87,6 +88,21 @@ main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+/* ----- section 2----- */
+.special {
+  /* 전체는 40 마진이고 이 영역은 80 마진 */
+  width: calc(100% - 80px);
+  background-color: pink;
+  /* 원래 있던 container의 0 20px을 지우고 양 마진 40만 주기 위해서 */
+  padding: 0;
+}
+/* ----- footer ---- */
+footer {
+  margin-top: 150px;
+  width: 100%;
+  height: 400px;
+  background-color: lavender;
 }
 
 /* media query */
@@ -112,6 +128,22 @@ main img {
   .company-title p {
     text-align: left;
   }
+  /* 세로에서 간격을 띄운 걸 가로로 배치하였으니 간격을 초기화 시켜야 레이아웃이 망가지지 않음. */
+  .card + .card {
+    margin-top: 0;
+  }
+  .card-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+  /* ----- section 2 ----- */
+  .special {
+    /* 전체 80 마진일 때 이 요소는 160 */
+    width: calc(100% - 160px);
+    max-width: 800px;
+    /* ★ padding: 0 필수 */
+    padding: 0;
+  }
 }
 /* pc */
 @media (min-width: 1024px) {
@@ -136,5 +168,19 @@ main img {
   }
   .company-title p {
     text-align: left;
-  } 
+  }
+  .card + .card {
+    margin-top: 0;
+  }
+  .card-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+  /* ----- section 2 ----- */
+  .special {
+    /* 전체 160 마진일 때 이 요소는 320 */
+    width: calc(100% - 320px);
+    max-width: 1200px;
+    padding: 0;
+  }
 }

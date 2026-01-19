@@ -1,10 +1,16 @@
-/* 슬라이드의 원본 개수(복제 제외). 밖에다 선언하는 이유는, 복제가 되기 전의 개수를 세야하기 때문에.
+/* [메인 페이지 슬라이드] 슬라이드의 원본 개수(복제 제외). 밖에다 선언하는 이유는, 복제가 되기 전의 개수를 세야하기 때문에.
 즉 1. 밖에서 먼저 개수를 세고 2. swiper 시작하고 3. 슬라이드 복제 */
 let originalIndex = document.querySelectorAll(
-  ".pick-slide-container .swiper-slide"
+  ".pick-slide-container .swiper-slide",
 ).length;
 
-/* =============== 1. pick-slide =============== */
+/* ★ swiper 리사이징 시 흔들림 방지 코드 */
+window.addEventListener("resize", () => {
+  pick_slide.update();
+});
+
+/* =============== 메인 페이지 슬라이드(pick-slide, brand-slide) ================== */
+/* 1. pick-slide */
 const pick_slide = new Swiper(".pick-slide-container", {
   // Optional parameters
   slidesPerView: 3,
@@ -17,7 +23,8 @@ const pick_slide = new Swiper(".pick-slide-container", {
     prevEl: ".pick-btn-prev",
   },
   pagination: {
-    el: ".swiper-pagination",
+    enabled: true,
+    el: ".pick-pagination",
     /* 이제부터 bullet를 그리겠다. */
     renderBullet: function (index, className) {
       if (index < originalIndex) {
@@ -37,7 +44,7 @@ const pick_slide = new Swiper(".pick-slide-container", {
     slideChange: function () {
       /* 지금 움직이고 있는 슬라이드의 진짜 index 가져와.(loop의 복제본 무시) (this.realIndex) */
       const activeBulletIndex = this.realIndex % originalIndex;
-      /* 지금 여기서 bullet은 renderBullet으로 '원본 슬라이드 개수'만큼만 제작된 상태. 이걸 bullets으로 불러옴. */
+      /* 지금 여기서 bullet은 renderBullet으로 '원본 슬라이드 개수'만큼만 제작된 상태. 이걸 bullets으로 불러옴. => originalIndex로 나누는 이유는, 혹시라도 readlIndex가 원본 슬라이드 개수 밖을 빠져 나가지 않도록 위한 방지 대책과, 또한 나눔으로써 '원본 슬라이드' 개수의 불렛만을 쓰겠다는 명시적 표기의 의미가 있음. */
       const bullets = document.querySelectorAll(".swiper-pagination-bullet");
       /* bullets 검사. bullet은 그 <span>태그, i는 순서 */
       bullets.forEach((bullet, i) => {
@@ -57,20 +64,9 @@ const pick_slide = new Swiper(".pick-slide-container", {
       initialSlide: 0,
       slidesPerView: 3,
       slidesPerGroup: 1,
-      pagination: {
-        enabled: false,
-      },
     },
   },
 });
-
-/* ★ swiper 리사이징 시 흔들림 방지 코드 */
-window.addEventListener("resize", () => {
-  pick_slide.update();
-});
-
-/* -------------- 메인 슬라이드 테스트(pick-slide) ---------------- */
-
 /* beforeInit의 파라미터를 clone으로 받아서 서로 연결함 */
 function SlideClone(slideclone) {
   /* 나 swiper의 집(clone.el)에서 wrapper 찾을거야. */
@@ -86,8 +82,7 @@ function SlideClone(slideclone) {
     slideWrapper.appendChild(clone);
   }
 }
-
-/* ======================== 2. brand-slide ================== */
+/* 2. brand-slide */
 const brand_slide = new Swiper(".brand-slide-container", {
   slidesPerView: 3,
   spaceBetween: 20,
@@ -108,4 +103,31 @@ const brand_slide = new Swiper(".brand-slide-container", {
       slidesPerView: 3,
     },
   },
+});
+
+/* ================ 서브3 페이지 슬라이드 =================== */
+/* 'brand'가 겹쳐서 2로 주었지만 전반적으로 변수명들 나중에 바꿀 것 */
+const brand2_slide = new Swiper(".brand2-slide-container", {
+  loop: true,
+  slidesPerView: 1, 
+  spaceBetween: 20, 
+  /* navigation */
+  navigation: {
+    nextEl: ".brand2-btn-next",
+    prevEl: ".brand2-btn-prev",
+  },
+  /* pagination */
+  pagination: {
+    enabled: true,
+  },
+  breakpoints: {
+    360: {
+      navigation: {
+        enabled: false,
+      },
+      pagination: {
+        enabled: true,
+      }
+    }
+  }
 });
