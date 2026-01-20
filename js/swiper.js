@@ -127,7 +127,18 @@ const brand2_slide = new Swiper(".brand2-slide-container", {
       },
       pagination: {
         enabled: true,
+        el: ".brand2-pagination",
       }
     }
   }
 });
+
+
+/* ============== reco 테스트 ================== */
+const reco_slide = new Swiper(".reco-slide-container", {
+  // Optional parameters
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+});
+

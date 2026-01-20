@@ -76,9 +76,59 @@ main img {
   height: 100%;
   object-fit: cover;
 }
-.brand-btn-prev,
-.brand-btn-next {
-  z-index: 100;
+.brand2-slide-container {
+  position: static;
+}
+.brand2-slide-all {
+  position: relative;
+  background-color: pink;
+  padding-bottom: 40px;
+}
+.brand2-pagination {
+  background-color: yellow;
+}
+
+/* ------ section 2 ----- */
+
+.recommend {
+  background-color: pink;
+  width: 100%;
+  overflow: hidden;
+}
+.recommend h2 {
+  text-align: center;
+  /* background-color: yellow; */
+}
+.reco-slide-container {
+  /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
+  /* 미세 조정을 위해 calc로 px 조금 더함 */
+  /* 여기서 200vw로 하면 100px만 줘도 됨. 밑 마진도 반 토막 (보정값 차이) */
+  width: calc(200% + 200px);
+  position: relative;
+  /* 가운데 정렬된 section에서 벗어나기 (3과 동일.) */
+  left: 50%;
+  margin-left: calc(-100% - 100px);
+}
+.reco-slide-wrapper {
+  margin-top: 50px;
+}
+.reco-slide {
+  /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음*/
+  height: clamp(500px, 80vw, 600px);
+  background-color: yellow;
+}
+.reco-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.reco-slide div:first-child {
+  background-color: mintcream;
+  height: 70%;
+}
+.reco-slide div:last-child {
+  height: 30%;
+  border: 1px solid mintcream;
 }
 
 /* media query */
