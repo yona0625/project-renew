@@ -32,9 +32,6 @@ section {
   border: 1px solid black;
   margin-top: 100px;
 }
-section:last-child {
-  margin-top: 0;
-}
 section > div {
   margin: 0 auto;
 }

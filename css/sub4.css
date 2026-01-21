@@ -16,7 +16,7 @@ li {
 }
 #container {
   width: 100%;
-  background-color: blue;
+  background-color: pink;
 }
 header {
   width: 100%;
@@ -49,114 +49,131 @@ main img {
   object-fit: cover;
 }
 
-/* ------ section 1 ------  */
+/* ------ section 1 ------- */
+.intro {
+  text-align: center;
+}
+.move-btn {
+  margin-top: 30px;
+}
+.move-btn ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.move-btn li {
+  border: 1px solid black;
+}
+.move-btn li a {
+  text-decoration: none;
+  color: black;
+}
 
-.brand2-slide {
-  width: 100%;
+.card-block {
+  /* 실제 flex 역할 */
   display: flex;
   flex-direction: column;
 }
-.image-box,
-.text-box {
-  flex: 1;
+.card-block + .card-block {
+  margin-top: 50px;
 }
 .image-box {
+  aspect-ratio: 1 / 1;
 }
 .text-box {
-  background-color: mediumspringgreen;
-  height: auto;
   padding: 30px 20px 30px 20px;
-  min-height: 200px;
+  box-sizing: border-box;
+}
+.image-box,
+.text-box {
+  border: 2px solid #333;
+  background-color: white;
+}
+.text-box > div {
+  border: 3px solid red;
+  /* max-height: 200px; */
 }
 .image-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.brand2-slide-container {
-  position: static;
-}
-.brand2-slide-all {
-  position: relative;
-  background-color: pink;
-  padding-bottom: 40px;
-}
-.brand2-pagination {
-  background-color: yellow;
+.text-box h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
 }
 
-/* ------ section 2 ----- */
+.text-box p {
+  line-height: 1.6;
+  color: #555;
+  font-size: 14px;
+}
 
-.recommend {
-  background-color: pink;
-  width: 100%;
-  overflow: hidden;
-}
-.recommend h2 {
-  text-align: center;
-  /* background-color: yellow; */
-}
-.reco-slide-container {
-  /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
-  /* 미세 조정을 위해 calc로 px 조금 더함 */
-  /* 여기서 200vw로 하면 100px만 줘도 됨. 밑 마진도 반 토막 (보정값 차이) */
+/* --- slide --- */
+
+.source-slide-container,
+.water-slide-container,
+.comm-slide-container {
   width: calc(200% + 200px);
   position: relative;
   left: 50%;
   margin-left: calc(-100% - 100px);
 }
-.reco-slide-wrapper {
+.source-slide-wrapper,
+.water-slide-wrapper,
+.comm-slide-wrapper {
   margin-top: 50px;
 }
-.reco-slide {
+.source-slide,
+.water-slide,
+.comm-slide {
   /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음*/
   height: clamp(500px, 80vw, 600px);
   background-color: yellow;
 }
-.reco-slide img {
+.source-slide img,
+.water-slide img,
+.comm-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.reco-slide div:first-child {
+.source-slide div:first-child,
+.water-slide div:first-child,
+.comm-slide div:first-child {
   background-color: mintcream;
   height: 70%;
 }
-.reco-slide div:last-child {
+.source-slide div:last-child,
+.water-slide div:last-child,
+.comm-slide div:last-child {
   height: 30%;
   border: 1px solid mintcream;
 }
 
-/* -------- section 3 -------- */
-.more-content {
-  
-}
-.item {
-  display: flex;
+/* ------------- section 3 -------------- */
+.water {
   width: 100%;
-  border: 1px solid black;
-  aspect-ratio: 3 / 1;
+  text-align: center;
 }
-.item + .item {
-  margin-top: 20px;
+.water .aws {
+  margin-top: 50px;
+  background-color: #fff;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: 20px;
 }
-/* 안에 들어간 이미지 크기로 인해 높이가 달라지는 걸 방지 */
-.more-image-box,
-.more-text-box {
-  height: 100%;
+/* ------------- section 4 ---------- */
+.comm-content-wrapper {
+  margin-top: 50px;
 }
-.more-image-box {
-  aspect-ratio: 1 / 1;
-  background-color: magenta;
-}
-.more-text-box {
-  background-color: red;
-  flex: 1;
-}
-/* ------- footer -------- */
+/* ---- footer ---- */
 footer {
   margin-top: 150px;
-  background-color: blue;
+  background-color: blueviolet;
 }
 
 /* media query */
@@ -175,33 +192,39 @@ footer {
     padding: 0 40px;
     max-width: 1023px;
   }
-  /* -------- section 1 -------- */
-  .brand2-slide {
+  /* ----------- section 1 -------- */
+  /* 세로 배치 */
+  .card-block {
     flex-direction: row;
     aspect-ratio: 2 / 1;
   }
+  /* 1:1 비율 유지 */
   .image-box,
   .text-box {
+    flex: 1;
     height: 100%;
   }
-  /* --------- section 2 -------- */
-  .reco-slide-container {
-    /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
-    /* 미세 조정을 위해 calc로 px 조금 더함 */
-    /* 여기서 200vw로 하면 100px만 줘도 됨. 밑 마진도 반 토막 (보정값 차이) */
+  /* --------- section 1: slide -------- */
+  .source-slide-container,
+  .water-slide-container,
+  .comm-slide-container {
     width: calc(200% + 200px);
     position: relative;
-    /* 가운데 정렬된 section에서 벗어나기 (3과 동일.) */
+    /* 가운데 정렬된 section에서 벗어나기  */
     left: 50%;
     margin-left: calc(-100% - 100px);
   }
-  .reco-slide-wrapper {
+  .source-slide-wrapper,
+  .water-slide-wrapper,
+  .comm-slide-wrapper {
     margin-top: 50px;
   }
-  .reco-slide {
+  .source-slide,
+  .water-slide,
+  .comm-slide {
     /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음 */
     height: clamp(600px, 70vw, 700px);
-    background-color: yellow;
+    background-color: mistyrose;
   }
 }
 /* pc */
@@ -215,42 +238,49 @@ footer {
     height: 500px;
   }
   section {
-    max-width: 1280px; /* 1280 */
+    max-width: 1440px; /* 1280 */
     padding: 0 80px;
     background-color: purple;
   }
   main img {
   }
-  /* -------- section 1 -------- */
-  .brand2-slide {
+  /* ----------- section 1 -------- */
+  /* 세로 배치 */
+  .card-block {
     flex-direction: row;
     aspect-ratio: 2 / 1;
   }
-  .image-box {
+  /* 1:1 비율 유지 */
+  .image-box,
+  .text-box {
+    flex: 1;
     height: 100%;
   }
-  /* --------- section 2 -------- */
-  .reco-slide-container {
+  /* --------- section 1: slide -------- */
+  .source-slide-container,
+  .water-slide-container,
+  .comm-slide-container {
     width: 100%;
     /* 전체 컨테이너 마진과 left값 삭제 */
     margin-left: 0;
     left: auto;
   }
-  .reco-slide div:first-child {
+  .source-slide div:first-child,
+  .water-slide div:first-child,
+  .comm-slide div:first-child {
     background-color: mintcream;
     height: 65%;
   }
-  .reco-slide div:last-child {
+  .source-slide div:last-child,
+  .water-slide div:last-child,
+  .comm-slide div:last-child {
     height: 35%;
     border: 1px solid mintcream;
   }
-  .reco-slide {
+  .source-slide,
+  .water-slide,
+  .comm-slide {
     /* pc에서 반응형으로 늘리거나 줄일 때 가로로만 늘어지는 걸 최대한 방지하기 위해 값을 미세하게 조정하며 바꿈 */
     height: clamp(370px, 35vw, 520px);
-  }
-
-  /* ------------- section 3 ---------- */
-  .more-content .item {
-    max-height: 300px;
   }
 }
