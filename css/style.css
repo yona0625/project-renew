@@ -8,16 +8,114 @@
 }
 body {
 }
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
 #container {
   width: 100%;
   background-color: blue;
 }
+/* header */
 header {
   width: 100%;
   border: 1px solid black;
   background-color: yellow;
-  height: 100px;
+  /* height: 100px; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+/* nav */
+nav {
+  background-color: hotpink;
+  /* margin-right에 투명한 auto 벽을 세워서 nav를 왼쪽으로 밀어냄 */
+  margin-right: auto;
+  margin-left: 30px;
+  display: none;
+}
+nav ul {
+  display: flex;
+}
+nav li {
+  border: 1px solid black;
+  padding: 10px;
+}
+nav li a {
+  text-decoration: none;
+}
+.all-menu {
+  background-color: #fff;
+  width: 300px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  right: -100%;
+}
+.exit-btn {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.all-menu.active {
+  right: 0;
+}
+/* trigger */
+.trigger {
+  width: 30px;
+  height: 25px;
+  /* border: 1px solid red; */
+  position: relative;
+  right: 20px;
+  cursor: pointer;
+}
+.trigger span {
+  width: 100%;
+  background-color: #000000;
+  height: 2px;
+  position: absolute;
+  transition: 0.3s;
+}
+.trigger span:first-child {
+  top: 0;
+}
+.trigger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.trigger span:last-child {
+  bottom: 0;
+}
+/* hover(active) */
+.trigger:hover span:first-child {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+}
+.trigger:hover span:nth-child(2) {
+  display: none;
+}
+.trigger:hover span:last-child {
+  transform: translateY(50%) rotate(-45deg);
+  bottom: 50%;
+}
+/* section */
 section {
   width: 100%;
   max-width: 767px;
@@ -268,6 +366,30 @@ footer {
     max-width: 1440px; /* 1280 */
     padding: 0 80px;
     background-color: purple;
+  }
+  header {
+    height: 80px;
+  }
+  /* nav */
+  nav {
+    display: block;
+  }
+  /* trigger */
+  .trigger {
+    display: none;
+  }
+  .all-menu {
+    width: 100%;
+    height: 300px;
+    top: 80px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* hover */
+  .main-menu ul li:hover .all-menu {
+    opacity: 1;
+    visibility: visible;
   }
   /* ----------- section 1 -------- */
   /* main slide */
