@@ -32,8 +32,6 @@ window.addEventListener("click", (e) => {
   }
   /* 함수로 분리 */
   function openMenu() {
-    /* cancel()을 넣어주는 이유: fill:forwards로 인해 닫힌 모습의 애니메이션을 계속 유지해주지만, 반응형으로 넘어가면 문제가 된다. 반응형으로 메뉴가 바뀌어도 '계속 닫힘'을 유지하기 때문에 분기점이 바뀔 때 아예 열수가 없다. 따라서 분기점을 기준으로 '여는' 시점에 이전 animate를 전부 초기화 해서 fill: forwards를 해제하여 분기점을 왔다갔다 하면서도 열고 닫기를 가능하게 하기 위함. */
-    mobileMenu.getAnimations().forEach((anim) => anim.cancel());
     mobileMenu.animate(
       [
         {
@@ -70,6 +68,8 @@ window.addEventListener("click", (e) => {
     closeFix.onfinish = () => {
       mobileMenu.classList.remove("active");
       /* opacity: 0인 상태인데, 이건 없어진 게 아니어서 완전히 지워야 함. */
+      /* cancel()을 넣어주는 이유: fill:forwards로 인해 닫힌 모습의 애니메이션을 계속 유지해주지만, 반응형으로 넘어가면 문제가 된다. 반응형으로 메뉴가 바뀌어도 '계속 닫힘'을 유지하기 때문에 분기점이 바뀔 때 아예 열수가 없다. 따라서 cancel로 초기화 함. */
+      /* 처음에는 cancel을 열 때 했었는데 닫을 때 해야 함. 분기점으로 레이아웃이 바뀌면서 헤더는 어쨌든 매번 '열기'로 접근하게 됨. 따라서 닫기에서 '열기 전' cancel로 깨끗하게 미리 깨끗하게 지워줘야 하므로, 열려고 하는 시점에 지우면 작동이 안 된다. */
       mobileMenu.getAnimations().forEach((anim) => anim.cancel());
     };
   }
@@ -148,7 +148,7 @@ window.addEventListener("click", (e) => {
     /* 따라서 remove active는 위가 아니라 여기 안에 들어간다. */
     closeFix.onfinish = () => {
       pcMenu.classList.remove("active");
-      /* opacity: 0인 상태인데, 이건 없어진 게 아니어서 완전히 지워야 함. */
+      /* 마찬가지로 닫을 때 cancel */
       pcMenu.getAnimations().forEach((anim) => anim.cancel());
     };
   }
