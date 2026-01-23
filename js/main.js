@@ -5,7 +5,7 @@
 
 /* 변수 불러오기 */
 const mobileMenu = document.querySelector(".all-menu");
-/* ---- 모바일~타블렛 헤더 ---- */
+/* ---- 모바일~타블렛 사이드바(헤더) ---- */
 window.addEventListener("click", (e) => {
   /* 모바일 전용 */
   if (window.innerWidth > 1023) return;
@@ -22,36 +22,135 @@ window.addEventListener("click", (e) => {
   if (trigger) {
     /* 원래 transition으로 했는데, 리사이징 할 때마다 transition이 발생해서 방법을 변경 -> css에서 transition을 삭제하고 js에서 animate로 조정 */
     mobileMenu.classList.add("active");
-    mobileMenu.animate([
-      {
-        right: '-100%'
-      },
-      {
-        right: 0
-      }
-    ], {
-      duration: 500,
-      easing: 'ease-out',
-      /* 애니메이션이 종료된 시점을 fill로 고정(안하면, -300px로 다시 날아감) */
-      fill: 'forwards'
-    })
+    openMenu();
   } else if (menuOpen && (exitBtn || !realMenu)) {
-  /* 2. 메뉴 닫기 */
-  /* (1) x 버튼을 누르거나, 전체 메뉴 바깥을 누르면 닫힘 */
-  /* (2) 오직 창이 열렸을 때만 닫힌다는 조건을 넣어줘야 함. 그게 없으면 창이 열려있든 닫혀있든 계속 remove(active)를 하고 있는 상태. 창이 열려 있느냐?(&&) 그렇다면 뒤를 수행, 아니면 안 함. */
+    /* 2. 메뉴 닫기 */
+    /* (1) x 버튼을 누르거나, 전체 메뉴 바깥을 누르면 닫힘 */
+    /* (2) 오직 창이 열렸을 때만 닫힌다는 조건을 넣어줘야 함. 그게 없으면 창이 열려있든 닫혀있든 계속 remove(active)를 하고 있는 상태. 창이 열려 있느냐?(&&) 그렇다면 뒤를 수행, 아니면 안 함. */
     mobileMenu.classList.remove("active");
-    mobileMenu.animate([
+    closeMenu();
+  }
+  /* 함수로 분리 */
+  function openMenu() {
+    /* cancel()을 넣어주는 이유: fill:forwards로 인해 닫힌 모습의 애니메이션을 계속 유지해주지만, 반응형으로 넘어가면 문제가 된다. 반응형으로 메뉴가 바뀌어도 '계속 닫힘'을 유지하기 때문에 분기점이 바뀔 때 아예 열수가 없다. 따라서 분기점을 기준으로 '여는' 시점에 이전 animate를 전부 초기화 해서 fill: forwards를 해제하여 분기점을 왔다갔다 하면서도 열고 닫기를 가능하게 하기 위함. */
+    mobileMenu.getAnimations().forEach((anim) => anim.cancel());
+    mobileMenu.animate(
+      [
+        {
+          transform: "translateX(100%)",
+        },
+        {
+          transform: "translateX(0)",
+        },
+      ],
       {
-        right: 0
+        duration: 300,
+        easing: "ease-out",
+        /* 애니메이션이 종료된 시점을 fill로 고정(안하면, -300px로 다시 날아감) */
+        fill: "forwards",
       },
+    );
+  }
+  function closeMenu() {
+    const closeFix = mobileMenu.animate(
+      [
+        {
+          transform: "translateX(0)",
+        },
+        {
+          transform: "translateX(100%)",
+        },
+      ],
       {
-        right: '-100%'
-      }
-    ], {
-      duration: 500,
-      easing: 'ease-out',
-      fill: 'forwards'
-    })
+        duration: 300,
+        easing: "ease-out",
+        fill: "forwards",
+      },
+    );
+    closeFix.onfinish = () => {
+      mobileMenu.classList.remove("active");
+      /* opacity: 0인 상태인데, 이건 없어진 게 아니어서 완전히 지워야 함. */
+      mobileMenu.getAnimations().forEach((anim) => anim.cancel());
+    };
+  }
+});
+
+/* PC 헤더 -> mouseenter, mouseleave로 바꿔야 함 */
+/* 메뉴 중 어느 것을 눌러도 창이 열려야 함. */
+/* 변수 생성 */
+const pcMenu = document.querySelector(".all-menu");
+window.addEventListener("click", (e) => {
+  /* pc 전용 */
+  if (window.innerWidth < 1024) return;
+
+  /* closest이 필요한 변수
+  1. 각각 nav안의 li
+  2. 전체 all-menu(이건 쿼리 셀렉터까지)
+  3. all-menu 안의 x버튼 */
+  const nav = e.target.closest("nav li");
+  const realPcMenu = e.target.closest(".all-menu");
+  const pcExitBtn = e.target.closest(".exit-btn");
+  const pcMenuOpen = pcMenu.classList.contains("active");
+
+  /* 열 때 / 닫을 때 */
+  if (nav) {
+    /* li를 클릭했을 때 이미 메뉴가 열려있다면 닫기 */
+    /* + pc는 nav(모바일에서는 trigger)를 눌렀을 때 여기서 한 번 더 if-else가 필요하다. li를 누를 때도 창이 열려있는지 닫혀있는지 경우에 따라 토글해야 하므로 */
+    if (pcMenuOpen) {
+      closeMenu();
+      /* 닫혀있을 때 열기 */
+    } else {
+      openMenu();
+    }
+    /* 닫을 때 */
+  } else if (pcMenuOpen && (pcExitBtn || !realPcMenu)) {
+    closeMenu();
+  }
+  /* 함수로 분리 */
+  function openMenu() {
+    pcMenu.classList.add("active");
+    pcMenu.animate(
+      [
+        {
+          opacity: "0",
+        },
+        {
+          opacity: "1",
+        },
+      ],
+      {
+        duration: 500,
+        easing: "ease-out",
+        fill: "forwards",
+      },
+    );
+  }
+  function closeMenu() {
+    /* - 만약 창이 열린 상태라면
+  - x버튼을 누르거나, 메뉴 바깥을 빠져나간다면 */
+    const closeFix = pcMenu.animate(
+      [
+        {
+          opacity: "1",
+        },
+        {
+          opacity: "0",
+        },
+      ],
+      {
+        duration: 500,
+        easing: "ease-out",
+        fill: "forwards",
+      },
+    );
+    /* onfinish가 필요한 이유는, li로 다시 열린 창을 닫을 때 animate로 닫히는 시간(0.5초)가 '지나고 나서야' 창이 닫혀야 하는데, 이게 없으면 바로 remove로 닫아버려서 닫힐 때 애니메이션 적용이 되지 않는다. onfinish는 animate가 다 끝날 때까지 기다렸다가 닫아주는 역할을 함. 
+    구문도 () => 가 아니라 = () => 로 '='로 저장했다가 나중에 실행해야 함. */
+    /* 따라서 remove active는 위가 아니라 여기 안에 들어간다. */
+    closeFix.onfinish = () => {
+      pcMenu.classList.remove("active");
+      /* opacity: 0인 상태인데, 이건 없어진 게 아니어서 완전히 지워야 함. */
+      pcMenu.getAnimations().forEach((anim) => anim.cancel());
+    };
   }
 });
 
