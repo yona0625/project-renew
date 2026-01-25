@@ -1,4 +1,4 @@
-/* header(모바일~타블렛) 테스트 */
+/* ======================= header(모바일~타블렛) 테스트 ======================= */
 /* 1. 만약에 trigger를 누르면, all-menu가 나와야 함. 
 2. all-menu는 exit-btn을 누르기 전까지 유지가 되어야 함.
 3. all-menu 바깥 영역을 터치해도 메뉴가 접혀야 함. */
@@ -154,7 +154,35 @@ window.addEventListener("click", (e) => {
   }
 });
 
-/* 탭 메뉴 테스트 */
+/* ======================= 헤더 안 메뉴 아코디언 ======================= */
+/* 첫번째 메뉴 안 li(a 포함)을 누르면 숨겨놨던 하위 메뉴가 아래로 나오고 다시 누르면 올라오는 토글 */
+/* 그럼 이걸 어떻게 할 것이냐? 높이로? */
+const firstMenuContainer = document.querySelector(".first-menu");
+const secondMenu = document.querySelectorAll(".second-menu li");
+/* 이벤트 위임으로 맨 상위로 잡음 */
+firstMenuContainer.addEventListener("click", (e) => {
+  if (window.innerWidth > 1023) return;
+  /* .first-menu를 위임했기에 li만 써도 됨(X) -> second-menu안에도 li가 있으므로 구분 지어야 함. -> 간단한 로직에서는 li로 foreach 접근해도 됨. */
+  const firstMenu = e.target.closest(".first-menu > li");
+  /* ★ e.target으로 찾으면 안 되는 이유: (구조상 문제) second-menu로 접근은 하겠지만, 지금 메뉴에서는 일부만 second-menu가 있기 때문에 second-menu가 없는 곳에는 에러가 남 -> 따라서 firstMenu로 시작해야 함. */
+  const secondMenu = firstMenu.querySelector(".second-menu");
+  /* 메뉴가 열려있는지 확인 필요 */
+  const secondMenuOpen = secondMenu.classList.contains("active");
+  /* 메뉴가 열려 있다면? */
+  if (secondMenu) {
+    /* 메뉴가 열려 있다면 -> 닫기 */
+    if (secondMenuOpen) {
+      secondMenu.classList.remove("active");
+      secondMenu.style.maxHeight = "0";
+      /* 닫혀있다면 -> 펼치기 */
+    } else {
+      secondMenu.classList.add("active");
+      secondMenu.style.maxHeight = secondMenu.scrollHeight + "px";
+    }
+  }
+});
+
+/* ======================= 탭 메뉴 테스트 ======================= */
 /* li 각 버튼을 불러옴 */
 const tab_button = document.querySelectorAll(".brand-product-tab li");
 /* 전체 tab을 불러옴 */

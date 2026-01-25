@@ -109,6 +109,7 @@ commonSwiper("comm");
 
 /* [2] 메인 슬라이드 */
 const mainSwiper = new Swiper(".main-slide-container", {
+  /* 변경 시점 있을 때 슬라이드가 계속 떨리는 걸 방지 */
   slidesPerView: 1,
   loop: true,
   pagination: {

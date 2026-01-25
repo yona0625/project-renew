@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 :root {
+  --bg-color: #ffffff;
 }
 body {
 }
@@ -13,6 +14,9 @@ li {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+a {
+  text-decoration: none;
 }
 .sr-only {
   position: absolute;
@@ -24,20 +28,33 @@ li {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
+.br {
+  display: block;
+}
 #container {
   width: 100%;
-  background-color: blue;
+  background-color: var(--bg-color);
 }
 /* header */
 header {
   width: 100%;
   border: 1px solid black;
-  background-color: yellow;
+  background-color: var(--bg-color);
   /* height: 100px; */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.logo-img {
+  width: 150px;
+  height: 50px;
+  border: 1px solid blue;
+}
+.logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* nav */
 nav {
@@ -52,7 +69,7 @@ nav ul {
 }
 nav li {
   border: 1px solid black;
-  padding: 10px;
+  padding: 10px 20px;
 }
 nav li a {
   text-decoration: none;
@@ -67,6 +84,26 @@ nav li a {
   right: 0;
   /* right: -100%; */
   transform: translateX(100%);
+}
+.all-menu-content {
+  border: 1px solid red;
+  margin-top: 50px;
+}
+.first-menu {
+  padding: 20px;
+  font-weight: 600;
+}
+.first-menu a {
+  text-decoration: none;
+  color: #000000;
+}
+.second-menu {
+  font-weight: 400;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.second-menu.active {
 }
 .exit-btn {
   width: 50px;
@@ -136,21 +173,44 @@ main {
   width: 100%;
   background-color: yellowgreen;
 }
-main h1 {
-  text-align: center;
-}
 
 /* --------- section 1 --------- */
 
 /* main slide */
 .main-slide-container {
   width: 100%;
-  min-height: 500px;
+  /* height: 50vh; */
+  height: 550px;
+  border: 3px solid purple;
+  position: relative;
 }
-.main-slide img {
+.main-slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-slide .slide-text {
+  width: 100%;
+  position: absolute;
+  padding: 0 10%;
+}
+.slide-img {
+  width: 100%;
+  height: 100%;
+}
+.slide-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.more-btn {
+  background-color: #fff;
+  color: black;
+  padding: 10px 20px;
+  display: inline-flex;
+  margin-top: 30px;
+  border-radius: 20px;
 }
 
 .content-wrapper {
@@ -325,7 +385,7 @@ footer {
   /* --------- section 1 ---------- */
   /* main slide */
   .main-slide-container {
-    max-height: 500px;
+    /* max-height: 500px; */
   }
   /* 세로 배치 */
   .card-block {
@@ -382,7 +442,7 @@ footer {
   }
   .all-menu {
     width: 100%;
-    height: 300px;
+    height: 250px;
     top: 80px;
     right: 0;
     opacity: 0;
@@ -390,14 +450,35 @@ footer {
     pointer-events: none;
   }
   .all-menu.active {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .all-menu .exit-btn {
+    display: none;
+  }
+  .all-menu-content {
+    margin-top: 0;
+    height: 100%;
+    /* 로고 넓이 + 30px만큼 밀어내기 */
+    margin: 0 180px;
+  }
+  .first-menu {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    height: 100%;
+  }
+  .all-menu-content li {
+    background: yellow;
+  }
+  .second-menu {
+    max-height: none;
   }
   /* hover */
   /* ----------- section 1 -------- */
   /* main slide */
   .main-slide-container {
-    max-height: 600px;
+    height: 600px;
   }
   /* 세로 배치 */
   .card-block {
