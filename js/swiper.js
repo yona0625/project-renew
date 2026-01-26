@@ -78,6 +78,12 @@ function commonSwiper(name) {
           }
         });
       },
+
+      /* 반응형 리사이징 할 때마다 스와이퍼가 헛도는 경우를 방지하고 매번 0번째로 보냄 */
+      resize: function () {
+        this.loopFix();
+        this.slideToLoop(0, 0);
+      },
     },
 
     // breakpoints
@@ -87,6 +93,9 @@ function commonSwiper(name) {
         initialSlide: 0,
         slidesPerView: 3,
         slidesPerGroup: 1,
+      },
+      1024: {
+        centeredSlides: false,
       },
     },
   });
@@ -120,8 +129,12 @@ const mainSwiper = new Swiper(".main-slide-container", {
     nextEl: ".main-btn-next",
     prevEl: ".main-btn-prev",
   },
-  
-})
+  on: {
+    resize: function () {
+      this.loopFix();
+    },
+  },
+});
 
 /* [3] 서브 슬라이드(1): brand */
 const brand_slide = new Swiper(".brand-slide-container", {

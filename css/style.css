@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 :root {
-  --bg-color: #ffffff;
+  --bg-color__white: #ffffff;
 }
 body {
 }
@@ -33,13 +33,13 @@ a {
 }
 #container {
   width: 100%;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color__white);
 }
 /* header */
 header {
   width: 100%;
   border: 1px solid black;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color__white);
   /* height: 100px; */
   position: relative;
   display: flex;
@@ -160,7 +160,7 @@ section {
   max-width: 767px;
   margin: 0 auto;
   padding: 0 20px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-top: 100px;
 }
 section > div {
@@ -171,7 +171,6 @@ section > div {
 /* ---------- main -------- */
 main {
   width: 100%;
-  background-color: yellowgreen;
 }
 
 /* --------- section 1 --------- */
@@ -211,6 +210,8 @@ main {
   display: inline-flex;
   margin-top: 30px;
   border-radius: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-wrapper {
@@ -228,6 +229,12 @@ main {
   flex-direction: column;
   /* margin-bottom: 50px; */
 }
+.card-block .more-btn {
+  border: 1px solid black;
+  width: 100%;
+}
+.card-block .more-btn span {
+}
 .card-block + .card-block {
   margin-top: 50px;
 }
@@ -243,11 +250,13 @@ main {
 }
 .image-box,
 .text-box {
-  border: 2px solid #333;
+  /* border: 2px solid #333; */
   background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .text-box > div {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   /* max-height: 200px; -> 어차피 많이 들어가지 않으니까 괜찮긴 한데... */
 }
 .image-box img {
@@ -275,7 +284,7 @@ main {
   width: 100vw;
   height: 300px;
   position: relative;
-  background-color: #fff;
+  background-color: #f5f5f5;
   left: 50%;
   margin-left: -50vw;
 }
@@ -291,7 +300,7 @@ main {
 
 /* ------- section 3 ------- */
 .pick {
-  background-color: pink;
+  background-color: var(--bg-color__white);
   width: 100%;
   overflow: hidden;
 }
@@ -314,10 +323,27 @@ main {
 }
 .pick-slide {
   /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음*/
-  height: clamp(500px, 80vw, 600px);
+  height: clamp(550px, 80vw, 600px);
   background-color: yellow;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
 }
-.pick-slide img {
+.pick-text {
+  background-color: var(--bg-color__white);
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.pick-text h3 {
+  /* background-color: red; */
+  font-size: 18px;
+}
+.pick-text .more-btn {
+  position: absolute;
+  bottom: 20px;
+}
+.pick-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -376,7 +402,7 @@ footer {
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   #container {
-    background-color: yellow;
+    /* background-color: yellow; */
   }
   section {
     padding: 0 40px;
@@ -395,8 +421,23 @@ footer {
   /* 1:1 비율 유지 */
   .image-box,
   .text-box {
-    flex: 1;
+    width: 50%;
     height: 100%;
+  }
+  .text-box {
+    padding: 50px 40px;
+  }
+  .text-box > div {
+    /* background-color: red; */
+    height: 100%;
+    position: relative;
+  }
+  .text-box .more-btn {
+    position: absolute;
+    bottom: 0;
+  }
+  .card-block:nth-child(even) {
+    flex-direction: row-reverse;
   }
   /* --------- section 3 -------- */
   .pick-slide-container {
@@ -422,12 +463,10 @@ footer {
 @media (min-width: 1024px) {
   #container {
     width: 100%;
-    background-color: red;
   }
   section {
-    max-width: 1440px; /* 1280 */
+    max-width: 1280px; /* 1280 */
     padding: 0 80px;
-    background-color: purple;
   }
   header {
     height: 80px;
@@ -446,7 +485,6 @@ footer {
     top: 80px;
     right: 0;
     opacity: 0;
-    /* visibility: hidden; */
     pointer-events: none;
   }
   .all-menu.active {
@@ -488,8 +526,23 @@ footer {
   /* 1:1 비율 유지 */
   .image-box,
   .text-box {
-    flex: 1;
+    width: 50%;
     height: 100%;
+  }
+  /* 짝수 역순 */
+  .card-block:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .text-box {
+    padding: 90px 40px;
+  }
+  .text-box > div {
+    height: 100%;
+    position: relative;
+  }
+  .text-box .more-btn {
+    position: absolute;
+    bottom: 0;
   }
   /* --------- section 3 -------- */
   .pick-slide-container {
@@ -500,14 +553,14 @@ footer {
   }
   .pick-slide div:first-child {
     background-color: mintcream;
-    height: 65%;
+    height: 60%;
   }
   .pick-slide div:last-child {
-    height: 35%;
+    height: 40%;
     border: 1px solid mintcream;
   }
   .pick-slide {
     /* pc에서 반응형으로 늘리거나 줄일 때 가로로만 늘어지는 걸 최대한 방지하기 위해 값을 미세하게 조정하며 바꿈 */
-    height: clamp(370px, 35vw, 520px);
+    height: clamp(400px, 35vw, 480px);
   }
 }
