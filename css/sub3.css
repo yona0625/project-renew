@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 :root {
+  --bg-color__white: #ffffff;
 }
 body {
 }
@@ -16,13 +17,126 @@ li {
 }
 #container {
   width: 100%;
-  background-color: blue;
+  background-color: var(--bg-color__white);
 }
+/* header */
 header {
   width: 100%;
   border: 1px solid black;
-  background-color: yellow;
-  height: 100px;
+  background-color: var(--bg-color__white);
+  /* height: 100px; */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-img {
+  width: 150px;
+  height: 50px;
+  border: 1px solid blue;
+}
+.logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* nav */
+nav {
+  background-color: hotpink;
+  /* margin-right에 투명한 auto 벽을 세워서 nav를 왼쪽으로 밀어냄 */
+  margin-right: auto;
+  margin-left: 30px;
+  display: none;
+}
+nav ul {
+  display: flex;
+}
+nav li {
+  border: 1px solid black;
+  padding: 10px 20px;
+}
+nav li a {
+  text-decoration: none;
+}
+.all-menu {
+  background-color: #fff;
+  width: 300px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  /* right: -100%; */
+  transform: translateX(100%);
+}
+.all-menu-content {
+  border: 1px solid red;
+  margin-top: 50px;
+}
+.first-menu {
+  padding: 20px;
+  font-weight: 600;
+}
+.first-menu a {
+  text-decoration: none;
+  color: #000000;
+}
+.second-menu {
+  font-weight: 400;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.second-menu.active {
+}
+.exit-btn {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.all-menu.active {
+  transform: translateX(0);
+}
+/* trigger */
+.trigger {
+  width: 30px;
+  height: 25px;
+  /* border: 1px solid red; */
+  position: relative;
+  right: 20px;
+  cursor: pointer;
+}
+.trigger span {
+  width: 100%;
+  background-color: #000000;
+  height: 2px;
+  position: absolute;
+  transition: 0.3s;
+}
+.trigger span:first-child {
+  top: 0;
+}
+.trigger span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.trigger span:last-child {
+  bottom: 0;
+}
+/* hover(active) */
+.trigger:hover span:first-child {
+  transform: translateY(-50%) rotate(45deg);
+  top: 50%;
+}
+.trigger:hover span:nth-child(2) {
+  display: none;
+}
+.trigger:hover span:last-child {
+  transform: translateY(50%) rotate(-45deg);
+  bottom: 50%;
 }
 section {
   width: 100%;
@@ -61,6 +175,7 @@ main img {
   flex: 1;
 }
 .image-box {
+  aspect-ratio: 1 / 1;
 }
 .text-box {
   background-color: mediumspringgreen;
@@ -72,6 +187,7 @@ main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  will-change: contents;
 }
 .brand2-slide-container {
   position: static;
@@ -175,6 +291,7 @@ footer {
     padding: 0 40px;
     max-width: 1023px;
   }
+  
   /* -------- section 1 -------- */
   .brand2-slide {
     flex-direction: row;
@@ -182,8 +299,9 @@ footer {
   }
   .image-box,
   .text-box {
-    height: 100%;
+    width: 50%;
   }
+  .image-box img {}
   /* --------- section 2 -------- */
   .reco-slide-container {
     /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
@@ -221,13 +339,61 @@ footer {
   }
   main img {
   }
+  header {
+    height: 80px;
+  }
+  /* nav */
+  nav {
+    display: block;
+  }
+  /* trigger */
+  .trigger {
+    display: none;
+  }
+  .all-menu {
+    width: 100%;
+    height: 250px;
+    top: 80px;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .all-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .all-menu .exit-btn {
+    display: none;
+  }
+  .all-menu-content {
+    margin-top: 0;
+    height: 100%;
+    /* 로고 넓이 + 30px만큼 밀어내기 */
+    margin: 0 180px;
+  }
+  .first-menu {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    height: 100%;
+  }
+  .all-menu-content li {
+    background: yellow;
+  }
+  .second-menu {
+    max-height: none;
+  }
   /* -------- section 1 -------- */
   .brand2-slide {
     flex-direction: row;
     aspect-ratio: 2 / 1;
   }
-  .image-box {
-    height: 100%;
+  .image-box,
+  .text-box {
+    width: 50%;
+  }
+  .image-box img {
+    
   }
   /* --------- section 2 -------- */
   .reco-slide-container {

@@ -14,12 +14,91 @@
     <!-- swiper js  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <!-- my js -->
-    <!-- <script src="js/swiper.js" defer></script> -->
+    <script src="js/swiper.js" defer></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
     <div id="container">
-      <header>헤더입니다.</header>
+       <header>
+        <!-- logo -->
+        <div class="logo-img">
+          <img src="images/logo-test.png" alt="" />
+        </div>
+        <!-- nav -->
+        <nav>
+          <!-- 개별 메뉴 -->
+          <ul class="main-menu">
+            <li>
+              <a href="#none"> Brands </a>
+            </li>
+            <li>
+              <a href="#none"> Our Company </a>
+            </li>
+            <li>
+              <a href="#none"> Discover </a>
+            </li>
+            <li>
+              <a href="#none"> Sustainability </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- trigger(mobile) -->
+        <div class="trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!-- 전체 메뉴 -->
+        <div class="all-menu">
+          <div class="exit-btn">
+            <img src="" alt="" />
+          </div>
+          <div class="all-menu-content">
+            <ul class="first-menu">
+              <li>
+                <a href="#none"> Brands </a>
+              </li>
+              <li>
+                <a href="#none"> Our Company </a>
+                <ul class="second-menu">
+                  <li>
+                    <a href="#none"> Coca-cola Company </a>
+                  </li>
+                  <li>
+                    <a href="#none"> Since 1886 </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#none"> Discover </a>
+                <ul class="second-menu">
+                  <li>
+                    <a href="#none"> Brand Story </a>
+                  </li>
+                  <li>
+                    <a href="#none"> Coke & Meal </a>
+                  </li>
+                  <li>
+                    <a href="#none"> Originals </a>
+                  </li>
+                  <li>
+                    <a href="#none"> Opener </a>
+                  </li>
+                  <li>
+                    <a href="#none"> Creations </a>
+                  </li>
+                  <li>
+                    <a href="#none"> CokePLAY App </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#none"> Sustainability </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
       <main>
         <img src="images/test.png" alt="" />
       </main>
@@ -28,18 +107,26 @@
         <div class="company-title">
           <h2>our company</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
-            vero quas est animi. Corporis vitae quaerat, ex laborum nesciunt
-            fugit labore, aut possimus non distinctio, quae temporibus odio
-            commodi quam quisquam maiores dignissimos delectus iusto odit.
-            Perspiciatis ratione dicta nisi aliquam, dolorem inventore quia
-            assumenda nemo odio reiciendis illum asperiores quod ut culpa esse,
-            sit est consectetur? Et commodi architecto, illum odio dolorem, quis
-            provident vitae a accusamus nemo corporis in quod, impedit vel.
-            Fugit nostrum voluptas id rerum illum, repudiandae earum ipsum
-            consectetur fuga, rem perferendis! Porro sunt aliquid cupiditate
-            dignissimos distinctio obcaecati quam a? Suscipit ratione dolore
-            quaerat!
+            1886년 5월 8일, 존 펨버턴(John Pemberton) 박사가 미국 조지아주
+            애틀랜타에 있는 제이콥스 약국(Jacobs’ Pharmacy)에서 코카-콜라를
+            처음으로 발명했다. 130여 년이 지난 지금, 코카-콜라 컴퍼니(The
+            Coca‑Cola Company)는 전 세계 200여 개국 이상에 진출한 글로벌
+            종합음료회사로 성장했다. 스파클링, 주스, 차, 커피, 스포츠 음료 등 총
+            200여 개의 브랜드를 보유하고 있다.
+            <span class="br">
+              한국에서는 1968년부터 코카-콜라가 정식으로 생산 및 판매되기
+              시작했다. 대표 브랜드인 코카-콜라를 비롯해 스프라이트, 환타,
+              미닛메이드, 조지아, 토레타!, 파워에이드 등 20여 개 음료 브랜드를
+              국내에서 생산 및 판매하고 있다.
+            </span>
+            <span class="br">
+              코카-콜라 시스템은 크게 두 가지로 구성된다. 원액 생산 및 상표
+              관리와 브랜드 마케팅을 담당하는 ‘코카-콜라사’와 완제품을 생산,
+              유통, 판매하는 ‘보틀링 파트너(Bottling Partners)’로 운영된다. 현재
+              한국에서 생산되는 코카-콜라 제품의 원액 생산과 마케팅은 한국
+              코카-콜라 유한회사가 담당하고 있으며, 국내 보틀링 파트너는
+              LG생활건강의 자회사인 코카-콜라 음료 주식회사가 맡고 있다.
+            </span>
           </p>
         </div>
         <div class="company-card">
@@ -50,23 +137,15 @@
               </div>
               <div class="text-box">
                 <div>
-                  <h3>제목 1</h3>
+                  <h3>글로벌 코카-콜라</h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Labore esse modi animi suscipit autem, enim laboriosam nemo
-                    assumenda natus consequuntur fugiat in libero provident vero
-                    accusamus! In atque ex id dolorem quidem perferendis,
-                    consequuntur non consequatur nemo ad possimus modi tenetur
-                    enim nisi! Ipsa eum illum vero veritatis, ad deserunt
-                    provident dolorem non suscipit labore enim recusandae veniam
-                    nobis expedita necessitatibus, dolore quasi ea reiciendis,
-                    voluptatum laborum modi quos minima ex rem? Cum vel
-                    laudantium ad repellendus sunt blanditiis. Error maiores
-                    saepe distinctio, molestias beatae omnis tempore minima
-                    ducimus placeat aspernatur. Labore praesentium veritatis
-                    natus, ullam officiis officia recusandae quisquam?
+                    전 세계인들의 일상 속 짜릿한 순간을 함께 해온 코카-콜라의
+                    글로벌 비전과 가치, 지속 가능한 경영 전략
                   </p>
                 </div>
+                <a href="#none" class="more-btn">
+                  <span> 더 보기 </span>
+                </a>
               </div>
             </div>
             <div class="card">
@@ -75,22 +154,15 @@
               </div>
               <div class="text-box">
                 <div>
-                  <h3>제목 1</h3>
+                  <h3>한국 코카-콜라</h3>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Labore esse modi animi suscipit autem, enim laboriosam nemo
-                    assumenda natus consequuntur fugiat in libero provident vero
-                    accusamus! In atque ex id dolorem quidem perferendis,
-                    consequuntur non consequatur nemo ad possimus modi tenetur
-                    enim nisi! Ipsa eum illum vero veritatis, ad deserunt
-                    provident dolorem non suscipit labore enim recusandae veniam
-                    nobis expedita necessitatibus, dolore quasi ea reiciendis,
-                    voluptatum laborum modi quos minima ex rem? Cum vel
-                    laudantium ad repellendus sunt blanditiis. Error maiores
-                    saepe distinctio, molestias beatae omnis tempore minima
-                    ducimus placeat aspernatur. Labore praesentium veritatis
-                    natus, ullam officiis officia recusandae quisquam?
+                    전 세계 200여 개국의 소비자들에게 상쾌함과 즐거움을 제공하고
+                    있는 코카-콜라. 한국에서 코카-콜라의 역사는 언제, 어떻게
+                    시작됐을까?
                   </p>
+                  <a href="#none" class="more-btn">
+                    <span> 더 보기 </span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -106,22 +178,14 @@
             </div>
             <div class="text-box">
               <div>
-                <h3>제목 1</h3>
+                <h3>한국 코카-콜라에는 특별한 기업문화가 있다?</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore esse modi animi suscipit autem, enim laboriosam nemo
-                  assumenda natus consequuntur fugiat in libero provident vero
-                  accusamus! In atque ex id dolorem quidem perferendis,
-                  consequuntur non consequatur nemo ad possimus modi tenetur
-                  enim nisi! Ipsa eum illum vero veritatis, ad deserunt
-                  provident dolorem non suscipit labore enim recusandae veniam
-                  nobis expedita necessitatibus, dolore quasi ea reiciendis,
-                  voluptatum laborum modi quos minima ex rem? Cum vel laudantium
-                  ad repellendus sunt blanditiis. Error maiores saepe
-                  distinctio, molestias beatae omnis tempore minima ducimus
-                  placeat aspernatur. Labore praesentium veritatis natus, ullam
-                  officiis officia recusandae quisquam?
+                  음료에 대한 열정을 바탕으로 새로운 도전과 혁신을 만들어나가는
+                  코카-콜라의 기업문화를 알아보는 콕콕콕 오피스 습격편
                 </p>
+                <a href="#none" class="more-btn">
+                  <span> 더보기 </span>
+                </a>
               </div>
             </div>
           </div>
@@ -131,22 +195,14 @@
             </div>
             <div class="text-box">
               <div>
-                <h3>제목 1</h3>
+                <h3>미국 애틀랜타 코카-콜라 본사&박물관 투어</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Labore esse modi animi suscipit autem, enim laboriosam nemo
-                  assumenda natus consequuntur fugiat in libero provident vero
-                  accusamus! In atque ex id dolorem quidem perferendis,
-                  consequuntur non consequatur nemo ad possimus modi tenetur
-                  enim nisi! Ipsa eum illum vero veritatis, ad deserunt
-                  provident dolorem non suscipit labore enim recusandae veniam
-                  nobis expedita necessitatibus, dolore quasi ea reiciendis,
-                  voluptatum laborum modi quos minima ex rem? Cum vel laudantium
-                  ad repellendus sunt blanditiis. Error maiores saepe
-                  distinctio, molestias beatae omnis tempore minima ducimus
-                  placeat aspernatur. Labore praesentium veritatis natus, ullam
-                  officiis officia recusandae quisquam?
+                  코카-콜라 미국 본사와 월드 오브 코카-콜라(World of Coca‑Cola)
+                  박물관이 궁금하다면? 박준형과 함께한 본격 코카-콜라 체험기!
                 </p>
+                <a href="#none" class="more-btn">
+                  <span> 더보기 </span>
+                </a>
               </div>
             </div>
           </div>
