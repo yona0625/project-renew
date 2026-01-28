@@ -39,6 +39,7 @@ function commonSwiper(name) {
     pagination: {
       enabled: true,
       el: `.${name}-pagination`,
+      clickable: true,
       /* 이제부터 bullet를 그리겠다. */
       renderBullet: function (index, className) {
         if (index < originalIndex) {
@@ -46,7 +47,8 @@ function commonSwiper(name) {
           <span class="'+ className + '"></span> */
           /* className = swiper-pagination-bullet */
           /* 스와이퍼의 불렛을 불러오되 그것을 ${name}-slideDot이라 지칭(템플릿 리터럴) - return으로 반환해야 html상의 태그로 기록 됨 */
-          return `<span class="${className} ${name}-slideDot"></span>`;
+          /* css에서 전체 제어하기 위한 common-dot이라는 이름을 부여 */
+          return `<span class="${className} ${name}-slideDot common-dot"></span>`;
         }
         /* 그게 아니라면 나머지는 ''(공백)처리해서 안 보이게 해. */
         return "";
@@ -61,6 +63,7 @@ function commonSwiper(name) {
       /* 너 슬라이드 바뀔 때 마다 아래 함수 실행해. */
       slideChange: function () {
         /* 지금 움직이고 있는 슬라이드의 진짜 index 가져와.(loop의 복제본 무시) (this.realIndex) */
+
         const activeBulletIndex = this.realIndex % originalIndex;
         /* 지금 여기서 bullet은 renderBullet으로 '원본 슬라이드 개수'만큼만 제작된 상태. 이걸 bullets으로 불러옴. => originalIndex로 나누는 이유는, 혹시라도 readlIndex가 원본 슬라이드 개수 밖을 빠져 나가지 않도록 위한 방지 대책과, 또한 나눔으로써 '원본 슬라이드' 개수의 불렛만을 쓰겠다는 명시적 표기의 의미가 있음. */
         /* document -> slideContainer로 불러와서 전체 swiper가 아니라 각각 슬라이드의 영역 '안'에서 불러오게 함 */
@@ -124,6 +127,10 @@ const mainSwiper = new Swiper(".main-slide-container", {
   pagination: {
     el: ".main-pagination",
     clickable: true,
+    renderBullet: function (index, className) {
+      /* 똑같이 common-dot으로 제어하기 위해 추가 */
+      return `<span class="${className} mainSlide-dot common-dot"></span>`;
+    },
   },
   navigation: {
     nextEl: ".main-btn-next",
@@ -132,6 +139,8 @@ const mainSwiper = new Swiper(".main-slide-container", {
   on: {
     resize: function () {
       this.loopFix();
+      this.slideToLoop(0,0);
+      this.update();
     },
   },
 });
@@ -140,7 +149,7 @@ const mainSwiper = new Swiper(".main-slide-container", {
 const brand_slide = new Swiper(".brand-slide-container", {
   slidesPerView: 3,
   spaceBetween: 20,
-  loop: true,
+  loop: false,
 
   navigation: {
     nextEl: ".brand-btn-next",
@@ -151,7 +160,6 @@ const brand_slide = new Swiper(".brand-slide-container", {
     360: {
       slidesPerView: 2,
       spaceBetween: 20,
-      loop: false,
     },
     768: {
       slidesPerView: 3,
@@ -189,7 +197,7 @@ const brand2_slide = new Swiper(".brand2-slide-container", {
     resize: function () {
       /* 슬라이드 흔들림 방지 */
       this.loopFix();
-      this.slideToLoop(0,0);
+      this.slideToLoop(0, 0);
       /* 이미지가 렌더링 속도를 못 따라오고 튀는 현상 방지 */
       this.update();
     },

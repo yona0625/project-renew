@@ -4,10 +4,28 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* font test */
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    sans-serif;
+}
 :root {
   --bg-color__white: #ffffff;
+  --font-color__gray: #999999;
+}
+html {
+  font-size: 70%;
 }
 body {
+  /* 10px로 된 것에서 1.6을 곱해 16px로 만듦 */
+  font-size: 1.6rem;
+  /* 단위를 안 쓰고 1.4 배수 개념으로 쓰기 */
+  line-height: 1.4;
+  /* -2.5%인데, rem말고 em으로 잡아줘야 함. rem일 경우 적용하려는 폰트가 작으면 그만큼 값이 변해서 자간의 줄이 겹칠 수도 있음. 즉 고정 말고 유동적인 em이 적합 */
+  letter-spacing: -0.025em;
 }
 ul,
 li {
@@ -35,10 +53,24 @@ a {
   width: 100%;
   background-color: var(--bg-color__white);
 }
+/* swiper pagination dot */
+.common-dot {
+  /* 기본 swiper dot에 0.2정도로 되어있기에 opacity: 1로 해야 함. */
+  opacity: 1;
+  background-color: var(--font-color__gray);
+  width: 10px;
+  height: 10px;
+  transition: 0.3s;
+}
+.common-dot.swiper-pagination-bullet-active {
+  background-color: red;
+  width: 50px;
+  border-radius: 20px;
+}
 /* header */
 header {
   width: 100%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   background-color: var(--bg-color__white);
   /* height: 100px; */
   position: relative;
@@ -49,7 +81,7 @@ header {
 .logo-img {
   width: 150px;
   height: 50px;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 .logo-img img {
   width: 100%;
@@ -58,7 +90,7 @@ header {
 }
 /* nav */
 nav {
-  background-color: hotpink;
+  /* background-color: hotpink; */
   /* margin-right에 투명한 auto 벽을 세워서 nav를 왼쪽으로 밀어냄 */
   margin-right: auto;
   margin-left: 30px;
@@ -68,11 +100,14 @@ nav ul {
   display: flex;
 }
 nav li {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 10px 20px;
 }
 nav li a {
   text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
 }
 .all-menu {
   background-color: #fff;
@@ -86,7 +121,7 @@ nav li a {
   transform: translateX(100%);
 }
 .all-menu-content {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   margin-top: 50px;
 }
 .first-menu {
@@ -96,12 +131,18 @@ nav li a {
 .first-menu a {
   text-decoration: none;
   color: #000000;
+  font-size: 18px;
+  line-height: 30px;
 }
 .second-menu {
   font-weight: 400;
   max-height: 0;
   overflow: hidden;
   transition: 0.3s;
+}
+.second-menu a {
+  font-size: 15px;
+   color: #4a4a4a;
 }
 .second-menu.active {
 }
@@ -180,7 +221,7 @@ main {
   width: 100%;
   /* height: 50vh; */
   height: 550px;
-  border: 3px solid purple;
+  /* border: 3px solid purple; */
   position: relative;
 }
 .main-slide {
@@ -193,10 +234,37 @@ main {
   width: 100%;
   position: absolute;
   padding: 0 10%;
+  z-index: 2;
+}
+.slide-text h1,
+.slide-text p {
+  color: #ffffff;
+}
+.slide-text p {
+  margin-top: 12px;
+}
+.slide-text .more-btn {
+  border: 1px solid transparent;
 }
 .slide-img {
   width: 100%;
   height: 100%;
+}
+.mainSlide-dot {
+  background-color: #ffffff;
+}
+/* dimmed */
+.slide-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+  z-index: 1;
+  /* 더 보기 버튼이 가려지지 않게 제외 */
+  pointer-events: none;
 }
 .slide-img img {
   width: 100%;
@@ -205,20 +273,22 @@ main {
 }
 .more-btn {
   background-color: #fff;
-  color: black;
-  padding: 10px 20px;
+  color: #333333;
+  padding: 10px 45px;
   display: inline-flex;
   margin-top: 30px;
-  border-radius: 20px;
+  border-radius: 30px;
   justify-content: center;
   align-items: center;
+  position: relative;
+  border: 1px solid #333333;
 }
 
 .content-wrapper {
   width: 100%;
   /* 전체 틀을 세로 정렬 */
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 .main-card {
 }
@@ -230,7 +300,7 @@ main {
   /* margin-bottom: 50px; */
 }
 .card-block .more-btn {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
 }
 .card-block .more-btn span {
@@ -247,6 +317,7 @@ main {
 .text-box {
   padding: 30px 20px 30px 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 .image-box,
 .text-box {
@@ -257,6 +328,7 @@ main {
 }
 .text-box > div {
   /* border: 3px solid red; */
+  /* background-color: red; */
   /* max-height: 200px; -> 어차피 많이 들어가지 않으니까 괜찮긴 한데... */
 }
 .image-box img {
@@ -266,14 +338,11 @@ main {
 }
 .text-box h3 {
   margin-bottom: 10px;
-  font-size: 18px;
   color: #333;
 }
-
 .text-box p {
   line-height: 1.6;
-  color: #555;
-  font-size: 14px;
+  color: var(--font-color__gray);
 }
 
 /* ------ section 2 ------ */
@@ -296,6 +365,14 @@ main {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  padding: 30px;
+}
+.journey-wrapper .more-btn {
+  border: 1px solid transparent;
+}
+.journey-wrapper p {
+  margin-top: 12px;
+  color: var(--font-color__gray);
 }
 
 /* ------- section 3 ------- */
@@ -337,11 +414,14 @@ main {
 }
 .pick-text h3 {
   /* background-color: red; */
-  font-size: 18px;
+  font-weight: 500;
 }
 .pick-text .more-btn {
   position: absolute;
-  bottom: 20px;
+  border: 1px solid transparent;
+  left: 25px;
+  padding: 0;
+  bottom: 30px;
 }
 .pick-image img {
   width: 100%;
@@ -356,6 +436,8 @@ main {
   height: 30%;
   border: 1px solid mintcream;
 }
+.pick-slideDot {
+}
 /* ------- section 4 ------ */
 .brand {
 }
@@ -364,22 +446,30 @@ main {
 }
 .brand-slide-all {
   width: 100%;
-  background-color: red;
+  background-color: var(--bg-color__white);
   position: relative;
 }
 .brand-slide-container {
   /* 버튼의 기준을 여기 container(swiper) 말고 brand-slide-all에 주기 위해 static으로 바꿈 */
   position: static;
   width: 80%;
-  background-color: pink;
+  /* background-color: pink; */
   margin-top: 50px;
 }
 .brand-slide-wrapper {
 }
 .brand-slide {
-  background-color: yellow;
-  border: 1px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
   aspect-ratio: 1 / 1;
+  padding: 30px;
+}
+.brand-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .brand-btn-prev,
 .brand-btn-next {
@@ -401,6 +491,9 @@ footer {
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 65%;
+  }
   #container {
     /* background-color: yellow; */
   }
@@ -426,15 +519,22 @@ footer {
   }
   .text-box {
     padding: 50px 40px;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
   }
   .text-box > div {
     /* background-color: red; */
-    height: 100%;
-    position: relative;
+    /* height: 100%; */
+    /* position: relative; */
   }
   .text-box .more-btn {
-    position: absolute;
-    bottom: 0;
+    margin-top: 30px;
+    width: fit-content;
+    /* position: absolute; */
+    /* bottom: 0; */
   }
   .card-block:nth-child(even) {
     flex-direction: row-reverse;
@@ -458,15 +558,25 @@ footer {
     height: clamp(600px, 70vw, 700px);
     background-color: yellow;
   }
+  .pick-text h3 {
+    /* font-size: 1.8rem; */
+  }
 }
 /* pc */
 @media (min-width: 1024px) {
+  html {
+    /* 16px * 0.625 = 10px, 기본 폰트는 16px인데 0.625면 10px이 됨. */
+    font-size: 62.5%;
+  }
   #container {
     width: 100%;
   }
   section {
     max-width: 1280px; /* 1280 */
     padding: 0 80px;
+  }
+  .more-btn span {
+    font-size: 1.5rem;
   }
   header {
     height: 80px;
@@ -481,11 +591,12 @@ footer {
   }
   .all-menu {
     width: 100%;
-    height: 250px;
+    height: 220px;
     top: 80px;
     right: 0;
     opacity: 0;
     pointer-events: none;
+    border-top: 1px solid #e5e5e5;
   }
   .all-menu.active {
     opacity: 1;
@@ -494,29 +605,54 @@ footer {
   .all-menu .exit-btn {
     display: none;
   }
+  .all-menu li a {
+    font-size: 18px;
+    line-height: 30px;
+    /* 30이 한계인데 이걸 어떻게 하지? */
+  }
   .all-menu-content {
     margin-top: 0;
     height: 100%;
     /* 로고 넓이 + 30px만큼 밀어내기 */
     margin: 0 180px;
+    /* background-color: red; */
   }
   .first-menu {
     display: flex;
     gap: 20px;
     text-align: center;
-    height: 100%;
+    /* height: 100%; */
+    /* background-color: red; */
+  }
+  .first-menu > li > a {
+    /* 전체 메뉴를 펼쳤을 때 서브만 보여야 하니 처음 메뉴는 숨겨야 함 */
+    visibility: hidden;
+    /* 근데 hidden만 하면 높이가 살아있으니, block화 해서 0으로 해야 li 공간은 유지하고 글자만 쏙 빠짐. */
+    display: block;
+    height: 0;
   }
   .all-menu-content li {
-    background: yellow;
+    /* background: yellow; */
+    /* border: 1px solid black; */
   }
   .second-menu {
+    /* 아코디언때 쓴건데 빼도 동작은 함 pc라서 */
     max-height: none;
+  }
+  .second-menu > li > a {
+    color: #4a4a4a;
   }
   /* hover */
   /* ----------- section 1 -------- */
   /* main slide */
   .main-slide-container {
     height: 600px;
+  }
+  .slide-text h1 {
+    font-size: 4.5rem;
+  }
+  .slide-text p {
+    font-size: 2rem;
   }
   /* 세로 배치 */
   .card-block {
@@ -535,14 +671,22 @@ footer {
   }
   .text-box {
     padding: 90px 40px;
+    text-align: left;
   }
   .text-box > div {
-    height: 100%;
-    position: relative;
+    /* height: 100%; */
+    /* position: relative; */
+  }
+  .text-box h3 {
+    font-size: 3rem;
+  }
+  .text-box p {
+    font-size: 1.8rem;
   }
   .text-box .more-btn {
-    position: absolute;
-    bottom: 0;
+    width: fit-content;
+    /* position: absolute;
+    bottom: 0; */
   }
   /* --------- section 3 -------- */
   .pick-slide-container {
@@ -562,5 +706,8 @@ footer {
   .pick-slide {
     /* pc에서 반응형으로 늘리거나 줄일 때 가로로만 늘어지는 걸 최대한 방지하기 위해 값을 미세하게 조정하며 바꿈 */
     height: clamp(400px, 35vw, 480px);
+  }
+  .pick-text h3 {
+    font-size: 1.8rem;
   }
 }

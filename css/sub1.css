@@ -15,6 +15,10 @@ li {
   padding: 0;
   list-style: none;
 }
+a {
+  text-decoration: none;
+  color: #000000;
+}
 #container {
   width: 100%;
   background-color: var(--bg-color__white);
@@ -143,7 +147,7 @@ section {
   max-width: 767px;
   margin: 0 auto;
   padding: 0 20px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-top: 100px;
 }
 section > div {
@@ -186,12 +190,15 @@ main img {
 }
 /* li '이거 하나만' 작동 */
 .brand-product-tab li.active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
   /* ★ max로 주어야지 그보다 높이가 작아도 딱 알맞게 컴이 계산함. (auto는 transition 안 먹힘) */
   max-height: 80px;
   opacity: 1;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* height: auto; */
+}
+.brand-product-tab li.active a {
+  color: red;
 }
 /* 작동하면 '나머지 li'를 다 이렇게 작동해 */
 .brand-product-tab.active li {
@@ -201,7 +208,6 @@ main img {
   opacity: 1;
 }
 .brand-product-tab li a {
-  text-decoration: none;
   /* background-color: red; */
   display: block;
   padding: 10px;
@@ -235,8 +241,8 @@ footer {
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   #container {
-    background-color: yellow;
-    border: 3px solid green;
+    /* background-color: yellow; */
+    /* border: 3px solid green; */
   }
   main {
     height: 500px;
@@ -265,7 +271,7 @@ footer {
 @media (min-width: 1024px) {
   #container {
     width: 100%;
-    background-color: purple;
+    /* background-color: purple; */
     border: 3px solid blue;
   }
   main {
@@ -274,7 +280,7 @@ footer {
   section {
     max-width: 1440px; /* 1280 */
     padding: 0 80px;
-    background-color: purple;
+    /* background-color: purple; */
   }
   main img {
   }
