@@ -225,7 +225,7 @@ tab_button.forEach((button) => {
     /* 현재 이건 ul를 열고 닫는 형태의 슬라이드라 foreach를 안 거침. */
     /* parentElement로 부모 통째를 열고 닫으면, 각자 관리를 안 해도 됨. */
     /* 나머지 클래스를 지우고, 선택한 것만 추가하는 건 이미 되어 있음 */
-    if (window.innerWidth < 767) {
+    if (window.innerWidth < 1024) {
       this.parentElement.classList.toggle("active");
     }
   });

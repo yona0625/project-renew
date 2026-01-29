@@ -6,6 +6,7 @@
 }
 :root {
   --bg-color__white: #ffffff;
+  --font-color__gray: #999999;
 }
 body {
 }
@@ -172,7 +173,7 @@ main img {
 }
 .brand-product-tab {
   width: 100%;
-  background-color: pink;
+  /* background-color: pink; */
   /* display: flex; */
   margin-bottom: 50px;
 }
@@ -184,6 +185,8 @@ main img {
   /* max 높이로 통일 */
   max-height: 0;
   opacity: 0;
+  border: 1px solid #e5e5e5;
+  /* border-top: 1px solid transparent; */
 }
 .brand-product-tab li:last-child {
   margin-bottom: 0;
@@ -194,7 +197,7 @@ main img {
   /* ★ max로 주어야지 그보다 높이가 작아도 딱 알맞게 컴이 계산함. (auto는 transition 안 먹힘) */
   max-height: 80px;
   opacity: 1;
-  /* border: 1px solid red; */
+  border: 1px solid #e5e5e5;
   /* height: auto; */
 }
 .brand-product-tab li.active a {
@@ -204,16 +207,17 @@ main img {
 .brand-product-tab.active li {
   max-height: 200px;
   /* 펼쳐질 때 여백이 있어야 깔끔함 */
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   opacity: 1;
 }
 .brand-product-tab li a {
   /* background-color: red; */
   display: block;
   padding: 10px;
+  transition: 0.3s;
 }
 .tab {
-  background-color: lime;
+  background-color: var(--bg-color__white);
   display: none;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -222,7 +226,8 @@ main img {
   margin-top: 20px;
 }
 .tab .item {
-  border: 1px solid black;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
   /* 내부 요소 정중앙 정렬 */
   display: flex;
   justify-content: center;
@@ -258,13 +263,13 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
   .brand-product-tab {
-    display: flex;
+    /* display: flex; */
   }
   .brand-product-tab li {
-    max-height: none;
+    /* max-height: none;
     opacity: 1;
     text-align: center;
-    flex: 1;
+    flex: 1; */
   }
 }
 /* pc */
@@ -334,11 +339,14 @@ footer {
   }
   .brand-product-tab {
     display: flex;
+    align-items: center;
+    gap: 20px;
   }
   .brand-product-tab li {
     max-height: none;
     opacity: 1;
     text-align: center;
     flex: 1;
+    /* height: 70px; */
   }
 }

@@ -4,6 +4,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* font test */
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    sans-serif;
+}
 :root {
   --bg-color__white: #ffffff;
 }
@@ -245,13 +253,13 @@ main img {
 
 /* -------- section 3 -------- */
 .more-content {
-  
 }
 .item {
   display: flex;
   width: 100%;
   border: 1px solid black;
-  aspect-ratio: 3 / 1;
+  aspect-ratio: 4 / 1;
+  /* max-width: 800px; */
 }
 .item + .item {
   margin-top: 20px;
@@ -291,7 +299,7 @@ footer {
     padding: 0 40px;
     max-width: 1023px;
   }
-  
+
   /* -------- section 1 -------- */
   .brand2-slide {
     flex-direction: row;
@@ -301,7 +309,8 @@ footer {
   .text-box {
     width: 50%;
   }
-  .image-box img {}
+  .image-box img {
+  }
   /* --------- section 2 -------- */
   .reco-slide-container {
     /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
@@ -393,7 +402,6 @@ footer {
     width: 50%;
   }
   .image-box img {
-    
   }
   /* --------- section 2 -------- */
   .reco-slide-container {

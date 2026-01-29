@@ -4,10 +4,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* font test */
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    sans-serif;
+}
 :root {
   --bg-color__white: #ffffff;
+  --font-color__gray: #999999;
+}
+html {
+  font-size: 70%;
 }
 body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
 }
 ul,
 li {
@@ -16,6 +31,7 @@ li {
   list-style: none;
 }
 h2,
+h3,
 p {
   margin: 0;
   padding: 0;
@@ -195,6 +211,8 @@ main img {
 .company-title p {
   margin-top: 20px;
   text-align: left;
+  color: #767676;
+  line-height: 1.7;
 }
 .company-title .br {
   margin-top: 1.2em;
@@ -226,6 +244,13 @@ main img {
   text-align: center;
   min-height: 200px;
   background-color: var(--bg-color__white);
+}
+.text-box p {
+  color: var(--font-color__gray);
+  margin-top: 1.2rem;
+}
+.text-box h3 {
+  font-weight: 600;
 }
 .text-box .more-btn {
   position: absolute;
@@ -260,6 +285,9 @@ footer {
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 65%;
+  }
   #container {
     /* background-color: yellow; */
     border: 3px solid green;
@@ -315,6 +343,9 @@ footer {
 }
 /* pc */
 @media (min-width: 1024px) {
+  html {
+    font-size: 62.5%;
+  }
   #container {
     width: 100%;
     /* background-color: purple; */
@@ -383,6 +414,7 @@ footer {
     /* border: 1px solid blue; */
     padding: 30px 0;
     text-align: left;
+    font-size: 2.4rem;
   }
   .company-title p {
     text-align: left;
@@ -404,6 +436,15 @@ footer {
   .card {
     width: 50%;
   }
+  .company-card .text-box h3 {
+    font-size: 2.2rem;
+    /* background-color: red; */
+    font-weight: 600;
+  }
+  .company-card .text-box p {
+    margin-top: 1.2rem;
+    font-size: 1.8rem;
+  }
   /* ----- section 2 ----- */
   .special {
     /* 전체 160 마진일 때 이 요소는 320 */
@@ -413,5 +454,13 @@ footer {
   }
   .special .text-box {
     min-height: 230px;
+  }
+  .special .text-box h3 {
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
+  .special .text-box p {
+    margin-top: 1.2rem;
+    font-size: 1.5rem;
   }
 }
