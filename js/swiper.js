@@ -139,7 +139,7 @@ const mainSwiper = new Swiper(".main-slide-container", {
   on: {
     resize: function () {
       this.loopFix();
-      this.slideToLoop(0,0);
+      this.slideToLoop(0, 0);
       this.update();
     },
   },
@@ -177,19 +177,23 @@ const brand2_slide = new Swiper(".brand2-slide-container", {
   navigation: {
     nextEl: ".brand2-btn-next",
     prevEl: ".brand2-btn-prev",
+    enabled: false,
   },
   /* pagination */
   pagination: {
+    el: ".brand2-pagination",
     enabled: true,
+    clickable: true,
+    type: "bullets",
+    renderBullet: function (index, className) {
+      /* 똑같이 common-dot으로 제어하기 위해 추가 */
+      return `<span class="${className} brandSlide2-dot common-dot"></span>`;
+    },
   },
   breakpoints: {
-    360: {
+    1024: {
       navigation: {
-        enabled: false,
-      },
-      pagination: {
         enabled: true,
-        el: ".brand2-pagination",
       },
     },
   },

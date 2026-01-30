@@ -14,6 +14,15 @@ body {
 }
 :root {
   --bg-color__white: #ffffff;
+  --font-color__gray: #999999;
+}
+html {
+  font-size: 70%;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
 }
 body {
 }
@@ -23,9 +32,46 @@ li {
   padding: 0;
   list-style: none;
 }
+h3 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
 #container {
   width: 100%;
   background-color: var(--bg-color__white);
+}
+/* swiper pagination dot */
+.common-dot {
+  /* 기본 swiper dot에 0.2정도로 되어있기에 opacity: 1로 해야 함. */
+  opacity: 1;
+  background-color: var(--font-color__gray);
+  width: 10px;
+  height: 10px;
+  transition: 0.3s;
+}
+.common-dot.swiper-pagination-bullet-active {
+  background-color: red;
+  width: 50px;
+  border-radius: 20px;
+}
+.more-btn {
+  background-color: #fff;
+  color: #333333;
+  padding: 10px 45px;
+  display: inline-flex;
+  margin-top: 30px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid #333333;
+  width: 100%;
+}
+.more-btn a {
+  color: #000000;
 }
 /* header */
 header {
@@ -178,18 +224,29 @@ main img {
   display: flex;
   flex-direction: column;
 }
+
 .image-box,
 .text-box {
-  flex: 1;
+  flex: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.text-box p {
+  color: var(--font-color__gray);
 }
 .image-box {
   aspect-ratio: 1 / 1;
 }
 .text-box {
-  background-color: mediumspringgreen;
+  background-color: var(--bg-color__white);
   height: auto;
-  padding: 30px 20px 30px 20px;
+  padding: 30px 40px 30px 40px;
   min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 .image-box img {
   width: 100%;
@@ -202,11 +259,11 @@ main img {
 }
 .brand2-slide-all {
   position: relative;
-  background-color: pink;
+  /* background-color: pink; */
   padding-bottom: 40px;
 }
 .brand2-pagination {
-  background-color: yellow;
+  /* background-color: yellow; */
 }
 
 /* ------ section 2 ----- */
@@ -257,9 +314,10 @@ main img {
 .item {
   display: flex;
   width: 100%;
-  border: 1px solid black;
-  aspect-ratio: 4 / 1;
-  /* max-width: 800px; */
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-direction: column;
 }
 .item + .item {
   margin-top: 20px;
@@ -271,11 +329,26 @@ main img {
 }
 .more-image-box {
   aspect-ratio: 1 / 1;
-  background-color: magenta;
+}
+.more-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .more-text-box {
-  background-color: red;
+  background-color: #ffffff;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+  text-align: center;
+}
+.more-text-box h3 {
+  font-weight: 600;
+}
+.more-text-box p {
+  color: var(--font-color__gray);
 }
 /* ------- footer -------- */
 footer {
@@ -286,8 +359,11 @@ footer {
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 65%;
+  }
   #container {
-    background-color: yellow;
+    /* background-color: yellow; */
     border: 3px solid green;
   }
   main {
@@ -309,6 +385,10 @@ footer {
   .text-box {
     width: 50%;
   }
+  .text-box {
+    /* text-align: left; */
+  }
+
   .image-box img {
   }
   /* --------- section 2 -------- */
@@ -330,12 +410,31 @@ footer {
     height: clamp(600px, 70vw, 700px);
     background-color: yellow;
   }
+  /* ----------- section 3 --------- */
+  .item {
+    aspect-ratio: 4 / 1;
+    flex-direction: row;
+    min-height: 200px;
+  }
+  .item + .item {
+    margin-top: 20px;
+  }
+  .item .more-text-box {
+    text-align: left;
+  }
+  .more-text-box .more-btn {
+    width: fit-content;
+  }
 }
 /* pc */
 @media (min-width: 1024px) {
+  html {
+    /* 16px * 0.625 = 10px, 기본 폰트는 16px인데 0.625면 10px이 됨. */
+    font-size: 62.5%;
+  }
   #container {
     width: 100%;
-    background-color: purple;
+    /* background-color: purple; */
     border: 3px solid blue;
   }
   main {
@@ -344,7 +443,7 @@ footer {
   section {
     max-width: 1280px; /* 1280 */
     padding: 0 80px;
-    background-color: purple;
+    /* background-color: purple; */
   }
   main img {
   }
@@ -397,9 +496,65 @@ footer {
     flex-direction: row;
     aspect-ratio: 2 / 1;
   }
-  .image-box,
+  .brand2-slide-container {
+    position: relative;
+  }
+  /* navigation */
+  .brand2-slide-container .brand2-btn-next,
+  .brand2-slide-container .brand2-btn-prev {
+    /* border: 1px solid black; */
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    /* 기존 swiper 속성 해제해야 함. top, left 해제 */
+    top: auto;
+    left: auto;
+    width: 30px;
+    height: 30px;
+    /* 잘 안 눌리는 걸 방지하기 위해 5 부여 */
+    z-index: 5;
+  }
+  .brand2-slide-container .brand2-btn-prev {
+    right: 60px;
+  }
+  /* pagination */
+  .brand2-slide-container .brand2-pagination {
+    /* border: 1px solid black; */
+    width: fit-content;
+    position: absolute;
+    /* 기존 swiper 속성 해제해야 함. top, left 해제 */
+    left: auto;
+    top: auto;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    right: 100px;
+    bottom: 30px;
+    font-size: 18px;
+    /* fraciton 슬래시와 숫자 사이의 간격 조절 */
+    gap: 5px;
+  }
+  .brand2-slide-container .swiper-pagination-current {
+    color: #e4002b;
+    font-weight: 600;
+  }
+  .brand2-slide-container .brand2-pagination .image-box,
   .text-box {
     width: 50%;
+  }
+  .text-box {
+    text-align: left;
+    align-items: stretch;
+  }
+  .text-box h3 {
+    font-size: 2.4rem;
+  }
+  .text-box p {
+    font-size: 1.8rem;
+    margin-top: 1.2rem;
+  }
+  .text-box .more-btn {
+    width: fit-content;
   }
   .image-box img {
   }
@@ -426,5 +581,22 @@ footer {
   /* ------------- section 3 ---------- */
   .more-content .item {
     max-height: 300px;
+  }
+  .item {
+    aspect-ratio: 4 / 1;
+    flex-direction: row;
+  }
+  .item .more-text-box {
+    text-align: left;
+  }
+  .more-text-box .more-btn {
+    width: fit-content;
+  }
+  .item .more-text-box h3 {
+    font-size: 2rem;
+  }
+  .item .more-text-box p {
+    font-size: 1.6rem;
+    margin-top: 1.2rem;
   }
 }
