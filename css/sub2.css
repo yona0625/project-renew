@@ -181,7 +181,6 @@ section > div {
   color: black;
   padding: 10px 20px;
   display: inline-flex;
-  /* margin-top: 30px; */
   border-radius: 20px;
   justify-content: center;
   align-items: center;
@@ -220,6 +219,11 @@ main img {
 .company-card {
   margin-top: 100px;
 }
+.company-card .more-btn {
+  border: 1px solid #3a3a3a;
+  border-radius: 30px;
+  width: 100%;
+}
 .card {
   border: 1px solid #e5e5e5;
   display: flex;
@@ -242,7 +246,7 @@ main img {
   overflow: hidden;
   position: relative;
   text-align: center;
-  min-height: 200px;
+  min-height: 225px;
   background-color: var(--bg-color__white);
 }
 .text-box p {
@@ -271,8 +275,23 @@ main img {
   /* 원래 있던 container의 0 20px을 지우고 양 마진 40만 주기 위해서 */
   padding: 0;
 }
+.special-title h3 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 2.4rem;
+}
 .special .card {
   width: 100%;
+}
+.special .more-btn {
+  /* background-color: red; */
+  width: fit-content;
+  gap: 5px;
+}
+.special .more-btn svg {
+  /* 꼭 넓이 높이 해줘야 모바일에서 svg를 포함한 버튼을 100%로 늘릴 때 같이 늘어나지 않음. */
+  width: 15px;
+  height: 15px;
 }
 /* ----- footer ---- */
 footer {
@@ -436,10 +455,16 @@ footer {
   .card {
     width: 50%;
   }
+  .company-card .text-box {
+    min-height: 230px;
+  }
   .company-card .text-box h3 {
     font-size: 2.2rem;
     /* background-color: red; */
     font-weight: 600;
+  }
+  .company-card .more-btn {
+    width: 120px;
   }
   .company-card .text-box p {
     margin-top: 1.2rem;
@@ -450,10 +475,14 @@ footer {
     /* 전체 160 마진일 때 이 요소는 320 */
     width: calc(100% - 320px);
     max-width: 1040px;
+    min-width: 750px;
     padding: 0;
   }
   .special .text-box {
-    min-height: 230px;
+    text-align: left;
+    min-height: 220px;
+    position: relative;
+    /* background-color: purple; */
   }
   .special .text-box h3 {
     font-weight: 600;
@@ -461,6 +490,21 @@ footer {
   }
   .special .text-box p {
     margin-top: 1.2rem;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+  .special .more-btn {
+    /* background-color: red; */
+    position: absolute;
+    /* 기존 가운데로 잡아놓은 거 초기화할 것 */
+    left: auto;
+    transform: none;
+    right: 20px;
+    bottom: 20px;
+    width: fit-content;
+    gap: 5px;
+  }
+  .special .more-btn svg {
+    width: 15px;
+    height: 15px;
   }
 }

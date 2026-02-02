@@ -4,9 +4,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* font test */
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    sans-serif;
+}
 :root {
   --bg-color__white: #ffffff;
   --font-color__gray: #999999;
+}
+html {
+  font-size: 70%;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
 }
 body {
 }
@@ -171,6 +187,15 @@ main img {
 /* --------- section 1 -------- */
 .all-brand {
 }
+.all-brand-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.all-brand-title h3 {
+}
+.all-brand-title span {
+  color: var(--font-color__gray);
+}
 .brand-product-tab {
   width: 100%;
   /* background-color: pink; */
@@ -185,8 +210,7 @@ main img {
   /* max 높이로 통일 */
   max-height: 0;
   opacity: 0;
-  border: 1px solid #e5e5e5;
-  /* border-top: 1px solid transparent; */
+  position: relative;
 }
 .brand-product-tab li:last-child {
   margin-bottom: 0;
@@ -202,6 +226,7 @@ main img {
 }
 .brand-product-tab li.active a {
   color: red;
+  font-weight: 500;
 }
 /* 작동하면 '나머지 li'를 다 이렇게 작동해 */
 .brand-product-tab.active li {
@@ -214,13 +239,42 @@ main img {
   /* background-color: red; */
   display: block;
   padding: 10px;
+  margin-left: 5px;
   transition: 0.3s;
+  color: #3a3a3a;
+}
+/* svg */
+.brand-product-tab li::after {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  /* 아이콘 출력의 표준 규격, 호환성으로 900을 사용함 */
+  font-weight: 900;
+
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #000000;
+
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.brand-product-tab li.active::after {
+  opacity: 1;
+  visibility: visible;
+}
+/* 전체 탭 */
+.brand-product {
+  display: grid;
+  /* 각 tab 묶음이 아니라 전체 영역에 그리드-배치를 해서 1줄에 2개씩 균등하게 배치되지 않는 경우를 해결 */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 .tab {
   background-color: var(--bg-color__white);
   display: none;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
 }
 .tab + .tab {
   margin-top: 20px;
@@ -235,7 +289,8 @@ main img {
   aspect-ratio: 1 / 1;
 }
 .tab.active {
-  display: grid;
+  /* 상위 전체에 grid를 주었으니 여기서 grid를 주면 또 grid에 grid가 중첩되므로 쪼그라든다. 여기서 contents를 주어야 하는데, 왜냐면 tab끼리 나눠놓은 걸 합쳤을 때 생기는 빈 공간을 빠짐없이 채워야 하기 때문 */
+  display: contents;
   justify-content: center;
   align-items: center;
 }
@@ -245,9 +300,10 @@ footer {
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 65%;
+  }
   #container {
-    /* background-color: yellow; */
-    /* border: 3px solid green; */
   }
   main {
     height: 500px;
@@ -270,10 +326,15 @@ footer {
     opacity: 1;
     text-align: center;
     flex: 1; */
+    height: 50px;
   }
 }
 /* pc */
 @media (min-width: 1024px) {
+  html {
+    /* 16px * 0.625 = 10px, 기본 폰트는 16px인데 0.625면 10px이 됨. */
+    font-size: 62.5%;
+  }
   #container {
     width: 100%;
     /* background-color: purple; */
@@ -283,7 +344,7 @@ footer {
     height: 500px;
   }
   section {
-    max-width: 1440px; /* 1280 */
+    max-width: 1280px; /* 1280 */
     padding: 0 80px;
     /* background-color: purple; */
   }
@@ -334,19 +395,41 @@ footer {
     max-height: none;
   }
   /* --- tab --- */
+  .all-brand-title h3 {
+    font-size: 2.4rem;
+  }
+  .all-brand-title span {
+    font-size: 1.8rem;
+    margin-top: 1.2em;
+  }
   .tab {
     grid-template-columns: repeat(3, 1fr);
   }
   .brand-product-tab {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border: 1px solid transparent;
   }
   .brand-product-tab li {
     max-height: none;
     opacity: 1;
     text-align: center;
-    flex: 1;
+    min-width: 150px;
+    /* flex: 1; */
     /* height: 70px; */
+    border-radius: 30px;
+    padding: 0 12px;
+    border: 1px solid #e5e5e5;
+  }
+  /* svg */
+  .brand-product-tab li::after {
+    display: none;
+  }
+  /* 전체 탭 */
+  .brand-product {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

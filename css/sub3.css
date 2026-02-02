@@ -197,7 +197,6 @@ section {
   max-width: 767px;
   margin: 0 auto;
   padding: 0 20px;
-  border: 1px solid black;
   margin-top: 100px;
 }
 section > div {
@@ -254,6 +253,14 @@ main img {
   object-fit: cover;
   will-change: contents;
 }
+.brand2-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.brand2-title h3 {}
+.brand2-title span {
+  color: var(--font-color__gray);
+}
 .brand2-slide-container {
   position: static;
 }
@@ -269,7 +276,7 @@ main img {
 /* ------ section 2 ----- */
 
 .recommend {
-  background-color: pink;
+  /* background-color: pink; */
   width: 100%;
   overflow: hidden;
 }
@@ -288,11 +295,15 @@ main img {
 }
 .reco-slide-wrapper {
   margin-top: 50px;
+  padding-bottom: 50px;
 }
 .reco-slide {
   /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음*/
-  height: clamp(500px, 80vw, 600px);
-  background-color: yellow;
+  height: clamp(600px, 80vw, 650px);
+  /* background-color: yellow; */
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .reco-slide img {
   width: 100%;
@@ -301,11 +312,35 @@ main img {
 }
 .reco-slide div:first-child {
   background-color: mintcream;
-  height: 70%;
+  height: 65%;
 }
 .reco-slide div:last-child {
-  height: 30%;
+  height: 35%;
   border: 1px solid mintcream;
+}
+.reco-text {
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.reco-text h3 {
+  font-weight: 500;
+}
+.reco-text p {
+  color: var(--font-color__gray);
+}
+.reco-text .more-btn {
+  position: absolute;
+  border: 1px solid transparent;
+  gap: 5px;
+  padding: 0;
+  width: fit-content;
+  right: 25px;
+  bottom: 30px;
+}
+.reco-text .more-btn svg {
+  width: 15px;
+  height: 15px;
 }
 
 /* -------- section 3 -------- */
@@ -349,6 +384,16 @@ main img {
 }
 .more-text-box p {
   color: var(--font-color__gray);
+}
+.more-text-box .more-btn {
+  border: 1px solid transparent;
+  background-color: red;
+  width: fit-content;
+  gap: 5px;
+}
+.more-text-box .more-btn svg {
+  width: 15px;
+  height: 15px;
 }
 /* ------- footer -------- */
 footer {
@@ -407,8 +452,8 @@ footer {
   }
   .reco-slide {
     /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음 */
-    height: clamp(600px, 70vw, 700px);
-    background-color: yellow;
+    height: clamp(640px, 70vw, 720px);
+    /* background-color: yellow; */
   }
   /* ----------- section 3 --------- */
   .item {
@@ -492,6 +537,13 @@ footer {
     max-height: none;
   }
   /* -------- section 1 -------- */
+  .brand2-title h3 {
+    font-size: 2.4rem;
+  }
+  .brand2-title span {
+    font-size: 1.2em;
+    font-size: 1.8rem;
+  }
   .brand2-slide {
     flex-direction: row;
     aspect-ratio: 2 / 1;
@@ -553,9 +605,6 @@ footer {
     font-size: 1.8rem;
     margin-top: 1.2rem;
   }
-  .text-box .more-btn {
-    width: fit-content;
-  }
   .image-box img {
   }
   /* --------- section 2 -------- */
@@ -567,17 +616,21 @@ footer {
   }
   .reco-slide div:first-child {
     background-color: mintcream;
-    height: 65%;
+    height: 52%;
   }
   .reco-slide div:last-child {
-    height: 35%;
+    height: 48%;
     border: 1px solid mintcream;
   }
-  .reco-slide {
-    /* pc에서 반응형으로 늘리거나 줄일 때 가로로만 늘어지는 걸 최대한 방지하기 위해 값을 미세하게 조정하며 바꿈 */
-    height: clamp(370px, 35vw, 520px);
+  .reco-image {
   }
-
+  .reco-text p {
+    margin-top: 0.5em;
+  }
+  .reco-slide {
+    /* 미세 변경 */
+    height: clamp(480px, 45vw, 550px);
+  }
   /* ------------- section 3 ---------- */
   .more-content .item {
     max-height: 300px;
