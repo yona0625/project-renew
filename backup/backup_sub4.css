@@ -274,6 +274,105 @@ main img {
 
 /* --- slide --- */
 
+.source-slide-container,
+.water-slide-container,
+.comm-slide-container {
+  width: calc(200% + 200px);
+  position: relative;
+  left: 50%;
+  margin-left: calc(-100% - 100px);
+}
+.source-slide-wrapper,
+.water-slide-wrapper,
+.comm-slide-wrapper {
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.source-slide,
+.water-slide,
+.comm-slide {
+  /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음*/
+  height: clamp(550px, 80vw, 600px);
+  background-color: yellow;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+/* slides */
+.source-slide .source-text,
+.water-slide .water-text,
+.comm-slide .comm-text {
+  background-color: var(--bg-color__white);
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+/* water */
+.water-slide .water-text {
+  text-align: left;
+}
+.source-text h3,
+.water-text h3, 
+.comm-text h3 {
+  font-weight: 500;
+}
+.source-text .more-btn,
+.water-text .more-btn, 
+.comm-text .more-btn {
+  position: absolute;
+  border: 1px solid transparent;
+  right: 25px;
+  padding: 0;
+  bottom: 30px;
+  /* width: 100px; */
+  /* background-color: red; */
+  /* overflow: visible; */
+  gap: 5px;
+}
+.source-text .more-btn svg,
+.water-text .more-btn svg,
+.comm-text .more-btn svg {
+  width: 15px;
+  height: 15px;
+}
+.source-image img,
+.water-image img,
+.comm-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.source-slide div:first-child,
+.water-slide div:first-child,
+.comm-slide div:first-child {
+  background-color: mintcream;
+  height: 70%;
+}
+.source-slide div:last-child,
+.water-slide div:last-child,
+.comm-slide div:last-child {
+  height: 30%;
+  border: 1px solid mintcream;
+}
+.source-slide img,
+.water-slide img,
+.comm-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.source-slide div:first-child,
+.water-slide div:first-child,
+.comm-slide div:first-child {
+  background-color: mintcream;
+  height: 70%;
+}
+.source-slide div:last-child,
+.water-slide div:last-child,
+.comm-slide div:last-child {
+  height: 30%;
+  border: 1px solid mintcream;
+}
 
 /* ------------- section 3 -------------- */
 .water {
@@ -344,7 +443,27 @@ footer {
     /* width: 100%; */
   }
   /* --------- section 1: slide -------- */
-  
+  .source-slide-container,
+  .water-slide-container,
+  .comm-slide-container {
+    width: calc(200% + 200px);
+    position: relative;
+    /* 가운데 정렬된 section에서 벗어나기  */
+    left: 50%;
+    margin-left: calc(-100% - 100px);
+  }
+  .source-slide-wrapper,
+  .water-slide-wrapper,
+  .comm-slide-wrapper {
+    margin-top: 50px;
+  }
+  .source-slide,
+  .water-slide,
+  .comm-slide {
+    /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음 */
+    height: clamp(600px, 70vw, 700px);
+    background-color: mistyrose;
+  }
 }
 /* pc */
 @media (min-width: 1024px) {
@@ -437,5 +556,30 @@ footer {
     width: fit-content;
   }
   /* --------- section 1: slide -------- */
-  
+  .source-slide-container,
+  .water-slide-container,
+  .comm-slide-container {
+    width: 100%;
+    /* 전체 컨테이너 마진과 left값 삭제 */
+    margin-left: 0;
+    left: auto;
+  }
+  .source-slide div:first-child,
+  .water-slide div:first-child,
+  .comm-slide div:first-child {
+    background-color: mintcream;
+    height: 65%;
+  }
+  .source-slide div:last-child,
+  .water-slide div:last-child,
+  .comm-slide div:last-child {
+    height: 35%;
+    border: 1px solid mintcream;
+  }
+  .source-slide,
+  .water-slide,
+  .comm-slide {
+    /* pc에서 반응형으로 늘리거나 줄일 때 가로로만 늘어지는 걸 최대한 방지하기 위해 값을 미세하게 조정하며 바꿈 */
+    height: clamp(370px, 35vw, 520px);
+  }
 }
