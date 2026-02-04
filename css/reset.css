@@ -1,0 +1,71 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* font test */
+body {
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    sans-serif;
+}
+:root {
+  --bg-color__white: #ffffff;
+  --font-color__gray: #999999;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 70%;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+.sr-only {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+.br {
+  display: block;
+}
+
+/* media query */
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+/* pc */
+@media (min-width: 1024px) {
+  html {
+    /* 16px * 0.625 = 10px, 기본 폰트는 16px인데 0.625면 10px이 됨. */
+    font-size: 62.5%;
+  }
+}

@@ -1,199 +1,8 @@
-/* reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-/* font test */
-body {
-  font-family:
-    "Pretendard Variable",
-    Pretendard,
-    -apple-system,
-    sans-serif;
-}
-:root {
-  --bg-color__white: #ffffff;
-  --font-color__gray: #999999;
-}
-html {
-  font-size: 70%;
-}
-body {
-  /* 10px로 된 것에서 1.6을 곱해 16px로 만듦 */
-  font-size: 1.6rem;
-  /* 단위를 안 쓰고 1.4 배수 개념으로 쓰기 */
-  line-height: 1.4;
-  /* -2.5%인데, rem말고 em으로 잡아줘야 함. rem일 경우 적용하려는 폰트가 작으면 그만큼 값이 변해서 자간의 줄이 겹칠 수도 있음. 즉 고정 말고 유동적인 em이 적합 */
-  letter-spacing: -0.025em;
-}
-ul,
-li {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-a {
-  text-decoration: none;
-}
-.sr-only {
-  position: absolute;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-}
-.br {
-  display: block;
-}
 #container {
   width: 100%;
   background-color: var(--bg-color__white);
 }
-/* swiper pagination dot */
-/* .common-dot {
-  opacity: 1;
-  background-color: var(--font-color__gray);
-  width: 10px;
-  height: 10px;
-  transition: 0.3s;
-}
-.common-dot.swiper-pagination-bullet-active {
-  background-color: red;
-  width: 50px;
-  border-radius: 20px;
-} */
-/* header */
-header {
-  width: 100%;
-  /* border: 1px solid black; */
-  background-color: var(--bg-color__white);
-  /* height: 100px; */
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo-img {
-  width: 150px;
-  height: 50px;
-  /* border: 1px solid blue; */
-}
-.logo-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-/* nav */
-nav {
-  /* background-color: hotpink; */
-  /* margin-right에 투명한 auto 벽을 세워서 nav를 왼쪽으로 밀어냄 */
-  margin-right: auto;
-  margin-left: 30px;
-  display: none;
-}
-nav ul {
-  display: flex;
-}
-nav li {
-  /* border: 1px solid black; */
-  padding: 10px 20px;
-}
-nav li a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 20px;
-  font-weight: 600;
-}
-.all-menu {
-  background-color: #fff;
-  width: 300px;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  /* right: -100%; */
-  transform: translateX(100%);
-}
-.all-menu-content {
-  /* border: 1px solid red; */
-  margin-top: 50px;
-}
-.first-menu {
-  padding: 20px;
-  font-weight: 600;
-}
-.first-menu a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 18px;
-  line-height: 30px;
-}
-.second-menu {
-  font-weight: 400;
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.3s;
-}
-.second-menu a {
-  font-size: 15px;
-   color: #4a4a4a;
-}
-.second-menu.active {
-}
-.exit-btn {
-  width: 50px;
-  height: 50px;
-  background-color: blue;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.all-menu.active {
-  transform: translateX(0);
-}
-/* trigger */
-.trigger {
-  width: 30px;
-  height: 25px;
-  /* border: 1px solid red; */
-  position: relative;
-  right: 20px;
-  cursor: pointer;
-}
-.trigger span {
-  width: 100%;
-  background-color: #000000;
-  height: 2px;
-  position: absolute;
-  transition: 0.3s;
-}
-.trigger span:first-child {
-  top: 0;
-}
-.trigger span:nth-child(2) {
-  top: 50%;
-  transform: translateY(-50%);
-}
-.trigger span:last-child {
-  bottom: 0;
-}
-/* hover(active) */
-.trigger:hover span:first-child {
-  transform: translateY(-50%) rotate(45deg);
-  top: 50%;
-}
-.trigger:hover span:nth-child(2) {
-  display: none;
-}
-.trigger:hover span:last-child {
-  transform: translateY(50%) rotate(-45deg);
-  bottom: 50%;
-}
+
 /* section */
 section {
   width: 100%;
@@ -250,6 +59,8 @@ main {
 }
 .slide-text .more-btn {
   border: 1px solid transparent;
+  /* left: auto;
+  transform: none; */
 }
 .slide-img {
   width: 100%;
@@ -422,24 +233,11 @@ main {
   color: #000000;
 }
 
-/* ------- footer ------- */
 
-footer {
-  margin-top: 150px;
-  width: 100%;
-  height: 400px;
-  background-color: dodgerblue;
-}
 
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  html {
-    font-size: 65%;
-  }
-  #container {
-    /* background-color: yellow; */
-  }
   section {
     padding: 0 40px;
     max-width: 1023px;
@@ -483,10 +281,6 @@ footer {
 }
 /* pc */
 @media (min-width: 1024px) {
-  html {
-    /* 16px * 0.625 = 10px, 기본 폰트는 16px인데 0.625면 10px이 됨. */
-    font-size: 62.5%;
-  }
   #container {
     width: 100%;
   }
@@ -497,70 +291,7 @@ footer {
   .more-btn span {
     font-size: 1.5rem;
   }
-  header {
-    height: 80px;
-  }
-  /* nav */
-  nav {
-    display: block;
-  }
-  /* trigger */
-  .trigger {
-    display: none;
-  }
-  .all-menu {
-    width: 100%;
-    height: 220px;
-    top: 80px;
-    right: 0;
-    opacity: 0;
-    pointer-events: none;
-    border-top: 1px solid #e5e5e5;
-  }
-  .all-menu.active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .all-menu .exit-btn {
-    display: none;
-  }
-  .all-menu li a {
-    font-size: 18px;
-    line-height: 30px;
-    /* 30이 한계인데 이걸 어떻게 하지? */
-  }
-  .all-menu-content {
-    margin-top: 0;
-    height: 100%;
-    /* 로고 넓이 + 30px만큼 밀어내기 */
-    margin: 0 180px;
-    /* background-color: red; */
-  }
-  .first-menu {
-    display: flex;
-    gap: 20px;
-    text-align: center;
-    /* height: 100%; */
-    /* background-color: red; */
-  }
-  .first-menu > li > a {
-    /* 전체 메뉴를 펼쳤을 때 서브만 보여야 하니 처음 메뉴는 숨겨야 함 */
-    visibility: hidden;
-    /* 근데 hidden만 하면 높이가 살아있으니, block화 해서 0으로 해야 li 공간은 유지하고 글자만 쏙 빠짐. */
-    display: block;
-    height: 0;
-  }
-  .all-menu-content li {
-    /* background: yellow; */
-    /* border: 1px solid black; */
-  }
-  .second-menu {
-    /* 아코디언때 쓴건데 빼도 동작은 함 pc라서 */
-    max-height: none;
-  }
-  .second-menu > li > a {
-    color: #4a4a4a;
-  }
+  
   /* hover */
   /* ----------- section 1 -------- */
   /* main slide */
