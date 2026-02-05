@@ -22,6 +22,13 @@ const mainSwiper = new Swiper(".main-slide-container", {
     nextEl: ".main-btn-next",
     prevEl: ".main-btn-prev",
   },
+  breakpoints: {
+    360: {
+      navigation: {
+        enabled: false,
+      },
+    },
+  },
   on: {
     resize: function () {
       this.loopFix();
@@ -44,7 +51,7 @@ const brand_slide = new Swiper(".brand-slide-container", {
 
   breakpoints: {
     360: {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 20,
     },
     768: {

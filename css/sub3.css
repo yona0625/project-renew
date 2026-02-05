@@ -1,4 +1,3 @@
-
 #container {
   width: 100%;
   background-color: var(--bg-color__white);
@@ -51,6 +50,8 @@ main img {
 }
 .image-box {
   aspect-ratio: 1 / 1;
+
+  background-color: purple;
 }
 .text-box {
   background-color: var(--bg-color__white);
@@ -69,10 +70,12 @@ main img {
   object-fit: cover;
   will-change: contents;
 }
+/* 여기의 image-box랑 text-box도 같이 묶어 처리해야할까? 일단 내버려 둠 */
 .brand2-title {
   text-align: center;
   margin-bottom: 50px;
 }
+
 .brand2-title h3 {
 }
 .brand2-title span {
@@ -87,7 +90,9 @@ main img {
   padding-bottom: 40px;
 }
 .brand2-pagination {
-  /* background-color: yellow; */
+  background-color: yellow;
+  position: absolute;
+  /* transform: translateY(-330%); */
 }
 
 /* ------ section 2 ----- */
@@ -111,56 +116,19 @@ main img {
   margin-left: calc(-100% - 100px);
 }
 .reco-slide-wrapper {
-  margin-top: 50px;
-  padding-bottom: 50px;
 }
 .reco-slide {
   /* 단위를 %로 하면 망가짐. 반응형이니 vw로 고정해야 함. -> 부모 높이가 지정 안 되어 있음*/
-  height: clamp(600px, 80vw, 650px);
-  /* background-color: yellow; */
-  border: 1px solid #e5e5e5;
-  border-radius: 20px;
-  overflow: hidden;
+  height: clamp(500px, 80vw, 650px);
 }
-.reco-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+
 .reco-slide div:first-child {
   background-color: mintcream;
-  height: 65%;
+  height: 50%;
 }
 .reco-slide div:last-child {
-  height: 35%;
+  height: 50%;
   border: 1px solid mintcream;
-}
-.reco-text {
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
-}
-.reco-text h3 {
-  font-weight: 500;
-}
-.reco-text p {
-  color: var(--font-color__gray);
-}
-.reco-text .more-btn {
-  position: absolute;
-  border: 1px solid transparent;
-  gap: 5px;
-  padding: 0;
-  width: fit-content;
-  right: 25px;
-  bottom: 30px;
-  /* 기존 정중앙 해제 */
-  left: auto;
-  transform: none;
-}
-.reco-text .more-btn svg {
-  width: 15px;
-  height: 15px;
 }
 
 /* -------- section 3 -------- */
@@ -217,11 +185,7 @@ main img {
   height: 15px;
   background: yellow;
 }
-/* ------- footer -------- */
-footer {
-  margin-top: 150px;
-  background-color: blue;
-}
+
 
 /* media query */
 /* tablet */
@@ -245,16 +209,7 @@ footer {
     flex-direction: row;
     aspect-ratio: 2 / 1;
   }
-  .image-box,
-  .text-box {
-    width: 50%;
-  }
-  .text-box {
-    /* text-align: left; */
-  }
 
-  .image-box img {
-  }
   /* --------- section 2 -------- */
   .reco-slide-container {
     /* width: 100vw에 left -50했는데 찌그러져서 값을 2배로 늘려서 모양 잡음. */
@@ -274,6 +229,15 @@ footer {
     height: clamp(640px, 70vw, 720px);
     /* background-color: yellow; */
   }
+  .reco-slide div:first-child {
+    background-color: mintcream;
+    height: 60%;
+  }
+  .reco-slide div:last-child {
+    height: 40%;
+    border: 1px solid mintcream;
+  }
+
   /* ----------- section 3 --------- */
   .item {
     aspect-ratio: 4 / 1;

@@ -50,6 +50,9 @@ main {
   width: 60px;
   height: 60px;
 }
+.main-pagination {
+  transform: translateY(-8px);
+}
 .slide-text h1,
 .slide-text p {
   color: #ffffff;
@@ -109,63 +112,12 @@ main {
 .main-card {
 }
 
-.card-block {
-  /* 실제 flex 역할 */
-  display: flex;
-  flex-direction: column;
-  /* margin-bottom: 50px; */
-}
-.card-block .more-btn {
-  /* border: 1px solid black; */
-  width: 100%;
-}
-.card-block .more-btn span {
-}
-.card-block + .card-block {
-  margin-top: 50px;
-}
-.card-block:last-child {
-  /* margin-bottom: 0; */
-}
-.image-box {
-  aspect-ratio: 1 / 1;
-}
-.text-box {
-  padding: 30px 20px 30px 20px;
-  box-sizing: border-box;
-  text-align: center;
-}
-.image-box,
-.text-box {
-  /* border: 2px solid #333; */
-  /* background-color: white; */
-  border-radius: 20px;
-  overflow: hidden;
-}
-.text-box > div {
-  /* max-height: 200px; -> 어차피 많이 들어가지 않으니까 괜찮긴 한데... */
-}
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.text-box h3 {
-  margin-bottom: 10px;
-  color: #333;
-}
-.text-box p {
-  line-height: 1.6;
-  color: var(--font-color__gray);
-}
-
 /* ------ section 2 ------ */
 
 .journey {
 }
 .journey-wrapper {
   width: 100vw;
-  height: 300px;
   position: relative;
   background-color: #f5f5f5;
   left: 50%;
@@ -180,6 +132,7 @@ main {
   flex-direction: column;
   text-align: center;
   padding: 40px;
+  box-sizing: border-box;
 }
 .journey-wrapper .more-btn {
   border: 1px solid transparent;
@@ -247,35 +200,7 @@ main {
   .main-slide-container {
     /* max-height: 500px; */
   }
-  /* 세로 배치 */
-  .card-block {
-    flex-direction: column;
-    aspect-ratio: 1 / 1;
-  }
-  /* 1:1 비율 유지 */
-  .image-box,
-  .text-box {
-    width: 100%;
-  }
-  .text-box {
-    padding: 50px 40px;
-    /* background-color: blue; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-  }
-  .text-box > div {
-    width: 100%;
-    text-align: center;
-  }
-  .text-box .more-btn {
-    margin-top: 30px;
-    width: fit-content;
-    /* position: absolute; */
-    /* bottom: 0; */
-    width: 100%;
-  }
+  
   /* --------- section 3 -------- */
   
 }
@@ -304,43 +229,7 @@ main {
   .slide-text p {
     font-size: 2rem;
   }
-  /* 세로 배치 */
-  .card-block {
-    flex-direction: row;
-    aspect-ratio: 2 / 1;
-  }
-  /* 1:1 비율 유지 */
-  .image-box,
-  .text-box {
-    width: 50%;
-    height: 100%;
-  }
-  /* 짝수 역순 */
-  .card-block:nth-child(even) {
-    flex-direction: row-reverse;
-  }
-  .text-box {
-    padding: 90px 40px;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .text-box > div {
-    /* height: 100%; */
-    /* position: relative; */
-  }
-  .text-box h3 {
-    font-size: 3rem;
-  }
-  .text-box p {
-    font-size: 1.8rem;
-  }
-  .text-box .more-btn {
-    width: fit-content;
-    /* position: absolute;
-    bottom: 0; */
-  }
+  
   /* --------- section 3 -------- */
   
 }
