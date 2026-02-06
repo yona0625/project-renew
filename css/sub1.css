@@ -169,8 +169,6 @@ main img {
 @media (min-width: 1024px) {
   #container {
     width: 100%;
-    /* background-color: purple; */
-    border: 3px solid blue;
   }
   main {
     height: 500px;

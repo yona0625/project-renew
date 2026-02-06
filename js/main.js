@@ -25,7 +25,7 @@ const mobileNav = {
       }
       /* 함수로 분리 */
       function openMenu() {
-        mobileMenu.animate(
+        const openFix = mobileMenu.animate(
           [
             {
               transform: "translateX(100%)",
@@ -41,6 +41,10 @@ const mobileNav = {
             fill: "forwards",
           },
         );
+        /* + 닫을 때만 넣었는데, 분기점 왔다갔다하면서 자꾸 동작을 안 해서 연 곳에서도 넣음 */
+        openFix.onfinish = () => {
+          mobileMenu.getAnimations().forEach((anim) => anim.cancel());
+        };
       }
       function closeMenu() {
         const closeFix = mobileMenu.animate(
