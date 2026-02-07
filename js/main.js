@@ -76,56 +76,43 @@ mobileNav.init();
 const pcNav = {
   init: function () {
     /* PC 헤더 -> mouseenter, mouseleave로 바꿔야 함 */
-    const pcMenu = document.querySelector(".all-menu");
-    window.addEventListener("click", (e) => {
-      /* pc 전용 */
-      if (window.innerWidth < 1024) return;
+    /* click으로 하면 이벤트 리스너 영역(딱히 윈도우 한정이 아님)에서도 정확한 타겟이 필요하므로 closest을 썼었는데, 이제는 li랑 all-menu 안의 영역으로만 한정이 되니 closest은 필요 없음.(모바일은 필요할듯 함) */
+    const pcNav = document.querySelectorAll("nav li");
+    const pcAllMenu = document.querySelector(".all-menu");
 
-      /* closest이 필요한 변수
-      1. 각각 nav안의 li
-      2. 전체 all-menu(이건 쿼리 셀렉터까지)
-      3. all-menu 안의 x버튼 */
-      const nav = e.target.closest("nav li");
-      const realPcMenu = e.target.closest(".all-menu");
-      const pcExitBtn = e.target.closest(".exit-btn");
-      const pcMenuOpen = pcMenu.classList.contains("active");
-
-      if (nav) {
-        /* li를 클릭했을 때 이미 메뉴가 열려있다면 닫기 */
-        /* + pc는 nav(모바일에서는 trigger)를 눌렀을 때 여기서 한 번 더 if-else가 필요하다. li를 누를 때도 창이 열려있는지 닫혀있는지 경우에 따라 토글해야 하므로 */
-        if (pcMenuOpen) {
-          closeMenu();
-          /* 닫혀있을 때 열기 */
-        } else {
-          openMenu();
+    /* nav 메뉴 접근 시 */
+    pcNav.forEach((item) => {
+      item.addEventListener("mouseenter", function () {
+        /* mouseenter/leave로 바뀌면서 인식 영역이 갈리므로 enter, leave 부분에 각자 1024 이하 구문을 넣어주는 게 안전함. */
+        if (window.innerWidth < 1024) return;
+        function openMenu() {
+          pcAllMenu.classList.add("active");
+          pcAllMenu.animate(
+            [
+              {
+                opacity: "0",
+              },
+              {
+                opacity: "1",
+              },
+            ],
+            {
+              duration: 500,
+              easing: "ease-out",
+              fill: "forwards",
+            },
+          );
         }
-        /* 닫을 때 */
-      } else if (pcMenuOpen && (pcExitBtn || !realPcMenu)) {
-        closeMenu();
-      }
-      /* 함수로 분리 */
-      function openMenu() {
-        pcMenu.classList.add("active");
-        pcMenu.animate(
-          [
-            {
-              opacity: "0",
-            },
-            {
-              opacity: "1",
-            },
-          ],
-          {
-            duration: 500,
-            easing: "ease-out",
-            fill: "forwards",
-          },
-        );
-      }
+        openMenu();
+      });
+    });
+    /* 전체 메뉴 떠날 시 */
+    pcAllMenu.addEventListener("mouseleave", function () {
+      if (window.innerWidth < 1024) return;
       function closeMenu() {
         /* - 만약 창이 열린 상태라면
         x버튼을 누르거나, 메뉴 바깥을 빠져나간다면 */
-        const closeFix = pcMenu.animate(
+        const closeFix = pcAllMenu.animate(
           [
             {
               opacity: "1",
@@ -144,11 +131,12 @@ const pcNav = {
         구문도 () => 가 아니라 = () => 로 '='로 저장했다가 나중에 실행해야 함. */
         /* 따라서 remove active는 위가 아니라 여기 안에 들어간다. */
         closeFix.onfinish = () => {
-          pcMenu.classList.remove("active");
+          pcAllMenu.classList.remove("active");
           /* 마찬가지로 닫을 때 cancel */
-          pcMenu.getAnimations().forEach((anim) => anim.cancel());
+          pcAllMenu.getAnimations().forEach((anim) => anim.cancel());
         };
       }
+      closeMenu();
     });
   },
 };
@@ -158,20 +146,28 @@ pcNav.init();
 const mobileSidebar = {
   init: function () {
     const firstMenuContainer = document.querySelector(".first-menu");
-    const secondMenu = document.querySelectorAll(".second-menu li");
 
     /* 이벤트 위임으로 맨 상위로 잡음 */
     firstMenuContainer.addEventListener("click", (e) => {
       if (window.innerWidth > 1023) return;
+      /* 서브 메뉴를 눌렀을 때 자꾸 접히는 문제 방지 */
       /* .first-menu를 위임했기에 li만 써도 됨(X) -> second-menu안에도 li가 있으므로 구분 지어야 함. -> 간단한 로직에서는 li로 foreach 접근해도 됨. */
       const firstMenu = e.target.closest(".first-menu > li");
+      /* 해당 영역 밖을 눌렀을 때: null로 나오는 에러 방지 */
       /* ★ e.target으로 찾으면 안 되는 이유: (구조상 문제) second-menu로 접근은 하겠지만, 지금 메뉴에서는 일부만 second-menu가 있기 때문에 second-menu가 없는 곳에는 에러가 남 -> 따라서 firstMenu로 시작해야 함. */
-      const secondMenu = firstMenu.querySelector(".second-menu");
+
+      /* 원래 firstMenu, secondMenu, e.target.closest에 각각 if(!(변수명)) return을 했는데, 이러니까 if문을 너무 남발해서 합쳤음. */
+      /* 1. 일단 if(!(변수명) return을 사용하는 이유는, 해당 영역의 바깥을 눌렀을 때 typeError(null)가 뜨는데 이 경우가 생기지 않게 return으로 넘겨버리겠다는 의미이다.
+      2. 여기서 secondMenu는 firstMenu에서 전달받고 있는데, typeError(null)이 나올 가능성은 firstMenu에 있으므로 옵셔널 체이닝은 firstMenu에만 붙이면 secondMenu에도 자동으로 되므로 더 안 붙여도 됨. */
+      /* 3. 1,2번에서 안전 장치를 다 걸었으므로 if문에 다 합쳐서 return */
+      /* ★ typeError(null)과 데이터 값 null은 다르다. firstMenu?.은 데이터 null값을 담아놓기만 하고 작동은 되지만(이후 return으로 넘겨버리면 됨.), typeError(null)의 경우 화면이 빨갛게 되면서 아예 작동을 안 함. */
+
+      const secondMenu = firstMenu?.querySelector(".second-menu");
+      if (e.target.closest(".second-menu") || !firstMenu || !secondMenu) return;
       /* 메뉴가 열려있는지 확인 필요 */
       const secondMenuOpen = secondMenu.classList.contains("active");
-      /* 메뉴가 열려 있다면? */
-      if (secondMenu) {
-        /* 메뉴가 열려 있다면 -> 닫기 */
+      /* 메뉴가 열려 있다면? -> 닫기 */
+      /* + (!secondMenu) return 추가로 기존 if(secondMenu)는 삭제 */
         if (secondMenuOpen) {
           secondMenu.classList.remove("active");
           secondMenu.style.maxHeight = "0";
@@ -180,7 +176,6 @@ const mobileSidebar = {
           secondMenu.classList.add("active");
           secondMenu.style.maxHeight = secondMenu.scrollHeight + "px";
         }
-      }
     });
   },
 };
@@ -194,25 +189,21 @@ const tabMenu = {
     /* 전체 tab을 불러옴 */
     const tab_content = document.querySelectorAll(".tab");
 
+    /* 클릭 이벤트 */
     tab_button.forEach((button) => {
-      /* [1] 일단 버튼을 누를 때마다 모든 active 제거 */
+      /* 일단 버튼을 누를 때마다 모든 active 제거 */
       button.addEventListener("click", function (e) {
         e.preventDefault(); /* a의 기본 동작 막음. 안전 장치 */
 
-        /* 1. ★ 버튼(제이쿼리로 따지면, 형제 class를 다 지우는 거랑 비슷) */
-        /* 전부 퇴장, 여러 개니까 foreach */
+        /* [1] 전체 리셋 */
         tab_button.forEach((btn) => {
           btn.classList.remove("active");
         });
-
-        /* 2. 내용 */
-        /* 전부 퇴장, 여러 개니까 foreach */
         tab_content.forEach((content) => {
           content.classList.remove("active");
         });
 
         /* [2] ★ 클릭한 버튼(this)에만 active 추가 */
-        /* 이 요소만 입장 */
         this.classList.add("active");
 
         /* [3] data-alt 연결, 탭 활성화 */
@@ -221,13 +212,15 @@ const tabMenu = {
         document.getElementById(tabBtn).classList.add("active");
 
         /* ----------- 처음 버튼을 누르면 전부 다 불러와야 함 ------------ */
+        /* 이건 로드할 때랑 다르게 '클릭'이벤트라 로드 이벤트랑 이 이벤트랑 동시에 2개가 존재해야 하는 게 맞음. */
+        /* 여긴 이미 active가 추가된 이후 시점이므로 옵셔널 체이닝으로 거를 필요가 없음. */
         if (tabBtn === "tab1") {
           tab_content.forEach((content) => {
             content.classList.add("active");
           });
         }
 
-        /* === 아코디언 테스트 === */
+        /* === 아코디언 테스트 (모바일) === */
         /* 현재 이건 ul를 열고 닫는 형태의 슬라이드라 foreach를 안 거침. */
         /* parentElement로 부모 통째를 열고 닫으면, 각자 관리를 안 해도 됨. */
         /* 나머지 클래스를 지우고, 선택한 것만 추가하는 건 이미 되어 있음 */
@@ -236,14 +229,29 @@ const tabMenu = {
         }
       });
     });
+
+    /* load 이벤트(순서 중요) */
+    const activeTab = document.querySelector(".brand-product-tab li.active");
+    const allTab = activeTab?.getAttribute("data-alt");
+    /* 옵셔널 체이닝(?.): 조건에 있는게 없어도 오류 내지 말고 넘어갈 것(active가 보장된 click이벤트와 달리 load로 바로 접근하니 해당 active 값이 없을 수도 있음) */
+    /* 현재 처음 화면에서 활성화된 탭이 탭1이라면, 나머지도 전부 활성화 -> 모든 탭을 열어라 */
+    if (allTab === "tab1") {
+      tab_content.forEach((content) => {
+        content.classList.add("active");
+      });
+    }
   },
 };
-tabMenu.init();
+/* 이미지가 다 로드되고 나서 실행(onload) */
+window.addEventListener("load", () => {
+  tabMenu.init();
+});
 
 /* ======================= top button test ===================== */
 const gotoTop = {
   init: function () {
     const topbtn = document.querySelector(".top-btn");
+    if(!topbtn) return; /* top 버튼 다 넣고나서 지울 것 */
     topbtn.addEventListener("click", () => {
       window.scrollTo(0, 0);
     });
