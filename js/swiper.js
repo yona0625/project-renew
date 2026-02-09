@@ -91,7 +91,7 @@ const brand2_slide = new Swiper(".brand2-slide-container", {
     },
   },
   on: {
-    resize: function () {
+    breakpoints: function () {
       /* 슬라이드 흔들림 방지 */
       this.loopFix();
       this.slideToLoop(0, 0);

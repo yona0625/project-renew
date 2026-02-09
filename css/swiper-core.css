@@ -43,8 +43,7 @@
   margin-top: 50px;
   padding-bottom: 50px;
 }
-.c-slide-wrapper {
-}
+
 .c-slide {
   height: clamp(450px, 80vw, 600px);
   background-color: #ffffff;

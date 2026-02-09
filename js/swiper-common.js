@@ -19,12 +19,12 @@ function commonSwiper(name) {
     /* c-slide안에 있는 text, image를 가져옴 */
     const slideItem = ["text", "image"];
     slideItem.forEach((item) => {
-        /* ${name}-text/image를 찾아서 findItem에 넣음 */
-        const findItem = slide.querySelector(`.${name}-${item}`);
-        /* 만약 찾았다면, c_slide__text/image라는 이름을 붙여 줌 */
-        if(findItem) {
-            findItem.classList.add(`c-slide__${item}`);
-        }
+      /* ${name}-text/image를 찾아서 findItem에 넣음 */
+      const findItem = slide.querySelector(`.${name}-${item}`);
+      /* 만약 찾았다면, c_slide__text/image라는 이름을 붙여 줌 */
+      if (findItem) {
+        findItem.classList.add(`c-slide__${item}`);
+      }
     });
     /* - 복제 - */
     const slideClone = slide.cloneNode(true);
@@ -37,6 +37,8 @@ function commonSwiper(name) {
     slidesPerView: 3,
     spaceBetween: 20,
     loop: true,
+    observer: true,
+    observeParents: true,
 
     // Navigation
     navigation: {
@@ -72,10 +74,17 @@ function commonSwiper(name) {
         });
       },
 
-      /* 반응형 리사이징 시 안정화 */
+
+      /* 인덱스 테스트 용 콘솔 */
+      slideChangeTransitionEnd: function () {
+        savedIdx = this.realIndex;
+        console.log("안전하게 저장된 인덱스:", savedIdx);
+      },
+
       resize: function () {
         this.loopFix();
         this.slideToLoop(0, 0);
+        this.update();
       },
     },
 
@@ -88,7 +97,7 @@ function commonSwiper(name) {
         slidesPerGroup: 1,
       },
       1024: {
-        centeredSlides: false,
+        centeredSlides: true,
       },
     },
   });

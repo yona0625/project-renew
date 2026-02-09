@@ -2,9 +2,9 @@
 .top-btn {
   width: 50px;
   height: 50px;
-  background-color: purple;
+  background-color: #e5e5e5;
   position: fixed;
-  right: calc(50% - 40px);
+  right: 20px;
   bottom: 20px;
   z-index: 10;
   border-radius: 50%;
@@ -94,6 +94,7 @@ nav li a {
   font-size: 20px;
   font-weight: 600;
 }
+
 .all-menu {
   background-color: #fff;
   width: 300px;
@@ -106,13 +107,29 @@ nav li a {
   transform: translateX(100%);
 }
 .all-menu-content {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* margin-left: 20px; */
   margin-top: 50px;
 }
 .first-menu {
   padding: 20px;
   font-weight: 600;
+}
+.first-menu > li > a {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid red; */
+}
+.first-menu > li:nth-child(2) > a {
+  /* border: 1px solid green; */
+}
+.first-menu > li:nth-child(2) > a::after,
+.first-menu > li:nth-child(3) > a::after {
+  content: "\f105";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 8px;
+  font-size: 14px;
 }
 .first-menu a {
   text-decoration: none;
@@ -139,6 +156,7 @@ nav li a {
   position: absolute;
   right: 0;
   top: 0;
+  background: url("../images/close-btn-image.png") center center no-repeat;
 }
 .all-menu.active {
   transform: translateX(0);
@@ -326,8 +344,6 @@ footer {
     background-color: red;
   }
   .top-btn {
-    right: 40px;
-    bottom: 40px;
   }
   /* 세로 배치 */
   .card-block {
@@ -367,6 +383,10 @@ footer {
   /* nav */
   nav {
     display: block;
+  }
+  .first-menu > li:nth-child(2) > a::after,
+  .first-menu > li:nth-child(3) > a::after {
+    display: none;
   }
   .main-menu li a {
     transition: 0.3s;
@@ -429,6 +449,7 @@ footer {
     /* 근데 hidden만 하면 높이가 살아있으니, block화 해서 0으로 해야 li 공간은 유지하고 글자만 쏙 빠짐. */
     display: block;
     height: 0;
+    transition: none;
   }
   .all-menu-content li {
     /* background: yellow; */
@@ -481,17 +502,17 @@ footer {
   }
   /* footer */
   .footer-icon {
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-}
-.footer-location {
-  width: auto;
-  flex-basis: auto;
-}
-.footer-icon li:not(.footer-location) a {
-  margin-top: 0;
-}
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+  }
+  .footer-location {
+    width: auto;
+    flex-basis: auto;
+  }
+  .footer-icon li:not(.footer-location) a {
+    margin-top: 0;
+  }
   .footer-copy {
-  text-align: right;
-}
+    text-align: right;
+  }
 }
