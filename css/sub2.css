@@ -1,25 +1,9 @@
-#container {
-  width: 100%;
-  overflow-x: hidden;
-  background-color: var(--bg-color__white);
-}
 
-section {
-  width: 100%;
-  max-width: 767px;
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-top: 100px;
-}
-section > div {
-  margin: 0 auto;
-}
 /* 모바일 기본 스타일 */
 
 /* ---------- main -------- */
 main {
   width: 100%;
-  /* background-color: red; */
   height: 600px;
 }
 main img {
@@ -30,19 +14,23 @@ main img {
 
 /* ---- section 1 ----- */
 .card {
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border-color__white);
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   overflow: hidden;
-  /* text-align: center; */
 }
 .card + .card {
   margin-top: 50px;
 }
+.card-link__a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: var(--font-color__black);
+}
 .card .image-box__a {
   aspect-ratio: 1 / 1;
-  border: 1px solid red;
 }
 .text-box__a p {
   color: var(--font-color__gray);
@@ -65,7 +53,7 @@ main img {
 /* company */
 .company-title {
   text-align: center;
-  background-color: #fff;
+  background-color: var(--bg-color__white);
   padding: 20px;
 }
 .company-card {
@@ -76,7 +64,7 @@ main img {
 .company-title p {
   margin-top: 20px;
   text-align: left;
-  color: #767676;
+  color: var(--font-color__gray);
   line-height: 1.7;
 }
 .company-title .br {
@@ -84,14 +72,13 @@ main img {
 }
 .company-card .more-btn,
 .special .more-btn {
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--border-color__gray);
   border-radius: 30px;
   margin-bottom: 15px;
   width: calc(100% - 40px);
 }
 .special .more-btn {
   border: 1px solid transparent;
-  /* background-color: red; */
 }
 
 .company-card .text-box__a,
@@ -103,7 +90,6 @@ main img {
   overflow: hidden;
   position: relative;
   text-align: center;
-  /* min-height: 280px; */
   background-color: var(--bg-color__white); 
 }
 .special .text-box__a {
@@ -112,11 +98,8 @@ main img {
 
 /* ----- section 2----- */
 .special {
-  /* 전체는 40 마진이고 이 영역은 80 마진 */
-  width: calc(100% - 80px);
-  /* background-color: pink; */
-  /* 원래 있던 container의 0 20px을 지우고 양 마진 40만 주기 위해서 */
-  /* padding: 0; */
+  /* 20씩 더 마진 */
+  width: calc(100% - 40px);
 }
 .special-title h3 {
   text-align: center;
@@ -139,12 +122,8 @@ main img {
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  #container {
-  }
   main {
     height: 500px;
-  }
-  main img {
   }
   section {
     padding: 0 40px;
@@ -194,8 +173,6 @@ main img {
 @media (min-width: 1024px) {
   #container {
     width: 100%;
-    /* background-color: purple; */
-
   }
   main {
     height: 500px;
@@ -203,7 +180,6 @@ main img {
   section {
     max-width: 1280px; /* 1280 */
     padding: 0 80px;
-    /* background-color: purple; */
   }
   main img {
   }
@@ -220,7 +196,6 @@ main img {
   }
   .company-title p {
     text-align: left;
-    /* border: 1px solid orange; */
     margin-top: 0;
     padding: 30px 0;
   }
@@ -265,7 +240,6 @@ main img {
     text-align: left;
     min-height: 220px;
     position: relative;
-    /* background-color: purple; */
   }
   .special .text-box__a h3 {
     font-weight: 600;

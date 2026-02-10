@@ -15,7 +15,8 @@
   cursor: pointer;
 }
 .more-btn {
-  background-color: #fff;
+  /* background-color: var(--bg-color__white); */
+  background-color: red;
   color: #333333;
   padding: 10px 45px;
   display: inline-flex;
@@ -41,6 +42,23 @@
 /* 100%를 채워야 하는 구역 */
 .card-block .more-btn {
   width: 100%;
+}
+#container {
+  width: 100%;
+  /* overflow-x: hidden; */
+  overflow-x: clip;
+  background-color: var(--bg-color__white);
+}
+section {
+  width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
+  padding: 0 20px;
+  /* border: 1px solid black; */
+  margin-top: 100px;
+}
+section > div {
+  margin: 0 auto;
 }
 /* header */
 header {
@@ -206,13 +224,34 @@ nav li a {
   /* 실제 flex 역할 */
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--border-color__white);
+  border-radius: 20px;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+}
+.card-link .more-btn {
+  /* more-btn이 text-box가 아니라 최상단 부모 card에 맞추기 위해 static */
+  position: static;
+}
+/* 클릭 영역을 카드 만큼 늘림 */
+.more-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* background-color: red; */
 }
 .card-block + .card-block {
   margin-top: 50px;
 }
 .image-box {
   aspect-ratio: 1 / 1;
-  overflow: hidden;
+  /* flex-shrink: 1; */
+  min-height: 0;
 }
 .text-box {
   padding: 30px 20px 30px 20px;
@@ -221,9 +260,8 @@ nav li a {
 }
 .image-box,
 .text-box {
-  background-color: white;
+  background-color: var(--bg-color__white);
   width: 100%;
-  border-radius: 20px;
 }
 .image-box img {
   width: 100%;
@@ -245,10 +283,9 @@ footer {
   width: 100%;
   /* height: 400px; */
   background-color: black;
-  padding: 80px 70px;
+  padding: 80px 40px;
 }
 .footer-wrapper {
-  /* border: 1px solid red; */
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
@@ -341,14 +378,14 @@ footer {
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   #container {
-    background-color: red;
   }
   .top-btn {
   }
   /* 세로 배치 */
   .card-block {
     flex-direction: column;
-    aspect-ratio: 1 / 1;
+    /* 또 여기서 ratio 주면 찌그러짐 */
+    /* aspect-ratio: 1 / 1; */
   }
   /* 1:1 비율 유지 */
   .image-box,
@@ -373,6 +410,9 @@ footer {
     /* position: absolute; */
     /* bottom: 0; */
     width: 100%;
+  }
+  footer {
+    padding: 80px 60px;
   }
 }
 /* pc */
@@ -473,12 +513,18 @@ footer {
   .card-block {
     flex-direction: row;
     aspect-ratio: 2 / 1;
+    border: none;
+  }
+  .more-btn::after {
+    display: none;
   }
   /* 1:1 비율 유지 */
   .image-box,
   .text-box {
     width: 50%;
     height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
   }
   /* 짝수 역순 */
   .card-block:nth-child(even) {
@@ -501,6 +547,9 @@ footer {
     width: fit-content;
   }
   /* footer */
+  footer {
+    padding: 80px 70px;
+  }
   .footer-icon {
     flex-wrap: nowrap;
     justify-content: flex-end;

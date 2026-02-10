@@ -1,25 +1,12 @@
 #container {
-  width: 100%;
-  overflow-x: hidden;
-  background-color: var(--bg-color__white);
   position: relative;
 }
-section {
-  width: 100%;
-  max-width: 767px;
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-top: 100px;
-}
-section > div {
-  margin: 0 auto;
-}
+
 /* 모바일 기본 스타일 */
 
 /* ---------- main -------- */
 main {
   width: 100%;
-  background-color: red;
   height: 600px;
 }
 main img {
@@ -45,19 +32,19 @@ main img {
   gap: 20px;
 }
 .move-btn li {
-  border: 1px solid #3a3a3a;
+  border: 1px solid var(--border-color__gray);
   border-radius: 40px;
   padding: 8px 40px;
   transition: 0.3s;
 }
 /* hover */
 .move-btn li:hover {
-  background-color: #e5e5e5;
-  border: 1px solid #e5e5e5;
+  background-color: var(--active-color__gray);
+  border: 1px solid var(--border-color__white);
 }
 .move-btn li a {
   text-decoration: none;
-  color: black;
+  color: var(--font-color__black);
   display: block;
   width: 100%;
   background-color: red;
@@ -68,11 +55,10 @@ main img {
 /* ------------- section 3 -------------- */
 .water {
   width: 100%;
-  /* text-align: center; */
 }
 .water .aws {
   margin-top: 50px;
-  background-color: #f5f5f5;
+  background-color: var(--bg-color__sub);
   width: 100vw;
   position: relative;
   left: 50%;
@@ -98,12 +84,8 @@ main img {
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  #container {
-  }
   main {
     height: 500px;
-  }
-  main img {
   }
   section {
     padding: 0 40px;

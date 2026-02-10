@@ -1,19 +1,4 @@
-#container {
-  width: 100%;
-  overflow-x: hidden;
-  background-color: var(--bg-color__white);
-}
-section {
-  width: 100%;
-  max-width: 767px;
-  margin: 0 auto;
-  padding: 0 20px;
-  /* border: 1px solid black; */
-  margin-top: 100px;
-}
-section > div {
-  margin: 0 auto;
-}
+
 /* 모바일 기본 스타일 */
 
 /* ---------- main -------- */
@@ -42,12 +27,9 @@ main img {
 }
 .brand-product-tab {
   width: 100%;
-  /* background-color: pink; */
-  /* display: flex; */
   margin-bottom: 50px;
 }
 .brand-product-tab li {
-  /* flex: 1; */
   text-align: left;
   overflow: hidden;
   transition: 0.3s ease-in-out;
@@ -65,11 +47,10 @@ main img {
   /* ★ max로 주어야지 그보다 높이가 작아도 딱 알맞게 컴이 계산함. (auto는 transition 안 먹힘) */
   max-height: 80px;
   opacity: 1;
-  border: 1px solid #e5e5e5;
-  /* height: auto; */
+  border: 1px solid var(--border-color__white);
 }
 .brand-product-tab li.active a {
-  color: red;
+  color: var(--active-color__red);
   font-weight: 500;
 }
 /* 작동하면 '나머지 li'를 다 이렇게 작동해 */
@@ -85,7 +66,7 @@ main img {
   padding: 10px;
   margin-left: 5px;
   transition: 0.3s;
-  color: #3a3a3a;
+  color: var(--border-color__gray);
 }
 /* svg */
 .brand-product-tab li::after {
@@ -99,7 +80,7 @@ main img {
   top: 50%;
   transform: translateY(-50%);
   font-size: 18px;
-  color: #000000;
+  color: var(--font-color__black);
 
   pointer-events: none;
   opacity: 0;
@@ -124,7 +105,8 @@ main img {
   margin-top: 20px;
 }
 .tab .item {
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--border-color__white);
+  background-color: var(--bg-color__white);
   border-radius: 20px;
   /* 내부 요소 정중앙 정렬 */
   display: flex;
@@ -155,14 +137,7 @@ main img {
   .tab {
     grid-template-columns: repeat(3, 1fr);
   }
-  .brand-product-tab {
-    /* display: flex; */
-  }
   .brand-product-tab li {
-    /* max-height: none;
-    opacity: 1;
-    text-align: center;
-    flex: 1; */
     height: 50px;
   }
 }
@@ -177,9 +152,6 @@ main img {
   section {
     max-width: 1280px; /* 1280 */
     padding: 0 80px;
-    /* background-color: purple; */
-  }
-  main img {
   }
   /* --- tab --- */
   .all-brand-title h3 {
@@ -205,8 +177,6 @@ main img {
     opacity: 1;
     text-align: center;
     min-width: 150px;
-    /* flex: 1; */
-    /* height: 70px; */
     border-radius: 30px;
     padding: 0 12px;
     border: 1px solid #e5e5e5;
