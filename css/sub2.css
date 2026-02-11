@@ -13,39 +13,34 @@ main img {
 }
 
 /* ---- section 1 ----- */
-.card {
+.card-item__sub {
   border: 1px solid var(--border-color__white);
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   overflow: hidden;
 }
-.card + .card {
+.card-item__sub + .card-item__sub {
   margin-top: 50px;
 }
-.card-link__a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  color: var(--font-color__black);
-}
-.card .image-box__a {
+.card-item__sub .card-image__sub {
   aspect-ratio: 1 / 1;
 }
-.text-box__a p {
+.card-text__sub p {
   color: var(--font-color__gray);
   margin-top: 1.2rem;
 }
-.text-box__a h3 {
+.card-text__sub h3 {
+  color: var(--font-color__black);
   font-weight: 600;
 }
-.text-box__a .more-btn {
+.card-text__sub .more-btn {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
 }
-.card img {
+.card-item__sub img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -81,8 +76,8 @@ main img {
   border: 1px solid transparent;
 }
 
-.company-card .text-box__a,
-.special .text-box__a {
+.company-card .card-text__sub,
+.special .card-text__sub {
   padding: 30px 20px 120px 20px;
   box-sizing: border-box;
   min-height: clamp(100px, 25vw, 200px);
@@ -92,7 +87,7 @@ main img {
   text-align: center;
   background-color: var(--bg-color__white); 
 }
-.special .text-box__a {
+.special .card-text__sub {
   padding: 30px 20px 100px 20px;
 }
 
@@ -106,7 +101,7 @@ main img {
   margin-bottom: 50px;
   font-size: 2.4rem;
 }
-.special .card {
+.special .card-item__sub {
   width: 100%;
 }
 .special .more-btn svg {
@@ -114,7 +109,7 @@ main img {
   width: 15px;
   height: 15px;
 }
-.special .text-box__a {
+.special .card-text__sub {
   height: auto;
 }
 
@@ -146,18 +141,19 @@ main img {
     margin-top: 1.2em;
   }
   /* 세로에서 간격을 띄운 걸 가로로 배치하였으니 간격을 초기화 시켜야 레이아웃이 망가지지 않음. */
-  .card + .card {
+  .card-item__sub + .card-item__sub {
     margin-top: 0;
   }
-  .card-wrapper {
+  .company-card-inner,
+  .special-inner {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
-  .card {
+  .card-item__sub {
     width: 100%;
   }
-  .card .text-box__a {
+  .card-item__sub .card-text__sub {
     min-height: 230px;
   }
   /* ----- section 2 ----- */
@@ -203,20 +199,21 @@ main img {
     margin-top: 1.2em;
   }
 
-  .card + .card {
+  .card-item__sub + .card-item__sub {
     margin-top: 0;
   }
-  .card-wrapper {
+  .company-card-inner,
+  .special-inner {
     display: flex;
     gap: 20px;
   }
-  .card {
+  .card-item__sub {
     width: 50%;
   }
-  .company-card .text-box__a {
+  .company-card .card-text__sub {
     min-height: 230px;
   }
-  .company-card .text-box__a h3 {
+  .company-card .card-text__sub h3 {
     font-size: 2.2rem;
     /* background-color: red; */
     font-weight: 600;
@@ -224,7 +221,7 @@ main img {
   .company-card .more-btn {
     width: fit-content;
   }
-  .company-card .text-box__a p {
+  .company-card .card-text__sub p {
     margin-top: 1.2rem;
     font-size: 1.8rem;
   }
@@ -236,16 +233,16 @@ main img {
     min-width: 750px;
     padding: 0;
   }
-  .special .text-box__a {
+  .special .card-text__sub {
     text-align: left;
     min-height: 220px;
     position: relative;
   }
-  .special .text-box__a h3 {
+  .special .card-text__sub h3 {
     font-weight: 600;
     font-size: 1.8rem;
   }
-  .special .text-box__a p {
+  .special .card-text__sub p {
     margin-top: 1.2rem;
     font-size: 1.6rem;
   }

@@ -15,8 +15,8 @@
   cursor: pointer;
 }
 .more-btn {
-  /* background-color: var(--bg-color__white); */
-  background-color: red;
+  background-color: var(--bg-color__white);
+  /* background-color: red; */
   color: #333333;
   padding: 10px 45px;
   display: inline-flex;
@@ -40,7 +40,7 @@
   gap: 5px;
 }
 /* 100%를 채워야 하는 구역 */
-.card-block .more-btn {
+.card-item__main .more-btn {
   width: 100%;
 }
 #container {
@@ -220,7 +220,7 @@ nav li a {
 
 /* 메인&서브 4의 card */
 
-.card-block {
+.card-item__main {
   /* 실제 flex 역할 */
   display: flex;
   flex-direction: column;
@@ -228,50 +228,35 @@ nav li a {
   border-radius: 20px;
   height: auto;
   overflow: hidden;
-  position: relative;
 }
-.card-link .more-btn {
-  /* more-btn이 text-box가 아니라 최상단 부모 card에 맞추기 위해 static */
-  position: static;
-}
-/* 클릭 영역을 카드 만큼 늘림 */
-.more-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  /* background-color: red; */
-}
-.card-block + .card-block {
+
+.card-item__main + .card-item__main {
   margin-top: 50px;
 }
-.image-box {
+.card-image__main {
   aspect-ratio: 1 / 1;
   /* flex-shrink: 1; */
   min-height: 0;
 }
-.text-box {
+.card-text__main {
   padding: 30px 20px 30px 20px;
   box-sizing: border-box;
   text-align: center;
 }
-.image-box,
-.text-box {
+.card-image__main,
+.card-text__main {
   background-color: var(--bg-color__white);
   width: 100%;
 }
-.image-box img {
+.card-image__main img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.text-box h3 {
+.card-text__main h3 {
   margin-bottom: 10px;
 }
-.text-box p {
+.card-text__main p {
   line-height: 1.6;
   color: var(--font-color__gray);
 }
@@ -377,22 +362,18 @@ footer {
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  #container {
-  }
-  .top-btn {
-  }
   /* 세로 배치 */
-  .card-block {
+  .card-item__main {
     flex-direction: column;
     /* 또 여기서 ratio 주면 찌그러짐 */
     /* aspect-ratio: 1 / 1; */
   }
   /* 1:1 비율 유지 */
-  .image-box,
-  .text-box {
+  .card-image__main,
+  .card-text__main {
     width: 100%;
   }
-  .text-box {
+  .card-text__main {
     padding: 50px 40px;
     /* background-color: blue; */
     display: flex;
@@ -400,11 +381,11 @@ footer {
     align-items: center;
     text-align: left;
   }
-  .text-box > div {
+  .card-text__main > div {
     width: 100%;
     text-align: center;
   }
-  .text-box .more-btn {
+  .card-text__main .more-btn {
     margin-top: 30px;
     width: fit-content;
     /* position: absolute; */
@@ -510,7 +491,7 @@ footer {
     bottom: 40px;
   }
   /* 세로 배치 */
-  .card-block {
+  .card-item__main {
     flex-direction: row;
     aspect-ratio: 2 / 1;
     border: none;
@@ -519,31 +500,31 @@ footer {
     display: none;
   }
   /* 1:1 비율 유지 */
-  .image-box,
-  .text-box {
+  .card-image__main,
+  .card-text__main {
     width: 50%;
     height: 100%;
     border-radius: 20px;
     overflow: hidden;
   }
   /* 짝수 역순 */
-  .card-block:nth-child(even) {
+  .card-item__main:nth-child(even) {
     flex-direction: row-reverse;
   }
-  .text-box {
+  .card-text__main {
     padding: 90px 40px;
     text-align: left;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .text-box h3 {
+  .card-text__main h3 {
     font-size: 3rem;
   }
-  .text-box p {
+  .card-text__main p {
     font-size: 1.8rem;
   }
-  .text-box .more-btn {
+  .card-text__main .more-btn {
     width: fit-content;
   }
   /* footer */

@@ -120,15 +120,12 @@
       </header>
       <main>
         <h1 class="sr-only">코카콜라 공식 홈페이지</h1>
-        <!-- main slide -->
-        <!-- Slider main container -->
-        <div class="swiper main-slide-container">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper main-slide-wrapper">
-            <!-- Slides -->
+        <!-- main slide(visual) --> <!-- === 변경 성공 === -->
+        <div class="swiper visual-slide-container">
+          <div class="swiper-wrapper visual-slide-wrapper">
             <!-- 1 -->
-            <div class="swiper-slide main-slide">
-              <div class="slide-img">
+            <div class="swiper-slide visual-slide">
+              <div class="visual-image">
                 <picture>
                   <source
                     media="(min-width: 768px)"
@@ -137,7 +134,7 @@
                   <img src="images/test.png" alt="나의 미식 파트너 코카-콜라" />
                 </picture>
               </div>
-              <div class="slide-text">
+              <div class="visual-text">
                 <h1>나의 미식 파트너, 코카-콜라</h1>
                 <p>
                   오늘을 제대로 즐기기 위해 필요한 건?
@@ -151,8 +148,8 @@
               </div>
             </div>
             <!-- 2 -->
-            <div class="swiper-slide main-slide">
-              <div class="slide-img">
+            <div class="swiper-slide visual-slide">
+              <div class="visual-image">
                 <picture>
                   <source
                     media="(min-width: 768px)"
@@ -161,7 +158,7 @@
                   <img src="images/test.png" alt="나의 미식 파트너 코카-콜라" />
                 </picture>
               </div>
-              <div class="slide-text">
+              <div class="visual-text">
                 <h1>나의 미식 파트너, 코카-콜라</h1>
                 <p>
                   오늘을 제대로 즐기기 위해 필요한 건?
@@ -175,8 +172,8 @@
               </div>
             </div>
             <!-- 3 -->
-            <div class="swiper-slide main-slide">
-              <div class="slide-img">
+            <div class="swiper-slide visual-slide">
+              <div class="visual-image">
                 <picture>
                   <source
                     media="(min-width: 768px)"
@@ -185,7 +182,7 @@
                   <img src="images/test.png" alt="나의 미식 파트너 코카-콜라" />
                 </picture>
               </div>
-              <div class="slide-text">
+              <div class="visual-text">
                 <h1>나의 미식 파트너, 코카-콜라</h1>
                 <p>
                   오늘을 제대로 즐기기 위해 필요한 건?
@@ -199,9 +196,8 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination main-pagination"></div>
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev main-btn-prev">
+          <div class="swiper-pagination visual-pagination"></div>
+          <div class="swiper-button-prev visual-btn-prev">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
               <path
@@ -220,15 +216,16 @@
           </div>
         </div>
       </main>
-      <!-- 1 -->
-      <section class="main-card">
-        <div class="content-wrapper">
+
+      <!-- 1 --> <!-- === 변경 성공 === -->
+      <section class="feature">
+        <div class="feature-inner">
           <!-- 1 -->
-          <div class="card-block card-link">
-            <div class="image-box">
+          <div class="card-item__main">
+            <div class="feature-image__card card-image__main">
               <img src="images/image.png" alt="이미지 1" />
             </div>
-            <div class="text-box">
+            <div class="feature-text__card card-text__main">
               <div>
                 <h3>코카-콜라 Real Magic 스토리</h3>
                 <p>
@@ -243,11 +240,11 @@
             </div>
           </div>
           <!-- 2 -->
-          <div class="card-block card-link">
-            <div class="image-box">
+          <div class="card-item__main">
+            <div class="feature-image__card card-image__main">
               <img src="images/main-image2.webp" alt="이미지 1" />
             </div>
-            <div class="text-box">
+            <div class="feature-text__card card-text__main">
               <div>
                 <h3>지속 가능한 미래</h3>
                 <p>
@@ -264,9 +261,14 @@
           </div>
         </div>
       </section>
+
+
+
+
+
       <!-- 2 -->
-      <section class="journey">
-        <div class="journey-wrapper">
+      <section class="promotion">
+        <div class="promotion-inner">
           <div>
             <h2>Coca‑Cola Journey : 코카-콜라 이야기 속으로 떠나는 여정</h2>
             <p>
@@ -281,7 +283,8 @@
           </div>
         </div>
       </section>
-      <!-- 3 -->
+
+      <!-- 3 --> <!-- 변경 성공 -->
       <section class="pick">
         <h2>이달의 PICK</h2>
         <!-- Slider main container -->
@@ -291,10 +294,10 @@
             <!-- Slides -->
             <!-- 1 -->
             <div class="swiper-slide pick-slide">
-              <div class="pick-image">
+              <div class="pick-image__swiperMain">
                 <img src="images/image2.png" alt="" />
               </div>
-              <div class="pick-text">
+              <div class="pick-text__swiperMain">
                 <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</h3>
                 <a href="#none" class="more-btn">
                   <span> 더 보기 </span>
@@ -307,17 +310,12 @@
                 </a>
               </div>
             </div>
-
-
-
-
-
             <!-- 2 -->
             <div class="swiper-slide pick-slide">
-              <div class="pick-image">
+              <div class="pick-image__swiperMain">
                 <img src="images/image2.png" alt="" />
               </div>
-              <div class="pick-text">
+              <div class="pick-text__swiperMain">
                 <h3>치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill</h3>
                 <a href="#none" class="more-btn">
                   <span> 더 보기 </span>
@@ -332,10 +330,10 @@
             </div>
             <!-- 3 -->
             <div class="swiper-slide pick-slide">
-              <div class="pick-image">
+              <div class="pick-image__swiperMain">
                 <img src="images/image2.png" alt="" />
               </div>
-              <div class="pick-text">
+              <div class="pick-text__swiperMain">
                 <h3>
                   달리다보면 너의 음료를 알게 될거야, 파워에이드 제로 라임향
                 </h3>
@@ -357,32 +355,33 @@
           <div class="swiper-button-next pic-btn pick-btn-next"></div> -->
         </div>
       </section>
-      <!-- 4 -->
-      <section class="brand">
+
+      <!-- 4 --> <!-- 변경 성공 -->
+      <section class="brandList">
         <h2>브랜드 살펴보기</h2>
-        <div class="brand-slide-all">
-          <div class="swiper brand-slide-container">
+        <div class="brandList-slide-area">
+          <div class="swiper brandList-slide-container">
             <!-- Additional required wrapper -->
-            <div class="swiper-wrapper brand-slide-wrapper">
+            <div class="swiper-wrapper brandList-slide-wrapper">
               <!-- Slides -->
-              <div class="swiper-slide brand-slide">
+              <div class="swiper-slide brandList-slide">
                 <img src="images/brand_coca.png" alt="" />
               </div>
-              <div class="swiper-slide brand-slide">
+              <div class="swiper-slide brandList-slide">
                 <img src="images/brand_sprite.png" alt="" />
               </div>
-              <div class="swiper-slide brand-slide">
+              <div class="swiper-slide brandList-slide">
                 <img src="images/brand_fanta.png" alt="" />
               </div>
-              <div class="swiper-slide brand-slide">
+              <div class="swiper-slide brandList-slide">
                 <img src="images/brand_coca.png" alt="" />
               </div>
             </div>
             <!-- If we need pagination -->
-            <div class="swiper-pagination brand-pagination"></div>
+            <div class="swiper-pagination brandList-pagination"></div>
 
             <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev brand-btn-prev">
+            <div class="swiper-button-prev brandList-btn-prev">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                 <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                 <path
@@ -390,7 +389,7 @@
                 />
               </svg>
             </div>
-            <div class="swiper-button-next brand-btn-next">
+            <div class="swiper-button-next brandList-btn-next">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                 <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                 <path
@@ -401,6 +400,7 @@
           </div>
         </div>
       </section>
+
       <!-- top 버튼 -->
       <div class="top-btn">
         <img src="images/top-btn-image.png" alt="top-btn-image" />

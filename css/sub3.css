@@ -87,14 +87,20 @@ main img {
 .reco-slide {
   height: clamp(500px, 80vw, 650px);
 }
-
 .reco-slide div:first-child,
 .reco-slide div:last-child {
   height: 50%;
 }
+.reco-slide .more-btn {
+  /* background: blue; */
+}
 
 /* -------- section 3 -------- */
 .more-content {
+  text-align: center;
+}
+.more-content h2 {
+  margin-bottom: 50px;
 }
 .item {
   display: flex;

@@ -6,21 +6,21 @@ commonSwiper("water");
 commonSwiper("comm");
 
 /* [2] 메인 슬라이드 */
-const mainSwiper = new Swiper(".main-slide-container", {
+const mainSwiper = new Swiper(".visual-slide-container", {
   /* 변경 시점 있을 때 슬라이드가 계속 떨리는 걸 방지 */
   slidesPerView: 1,
   loop: true,
   pagination: {
-    el: ".main-pagination",
+    el: ".visual-pagination",
     clickable: true,
     renderBullet: function (index, className) {
       /* 똑같이 common-dot으로 제어하기 위해 추가 */
-      return `<span class="${className} mainSlide-dot common-dot"></span>`;
+      return `<span class="${className} visualSlide-dot common-dot"></span>`;
     },
   },
   navigation: {
-    nextEl: ".main-btn-next",
-    prevEl: ".main-btn-prev",
+    nextEl: ".visual-btn-next",
+    prevEl: ".visual-btn-prev",
   },
   breakpoints: {
     360: {
@@ -39,14 +39,14 @@ const mainSwiper = new Swiper(".main-slide-container", {
 });
 
 /* [3] 서브 슬라이드(1): brand */
-const brand_slide = new Swiper(".brand-slide-container", {
+const brand_slide = new Swiper(".brandList-slide-container", {
   slidesPerView: 3,
   spaceBetween: 20,
   loop: false,
 
   navigation: {
-    nextEl: ".brand-btn-next",
-    prevEl: ".brand-btn-prev",
+    nextEl: ".brandList-btn-next",
+    prevEl: ".brandList-btn-prev",
   },
 
   breakpoints: {

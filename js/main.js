@@ -1,3 +1,21 @@
+/* 더 보기(#none) 클릭 시 상단으로 이동하는 것을 방지 */
+const preventMoveTop = {
+  init: function () {
+    this.preventMoveTop();
+  },
+  /* href="#none"인 모든 링크의 기본 동작(상단 이동) 방지 */
+  preventMoveTop: function () {
+    // 특정 클래스(.more-btn)뿐만 아니라 #none을 가진 모든 a 태그 대상
+    document.addEventListener("click", (e) => {
+      const anchor = e.target.closest('a[href="#none"]');
+      if (anchor) {
+        e.preventDefault();
+      }
+    });
+  },
+};
+preventMoveTop.init();
+
 /* ======================= nav ======================= */
 /* --- 모바일~타블렛 --- */
 const mobileNav = {
@@ -168,14 +186,14 @@ const mobileSidebar = {
       const secondMenuOpen = secondMenu.classList.contains("active");
       /* 메뉴가 열려 있다면? -> 닫기 */
       /* + (!secondMenu) return 추가로 기존 if(secondMenu)는 삭제 */
-        if (secondMenuOpen) {
-          secondMenu.classList.remove("active");
-          secondMenu.style.maxHeight = "0";
-          /* 닫혀있다면 -> 펼치기 */
-        } else {
-          secondMenu.classList.add("active");
-          secondMenu.style.maxHeight = secondMenu.scrollHeight + "px";
-        }
+      if (secondMenuOpen) {
+        secondMenu.classList.remove("active");
+        secondMenu.style.maxHeight = "0";
+        /* 닫혀있다면 -> 펼치기 */
+      } else {
+        secondMenu.classList.add("active");
+        secondMenu.style.maxHeight = secondMenu.scrollHeight + "px";
+      }
     });
   },
 };
@@ -185,9 +203,9 @@ mobileSidebar.init();
 const tabMenu = {
   init: function () {
     /* li 각 버튼을 불러옴 */
-    const tab_button = document.querySelectorAll(".brand-product-tab li");
+    const tab_button = document.querySelectorAll(".brand-tab-menu li");
     /* 전체 tab을 불러옴 */
-    const tab_content = document.querySelectorAll(".tab");
+    const tab_content = document.querySelectorAll(".brand-tab");
 
     /* 클릭 이벤트 */
     tab_button.forEach((button) => {
@@ -214,7 +232,7 @@ const tabMenu = {
         /* ----------- 처음 버튼을 누르면 전부 다 불러와야 함 ------------ */
         /* 이건 로드할 때랑 다르게 '클릭'이벤트라 로드 이벤트랑 이 이벤트랑 동시에 2개가 존재해야 하는 게 맞음. */
         /* 여긴 이미 active가 추가된 이후 시점이므로 옵셔널 체이닝으로 거를 필요가 없음. */
-        if (tabBtn === "tab1") {
+        if (tabBtn === "brand-tab1") {
           tab_content.forEach((content) => {
             content.classList.add("active");
           });
@@ -231,11 +249,11 @@ const tabMenu = {
     });
 
     /* load 이벤트(순서 중요) */
-    const activeTab = document.querySelector(".brand-product-tab li.active");
+    const activeTab = document.querySelector(".brand-tab-menu li.active");
     const allTab = activeTab?.getAttribute("data-alt");
     /* 옵셔널 체이닝(?.): 조건에 있는게 없어도 오류 내지 말고 넘어갈 것(active가 보장된 click이벤트와 달리 load로 바로 접근하니 해당 active 값이 없을 수도 있음) */
     /* 현재 처음 화면에서 활성화된 탭이 탭1이라면, 나머지도 전부 활성화 -> 모든 탭을 열어라 */
-    if (allTab === "tab1") {
+    if (allTab === "brand-tab1") {
       tab_content.forEach((content) => {
         content.classList.add("active");
       });
@@ -251,7 +269,7 @@ window.addEventListener("load", () => {
 const gotoTop = {
   init: function () {
     const topbtn = document.querySelector(".top-btn");
-    if(!topbtn) return; /* top 버튼 다 넣고나서 지울 것 */
+    if (!topbtn) return; /* top 버튼 다 넣고나서 지울 것 */
     topbtn.addEventListener("click", () => {
       window.scrollTo(0, 0);
     });

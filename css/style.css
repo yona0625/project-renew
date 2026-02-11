@@ -8,44 +8,44 @@ main {
 
 /* --------- section 1 --------- */
 
-/* main slide */
-.main-slide-container {
+/* main slide(visual) */
+.visual-slide-container {
   width: 100%;
   height: 550px;
   position: relative;
 }
-.main-slide {
+.visual-slide {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.main-slide .slide-text {
+.visual-slide .visual-text {
   width: 100%;
   position: absolute;
   padding: 0 10%;
   z-index: 2;
 }
-.main-btn-prev,
-.main-btn-next {
+.visual-btn-prev,
+.visual-btn-next {
   color: var(--font-color__white);
   width: 60px;
   height: 60px;
 }
-.main-pagination {
+.visual-pagination {
   transform: translateY(-8px);
 }
-.slide-text h1,
-.slide-text p {
+.visual-text h1,
+.visual-text p {
   color: var(--font-color__white);
 }
-.slide-text p {
+.visual-text p {
   margin-top: 12px;
 }
-.slide-text .more-btn {
+.visual-text .more-btn {
   border: 1px solid transparent;
 }
-.slide-img {
+.visual-image {
   width: 100%;
   height: 100%;
 }
@@ -53,7 +53,7 @@ main {
   background-color: var(--bg-color__white);
 }
 /* dimmed */
-.slide-img::after {
+.visual-image::after {
   content: "";
   position: absolute;
   top: 0;
@@ -65,39 +65,31 @@ main {
   /* 더 보기 버튼이 가려지지 않게 제외 */
   pointer-events: none;
 }
-.slide-img img {
+.visual-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.more-btn {
-  background-color: var(--bg-color__white);
-  color: #333333;
-  padding: 10px 45px;
-  display: inline-flex;
-  margin-top: 30px;
-  border-radius: 30px;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  border: 1px solid var(--border-color__gray);
-}
 
-.content-wrapper {
+
+/* section 1 */
+.feature-inner {
   width: 100%;
+
+
 }
 /* ------ section 2 ------ */
 
-.journey {
+.promotion {
 }
-.journey-wrapper {
+.promotion-inner {
   width: 100vw;
   position: relative;
   background-color: var(--bg-color__sub);
   left: 50%;
   margin-left: -50vw;
 }
-.journey-wrapper > div {
+.promotion-inner > div {
   width: 100%;
   height: 100%;
   display: flex;
@@ -108,26 +100,26 @@ main {
   padding: 40px;
   box-sizing: border-box;
 }
-.journey-wrapper .more-btn {
+.promotion-inner .more-btn {
   border: 1px solid transparent;
 }
-.journey-wrapper p {
+.promotion-inner p {
   margin-top: 12px;
   color: var(--font-color__gray);
 }
 
 /* ------- section 4 ------ */
-.brand {
+.brandList {
 }
-.brand h2 {
+.brandList h2 {
   text-align: center;
 }
-.brand-slide-all {
+.brandList-slide-area {
   width: 95%;
   background-color: var(--bg-color__white);
   position: relative;
 }
-.brand-slide-container {
+.brandList-slide-container {
   /* 버튼의 기준을 여기 container(swiper) 말고 brand-slide-all에 주기 위해 static으로 바꿈 */
   position: static;
   /* 양 마진을 50씩 고정(반응형 대응) */
@@ -135,9 +127,9 @@ main {
   width: calc(95% - 100px);
   margin-top: 50px;
 }
-.brand-slide-wrapper {
+.brandList-slide-inner {
 }
-.brand-slide {
+.brandList-slide {
   border-radius: 20px;
   overflow: hidden;
   background-color: var(--bg-color__white);
@@ -147,11 +139,11 @@ main {
   justify-content: center;
   align-items: center;
 }
-.brand-slide img {
+.brandList-slide img {
   object-fit: contain;
 }
-.brand-btn-prev,
-.brand-btn-next {
+.brandList-btn-prev,
+.brandList-btn-next {
   position: absolute;
   width: 50px;
   height: 50px;
@@ -195,10 +187,10 @@ main {
   .main-slide-container {
     height: 600px;
   }
-  .slide-text h1 {
+  .visual-text h1 {
     font-size: 4.5rem;
   }
-  .slide-text p {
+  .visual-text p {
     font-size: 2rem;
   }
   

@@ -20,10 +20,12 @@ function commonSwiper(name) {
     const slideItem = ["text", "image"];
     slideItem.forEach((item) => {
       /* ${name}-text/image를 찾아서 findItem에 넣음 */
-      const findItem = slide.querySelector(`.${name}-${item}`);
+      /* 공통 요소가 또 있으므로 __swiperMain로 불러옴 */
+      const findItem = slide.querySelector(`.${name}-${item}__swiperMain`);
       /* 만약 찾았다면, c_slide__text/image라는 이름을 붙여 줌 */
       if (findItem) {
-        findItem.classList.add(`c-slide__${item}`);
+        /* 불러온 걸 [슬라이드]__text로 붙임 */
+        findItem.classList.add(`c-slide-${item}__swiperMain`);
       }
     });
     /* - 복제 - */
