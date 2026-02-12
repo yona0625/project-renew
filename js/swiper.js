@@ -1,9 +1,9 @@
 /* 공통 슬라이드 - 호출 */
 commonSwiper("pick");
-commonSwiper("reco");
-commonSwiper("source");
+commonSwiper("recommend");
+commonSwiper("resource");
 commonSwiper("water");
-commonSwiper("comm");
+commonSwiper("community");
 
 /* [2] 메인 슬라이드 */
 const mainSwiper = new Swiper(".visual-slide-container", {
@@ -38,8 +38,8 @@ const mainSwiper = new Swiper(".visual-slide-container", {
   },
 });
 
-/* [3] 서브 슬라이드(1): brand */
-const brand_slide = new Swiper(".brandList-slide-container", {
+/* [3] 서브 슬라이드(1): brandList */
+const brandList_slide = new Swiper(".brandList-slide-container", {
   slidesPerView: 3,
   spaceBetween: 20,
   loop: false,
@@ -60,21 +60,20 @@ const brand_slide = new Swiper(".brandList-slide-container", {
   },
 });
 
-/* [4] 서브 슬라이드(2): brand2 */
-/* 'brand'가 겹쳐서 2로 주었지만 전반적으로 변수명들 나중에 바꿀 것 */
-const brand2_slide = new Swiper(".brand2-slide-container", {
+/* [4] 서브 슬라이드(2): story */
+const story_slide = new Swiper(".story-slide-container", {
   loop: true,
   slidesPerView: 1,
   spaceBetween: 20,
   /* navigation */
   navigation: {
-    nextEl: ".brand2-btn-next",
-    prevEl: ".brand2-btn-prev",
+    nextEl: ".story-btn-next",
+    prevEl: ".story-btn-prev",
     enabled: false,
   },
   /* pagination */
   pagination: {
-    el: ".brand2-pagination",
+    el: ".story-pagination",
     enabled: true,
     clickable: true,
     type: "bullets",

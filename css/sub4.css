@@ -4,7 +4,7 @@
 
 /* 모바일 기본 스타일 */
 
-/* ---------- main -------- */
+/* --- main --- */
 main {
   width: 100%;
   height: 600px;
@@ -18,11 +18,11 @@ main img {
 section + section {
   margin-top: 150px;
 }
-/* ------ section 1 ------- */
-.intro {
+/* --- section 1 --- */
+.future-intro {
   text-align: center;
 }
-.intro p {
+.future-intro p {
   color: var(--font-color__gray);
 }
 .move-btn {
@@ -52,10 +52,7 @@ section + section {
   width: 100%;
   background-color: red;
 }
-
-/* --- slide --- */
-
-/* ------------- section 3 -------------- */
+/* --- section 3 --- */
 .water {
   width: 100%;
 }
@@ -70,7 +67,7 @@ section + section {
   font-size: 1.8rem;
   color: var(--font-color__gray);
 }
-.water .aws {
+.promo-aws {
   margin-top: 50px;
   background-color: var(--bg-color__sub);
   width: 100vw;
@@ -80,20 +77,17 @@ section + section {
   padding: 40px;
   text-align: center;
 }
-.aws h2 {
+.promo-aws h2 {
   font-size: 2.2rem;
 }
-.aws p {
+.promo-aws p {
   margin-top: 1.2rem;
   color: var(--font-color__gray);
 }
-.aws .more-btn {
+.promo-aws .more-btn {
   border: 1px solid transparent;
 }
-/* ------------- section 4 ---------- */
-.comm-content-wrapper {
-  margin-top: 50px;
-}
+/* --- section 4 --- */
 .community-title {
   text-align: center;
 }
@@ -102,13 +96,15 @@ section + section {
 .community-title span {
   color: var(--font-color__gray);
 }
-/* section 5 */
-.global-title {
+.sustain-wrapper {
+  margin-top: 50px;
+}
+.sustain-title {
   text-align: center;
   margin-bottom: 50px;
 }
 
-/* media query */
+/* === media query === */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   main {
@@ -121,7 +117,6 @@ section + section {
   .move-btn ul {
     flex-direction: row;
   }
-  /* --------- section 1: slide -------- */
 }
 /* pc */
 @media (min-width: 1024px) {
@@ -132,22 +127,18 @@ section + section {
     height: 500px;
   }
   section {
-    max-width: 1280px; /* 1280 */
+    max-width: 1280px;
     padding: 0 80px;
   }
 
-  /* ----------- section 1 -------- */
-  .intro p {
+  /* --- section 1 --- */
+  .future-intro p {
     margin-top: 0.8em;
-  }
-  /* 짝수 역순 -> water 말고 구조화로 쓸 수 있다면 바꿔볼 것 */
-  .water .card-block {
-    flex-direction: row-reverse;
   }
   .move-btn ul {
     flex-direction: row;
   }
-  /* --------- section 1: slide -------- */
+  /* --- section 3 --- */
   .water-title h3 {
     font-size: 2.4rem;
   }
@@ -160,15 +151,14 @@ section + section {
   .water-title span {
     font-size: 1.8rem;
   }
-  /* --- */
+  /* --- section 4 ---*/
   .community-title h3 {
     font-size: 2.4rem;
   }
   .community-title span {
     font-size: 1.8rem;
   }
-  /* --- */
-  .global-title h3 {
-    font-size: 2.4rem;
+  .sustain-title {
+    font-size: 1.8rem;
   }
 }

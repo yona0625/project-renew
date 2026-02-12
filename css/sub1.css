@@ -1,10 +1,8 @@
-
 /* 모바일 기본 스타일 */
 
-/* ---------- main -------- */
+/* --- main --- */
 main {
   width: 100%;
-  background-color: red;
   height: 600px;
 }
 main img {
@@ -13,14 +11,10 @@ main img {
   object-fit: cover;
 }
 
-/* --------- section 1 -------- */
-.brandAll {
-}
+/* --- section 1 --- */
 .brandAll-title {
   text-align: center;
   margin-bottom: 50px;
-}
-.brandAll-title h3 {
 }
 .brandAll-title span {
   color: var(--font-color__gray);
@@ -33,7 +27,6 @@ main img {
   text-align: left;
   overflow: hidden;
   transition: 0.3s ease-in-out;
-  /* max 높이로 통일 */
   max-height: 0;
   opacity: 0;
   position: relative;
@@ -43,7 +36,6 @@ main img {
 }
 /* li '이거 하나만' 작동 */
 .brand-tab-menu li.active {
-  /* text-decoration: underline; */
   /* ★ max로 주어야지 그보다 높이가 작아도 딱 알맞게 컴이 계산함. (auto는 transition 안 먹힘) */
   max-height: 80px;
   opacity: 1;
@@ -57,11 +49,9 @@ main img {
 .brand-tab-menu.active li {
   max-height: 200px;
   /* 펼쳐질 때 여백이 있어야 깔끔함 */
-  /* margin-bottom: 12px; */
   opacity: 1;
 }
 .brand-tab-menu li a {
-  /* background-color: red; */
   display: block;
   padding: 10px;
   margin-left: 5px;
@@ -72,16 +62,13 @@ main img {
 .brand-tab-menu li::after {
   content: "\f105";
   font-family: "Font Awesome 6 Free";
-  /* 아이콘 출력의 표준 규격, 호환성으로 900을 사용함 */
   font-weight: 900;
-
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 18px;
   color: var(--font-color__black);
-
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
@@ -90,7 +77,7 @@ main img {
   opacity: 1;
   visibility: visible;
 }
-/* 전체 탭 */
+/* tab */
 .brand-item {
   display: grid;
   /* 각 tab 묶음이 아니라 전체 영역에 그리드-배치를 해서 1줄에 2개씩 균등하게 배치되지 않는 경우를 해결 */
@@ -108,20 +95,19 @@ main img {
   border: 1px solid var(--border-color__white);
   background-color: var(--bg-color__white);
   border-radius: 20px;
-  /* 내부 요소 정중앙 정렬 */
   display: flex;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1 / 1;
 }
 .brand-tab.active {
-  /* 상위 전체에 grid를 주었으니 여기서 grid를 주면 또 grid에 grid가 중첩되므로 쪼그라든다. 여기서 contents를 주어야 하는데, 왜냐면 tab끼리 나눠놓은 걸 합쳤을 때 생기는 빈 공간을 빠짐없이 채워야 하기 때문 */
+  /* 여기서 contents를 주어야 하는데, 왜냐면 tab끼리 나눠놓은 걸 합쳤을 때 생기는 빈 공간을 빠짐없이 채워야 하기 때문 */
   display: contents;
   justify-content: center;
   align-items: center;
 }
 
-/* media query */
+/* === media query === */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   main {
@@ -133,7 +119,7 @@ main img {
     padding: 0 40px;
     max-width: 1023px;
   }
-  /* --- tab ---  */
+  /* tab */
   .brand-tab {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -150,10 +136,13 @@ main img {
     height: 500px;
   }
   section {
-    max-width: 1280px; /* 1280 */
+    max-width: 1280px;
     padding: 0 80px;
   }
-  /* --- tab --- */
+  /* tab */
+  .brand-item {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .brandAll-title h3 {
     font-size: 2.4rem;
   }
@@ -184,9 +173,5 @@ main img {
   /* svg */
   .brand-tab-menu li::after {
     display: none;
-  }
-  /* 전체 탭 */
-  .brand-item {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

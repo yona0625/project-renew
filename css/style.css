@@ -1,13 +1,9 @@
-
 /* 모바일 기본 스타일 */
-
 /* ---------- main -------- */
 main {
   width: 100%;
 }
-
-/* --------- section 1 --------- */
-
+/* --- main --- */
 /* main slide(visual) */
 .visual-slide-container {
   width: 100%;
@@ -71,25 +67,20 @@ main {
   object-fit: cover;
 }
 
-
-/* section 1 */
+/* --- section 1 --- */
 .feature-inner {
   width: 100%;
-
-
 }
-/* ------ section 2 ------ */
 
-.promotion {
-}
-.promotion-inner {
+/* --- section 2 --- */
+.promo-story-inner {
   width: 100vw;
   position: relative;
   background-color: var(--bg-color__sub);
   left: 50%;
   margin-left: -50vw;
 }
-.promotion-inner > div {
+.promo-story-inner > div {
   width: 100%;
   height: 100%;
   display: flex;
@@ -100,17 +91,15 @@ main {
   padding: 40px;
   box-sizing: border-box;
 }
-.promotion-inner .more-btn {
+.promo-story-inner .more-btn {
   border: 1px solid transparent;
 }
-.promotion-inner p {
+.promo-story-inner p {
   margin-top: 12px;
   color: var(--font-color__gray);
 }
 
-/* ------- section 4 ------ */
-.brandList {
-}
+/* --- section 4 --- */
 .brandList h2 {
   text-align: center;
 }
@@ -120,14 +109,9 @@ main {
   position: relative;
 }
 .brandList-slide-container {
-  /* 버튼의 기준을 여기 container(swiper) 말고 brand-slide-all에 주기 위해 static으로 바꿈 */
   position: static;
-  /* 양 마진을 50씩 고정(반응형 대응) */
-  /* 살짝 작게 */
   width: calc(95% - 100px);
   margin-top: 50px;
-}
-.brandList-slide-inner {
 }
 .brandList-slide {
   border-radius: 20px;
@@ -148,25 +132,16 @@ main {
   width: 50px;
   height: 50px;
   background-color: var(--bg-color__white);
-  color: #000000;
+  color: var(--font-color__black);
 }
 
-
-
-/* media query */
+/* ===== media query ===== */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   section {
     padding: 0 40px;
     max-width: 1023px;
   }
-  /* --------- section 1 ---------- */
-  /* main slide */
-  .main-slide-container {
-  }
-  
-  /* --------- section 3 -------- */
-  
 }
 /* pc */
 @media (min-width: 1024px) {
@@ -174,16 +149,13 @@ main {
     width: 100%;
   }
   section {
-    max-width: 1280px; /* 1280 */
+    max-width: 1280px;
     padding: 0 80px;
   }
   .more-btn span {
     font-size: 1.5rem;
   }
-  
-  /* hover */
-  /* ----------- section 1 -------- */
-  /* main slide */
+  /* --- main --- */
   .main-slide-container {
     height: 600px;
   }
@@ -193,7 +165,4 @@ main {
   .visual-text p {
     font-size: 2rem;
   }
-  
-  /* --------- section 3 -------- */
-  
 }

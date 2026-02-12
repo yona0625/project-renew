@@ -77,7 +77,7 @@ header {
 .logo-img {
   width: 150px;
   height: 50px;
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   margin-left: 20px;
 }
 .logo-img a {
@@ -114,18 +114,17 @@ nav li a {
 }
 
 .all-menu {
-  background-color: #fff;
+  background-color: var(--border-color__white);
   width: 300px;
   position: fixed;
   z-index: 999;
   top: 0;
   bottom: 0;
   right: 0;
-  /* right: -100%; */
   transform: translateX(100%);
 }
 .all-menu-content {
-  /* border: 1px solid red; */
+  border: 1px solid red;
   /* margin-left: 20px; */
   margin-top: 50px;
 }
@@ -437,24 +436,24 @@ footer {
     display: none;
   }
   .all-menu li a {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 30px;
     /* 30이 한계인데 이걸 어떻게 하지? */
+  }
+  .all-menu li {
+    border: 1px solid saddlebrown;
   }
   .all-menu-content {
     margin-top: 0;
     height: 100%;
     /* 로고 넓이 + 30px만큼 밀어내기 */
-    margin: 0 180px;
-    /* background-color: red; */
+    margin: 0 190px;
   }
   .first-menu {
     display: flex;
-    gap: 20px;
     text-align: center;
     height: 100%;
-    /* height: 100%; */
-    /* background-color: red; */
+    padding: 0;
   }
   .first-menu li > a {
     transition: 0.3s;
@@ -466,15 +465,15 @@ footer {
   }
   .first-menu > li > a {
     /* 전체 메뉴를 펼쳤을 때 서브만 보여야 하니 처음 메뉴는 숨겨야 함 */
-    visibility: hidden;
+    /* visibility: hidden; */
+    visibility: visible;
     /* 근데 hidden만 하면 높이가 살아있으니, block화 해서 0으로 해야 li 공간은 유지하고 글자만 쏙 빠짐. */
-    display: block;
+    /* display: block; */
     height: 0;
+    padding: 10px 20px;
     transition: none;
   }
   .all-menu-content li {
-    /* background: yellow; */
-    /* border: 1px solid black; */
   }
   .second-menu {
     /* 아코디언때 쓴건데 빼도 동작은 함 pc라서 */
@@ -508,7 +507,7 @@ footer {
     overflow: hidden;
   }
   /* 짝수 역순 */
-  .card-item__main:nth-child(even) {
+  .card-item__main.is-reverse {
     flex-direction: row-reverse;
   }
   .card-text__main {

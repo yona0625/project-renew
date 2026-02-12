@@ -93,7 +93,6 @@ mobileNav.init();
 /* --- PC --- */
 const pcNav = {
   init: function () {
-    /* PC 헤더 -> mouseenter, mouseleave로 바꿔야 함 */
     /* click으로 하면 이벤트 리스너 영역(딱히 윈도우 한정이 아님)에서도 정확한 타겟이 필요하므로 closest을 썼었는데, 이제는 li랑 all-menu 안의 영역으로만 한정이 되니 closest은 필요 없음.(모바일은 필요할듯 함) */
     const pcNav = document.querySelectorAll("nav li");
     const pcAllMenu = document.querySelector(".all-menu");
@@ -154,7 +153,7 @@ const pcNav = {
           pcAllMenu.getAnimations().forEach((anim) => anim.cancel());
         };
       }
-      closeMenu();
+      // closeMenu();
     });
   },
 };

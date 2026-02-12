@@ -76,18 +76,22 @@ function commonSwiper(name) {
         });
       },
 
-
       /* 인덱스 테스트 용 콘솔 */
-      slideChangeTransitionEnd: function () {
-        savedIdx = this.realIndex;
-        console.log("안전하게 저장된 인덱스:", savedIdx);
-      },
+      // slideChangeTransitionEnd: function () {
+      //   savedIdx = this.realIndex;
+      //   console.log("안전하게 저장된 인덱스:", savedIdx);
+      // },
 
       resize: function () {
         this.loopFix();
         this.slideToLoop(0, 0);
         this.update();
       },
+      // breakpoints: function () {
+      //   this.loopFix();
+      //   this.slideToLoop(0, 0);
+      //   this.update();
+      // },
     },
 
     // breakpoints
@@ -99,7 +103,8 @@ function commonSwiper(name) {
         slidesPerGroup: 1,
       },
       1024: {
-        centeredSlides: true,
+        centeredSlides: false,
+        slidesPerView: 3,
       },
     },
   });
