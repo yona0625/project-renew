@@ -1,4 +1,3 @@
-
 /* 모바일 기본 스타일 */
 
 /* --- main --- */
@@ -56,8 +55,13 @@ main img {
   text-align: center;
   margin-bottom: 50px;
 }
-.story-intro__title span {
+.story-intro__title h3 {
+  font-size: 2.4rem;
+}
+.story-intro__title p {
   color: var(--font-color__gray);
+  margin-top: 0.2em;
+  font-size: 1.8rem;
 }
 .story-slide-container {
   position: static;
@@ -77,13 +81,17 @@ main img {
 }
 .recommend h2 {
   text-align: center;
+  margin-bottom: 1.5em;
 }
 .recommend-slide {
-  height: clamp(500px, 80vw, 650px);
+  height: clamp(600px, 10vw, 800px);
 }
-.recommend-slide div:first-child,
-.recommend-slide div:last-child {
+.recommend-image__swiperMain,
+.recommend-text__swiperMain {
   height: 50%;
+}
+.recommend-slide p {
+  margin-top: 0.2em;
 }
 
 /* --- section 3 --- */
@@ -91,7 +99,7 @@ main img {
   text-align: center;
 }
 .more-content h2 {
-  margin-bottom: 50px;
+  margin-bottom: 1.5em;
 }
 .content-item {
   display: flex;

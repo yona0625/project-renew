@@ -18,6 +18,16 @@ main img {
 section + section {
   margin-top: 150px;
 }
+/* common */
+.resource .card-text__main,
+.water .card-text__main {
+  min-height: clamp(300px, 25vw, 500px);
+}
+.water-title p,
+.community-title p {
+  color: var(--font-color__gray);
+}
+
 /* --- section 1 --- */
 .future-intro {
   text-align: center;
@@ -52,6 +62,7 @@ section + section {
   width: 100%;
   background-color: red;
 }
+
 /* --- section 3 --- */
 .water {
   width: 100%;
@@ -86,22 +97,20 @@ section + section {
 }
 .promo-aws .more-btn {
   border: 1px solid transparent;
+  margin-top: 1.2em;
 }
 /* --- section 4 --- */
 .community-title {
   text-align: center;
 }
-.community-title h3 {
-}
-.community-title span {
-  color: var(--font-color__gray);
-}
+
 .sustain-wrapper {
   margin-top: 50px;
 }
 .sustain-title {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 1.2em;
+  font-size: 2.4rem;
 }
 
 /* === media query === */
@@ -117,6 +126,10 @@ section + section {
   .move-btn ul {
     flex-direction: row;
   }
+  .resource .card-text__main,
+  .water .card-text__main {
+    min-height: clamp(300px, 25vw, 600px);
+  }
 }
 /* pc */
 @media (min-width: 1024px) {
@@ -130,7 +143,21 @@ section + section {
     max-width: 1280px;
     padding: 0 80px;
   }
-
+  /* common */
+  .resource .more-btn,
+  .water .more-btn,
+  .community .more-btn {
+    margin-top: 1.2em;
+  }
+  .community-title h3,
+  .water-title h3 {
+    font-size: 2.4rem;
+  }
+  .community-title p,
+  .water-title p {
+    margin-top: 0.4em;
+    font-size: 1.8rem;
+  }
   /* --- section 1 --- */
   .future-intro p {
     margin-top: 0.8em;
@@ -139,26 +166,6 @@ section + section {
     flex-direction: row;
   }
   /* --- section 3 --- */
-  .water-title h3 {
-    font-size: 2.4rem;
-  }
-  .water-title span {
-    font-size: 1.8rem;
-  }
-  .water-title h3 {
-    font-size: 2.4rem;
-  }
-  .water-title span {
-    font-size: 1.8rem;
-  }
+
   /* --- section 4 ---*/
-  .community-title h3 {
-    font-size: 2.4rem;
-  }
-  .community-title span {
-    font-size: 1.8rem;
-  }
-  .sustain-title {
-    font-size: 1.8rem;
-  }
 }

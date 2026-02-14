@@ -17,10 +17,10 @@
 .more-btn {
   background-color: var(--bg-color__white);
   /* background-color: red; */
+  margin-top: auto;
   color: #333333;
   padding: 10px 45px;
   display: inline-flex;
-  margin-top: 30px;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
@@ -51,6 +51,7 @@
 }
 section {
   width: 100%;
+  min-width: 375px;
   max-width: 767px;
   margin: 0 auto;
   padding: 0 20px;
@@ -164,12 +165,9 @@ nav li a {
   font-size: 15px;
   color: #4a4a4a;
 }
-.second-menu.active {
-}
 .exit-btn {
   width: 50px;
   height: 50px;
-  background-color: blue;
   position: absolute;
   right: 0;
   top: 0;
@@ -189,7 +187,7 @@ nav li a {
 }
 .trigger span {
   width: 100%;
-  background-color: #000000;
+  background-color: var(--font-color__black);
   height: 2px;
   position: absolute;
   transition: 0.3s;
@@ -225,7 +223,6 @@ nav li a {
   flex-direction: column;
   border: 1px solid var(--border-color__white);
   border-radius: 20px;
-  height: auto;
   overflow: hidden;
 }
 
@@ -234,13 +231,15 @@ nav li a {
 }
 .card-image__main {
   aspect-ratio: 1 / 1;
-  /* flex-shrink: 1; */
   min-height: 0;
 }
 .card-text__main {
   padding: 30px 20px 30px 20px;
   box-sizing: border-box;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: clamp(260px, 25vw, 400px);
 }
 .card-image__main,
 .card-text__main {
@@ -253,13 +252,19 @@ nav li a {
   object-fit: cover;
 }
 .card-text__main h3 {
-  margin-bottom: 10px;
+  font-size: 2rem;
 }
 .card-text__main p {
-  line-height: 1.6;
+  margin-top: 0.4em;
+  font-size: 1.5rem;
+  line-height: 1.5;
   color: var(--font-color__gray);
+  /* 텍스트가 많아도 버튼을 1.2em만큼 밑으로 밀어내기 위해 */
+  margin-bottom: 1.2em;
 }
-
+.card-text__main .more-btn {
+  /* margin-top: auto; */
+}
 /* ------- footer ------- */
 
 footer {
@@ -374,19 +379,13 @@ footer {
   }
   .card-text__main {
     padding: 50px 40px;
-    /* background-color: blue; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
   }
   .card-text__main > div {
     width: 100%;
     text-align: center;
   }
   .card-text__main .more-btn {
-    margin-top: 30px;
-    width: fit-content;
+    /* margin-top: 30px; */
     /* position: absolute; */
     /* bottom: 0; */
     width: 100%;
@@ -513,8 +512,6 @@ footer {
   .card-text__main {
     padding: 90px 40px;
     text-align: left;
-    display: flex;
-    align-items: center;
     justify-content: center;
   }
   .card-text__main h3 {
@@ -522,8 +519,10 @@ footer {
   }
   .card-text__main p {
     font-size: 1.8rem;
+    margin-top: 0.4em;
   }
   .card-text__main .more-btn {
+    /* margin-top: 2em; */
     width: fit-content;
   }
   /* footer */

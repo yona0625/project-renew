@@ -153,7 +153,7 @@ const pcNav = {
           pcAllMenu.getAnimations().forEach((anim) => anim.cancel());
         };
       }
-      // closeMenu();
+      closeMenu();
     });
   },
 };

@@ -37,7 +37,7 @@ function commonSwiper(name) {
   /* ${name}으로 받아오는 slideContainer에 적용해야 함 */
   const newSwiper = new Swiper(slideContainer, {
     slidesPerView: 3,
-    spaceBetween: 20,
+    spaceBetween: 15,
     loop: true,
     observer: true,
     observeParents: true,
