@@ -19,9 +19,40 @@ preventMoveTop.init();
 /* ======================= nav ======================= */
 /* --- 모바일~타블렛 --- */
 const mobileNav = {
+  /* pc일 때 모바일 잔상이 안 남도록 (모바일 -> pc순이면 필요) */
+  resetForPC: function () {
+    const mobileMenu = document.querySelector(".all-menu");
+    const mobileSubMenu = document.querySelectorAll(".second-menu");
+
+    /* mobileMenu가 없을 시 안전장치 */
+    if (!mobileMenu) return;
+
+    /* 열려있을 때 pc로 이동하면 active 제거 -> 창이 닫히게 함 */
+    mobileMenu.classList.remove("active");
+    /* 모바일의 transform을 지움(더 확실하게) */
+    /* = "": 인라인 스타일로 새겨진 걸 삭제 */
+    mobileMenu.style.transform = "";
+    /* ★★★ 금지된 본문 스크롤을 pc에서 해제 */
+    document.body.style.overflow = "";
+
+    /* 아코디언의 상위, 하위 전부 포함해서 싹 cancel로 지움 */
+    /* cancel: 애니메이션에 관해 삭제 */
+    mobileMenu.getAnimations().forEach((anim) => anim.cancel());
+    mobileSubMenu.forEach((sub) => {
+      sub.getAnimations().forEach((anim) => anim.cancel());
+      sub.style.maxHeight = "";
+    });
+  },
   init: function () {
     /* 변수 불러오기 */
     const mobileMenu = document.querySelector(".all-menu");
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1023) {
+        this.resetForPC(); // 객체 내부 함수 호출
+      }
+    });
+
     window.addEventListener("click", (e) => {
       /* 모바일 전용 */
       if (window.innerWidth > 1023) return;
@@ -43,6 +74,8 @@ const mobileNav = {
       }
       /* 함수로 분리 */
       function openMenu() {
+        // 메뉴가 열릴 때 본문 스크롤 금지
+        document.body.style.overflow = "hidden";
         const openFix = mobileMenu.animate(
           [
             {
@@ -96,12 +129,20 @@ const pcNav = {
     /* click으로 하면 이벤트 리스너 영역(딱히 윈도우 한정이 아님)에서도 정확한 타겟이 필요하므로 closest을 썼었는데, 이제는 li랑 all-menu 안의 영역으로만 한정이 되니 closest은 필요 없음.(모바일은 필요할듯 함) */
     const pcNav = document.querySelectorAll("nav li");
     const pcAllMenu = document.querySelector(".all-menu");
+    /* header 추가 */
+    const pcHeader = document.querySelector("header");
 
     /* nav 메뉴 접근 시 */
     pcNav.forEach((item) => {
       item.addEventListener("mouseenter", function () {
         /* mouseenter/leave로 바뀌면서 인식 영역이 갈리므로 enter, leave 부분에 각자 1024 이하 구문을 넣어주는 게 안전함. */
-        if (window.innerWidth < 1024) return;
+        /* 1024 미만이거나, 이미 메뉴가 열려있다면 중단(다른 대표메뉴를 커서에 대어도 열리는 게 계속 발생하지 않도록) */
+        if (
+          window.innerWidth < 1024 ||
+          pcAllMenu.classList.contains("active")
+        ) {
+          return;
+        }
         function openMenu() {
           pcAllMenu.classList.add("active");
           pcAllMenu.animate(
@@ -124,7 +165,8 @@ const pcNav = {
       });
     });
     /* 전체 메뉴 떠날 시 */
-    pcAllMenu.addEventListener("mouseleave", function () {
+    /* allmenu -> header로 변경, allmenu로 잡아 버리면 allmenu를 거치지 않고 header에서 커서를 떼었을 때 메뉴가 계속 안 닫힘 */
+    pcHeader.addEventListener("mouseleave", function () {
       if (window.innerWidth < 1024) return;
       function closeMenu() {
         /* - 만약 창이 열린 상태라면
