@@ -129,6 +129,10 @@ const pcNav = {
     /* click으로 하면 이벤트 리스너 영역(딱히 윈도우 한정이 아님)에서도 정확한 타겟이 필요하므로 closest을 썼었는데, 이제는 li랑 all-menu 안의 영역으로만 한정이 되니 closest은 필요 없음.(모바일은 필요할듯 함) */
     const pcNav = document.querySelectorAll("nav li");
     const pcAllMenu = document.querySelector(".all-menu");
+    /* 애니메이션 리셋 */
+    const resetAnimation = () => {
+      pcAllMenu.getAnimations().forEach((anim) => anim.cancel());
+    };
     /* header 추가 */
     const pcHeader = document.querySelector("header");
 
@@ -137,13 +141,17 @@ const pcNav = {
       item.addEventListener("mouseenter", function () {
         /* mouseenter/leave로 바뀌면서 인식 영역이 갈리므로 enter, leave 부분에 각자 1024 이하 구문을 넣어주는 게 안전함. */
         /* 1024 미만이거나, 이미 메뉴가 열려있다면 중단(다른 대표메뉴를 커서에 대어도 열리는 게 계속 발생하지 않도록) */
-        if (
-          window.innerWidth < 1024 ||
-          pcAllMenu.classList.contains("active")
-        ) {
-          return;
-        }
+        
+        if (window.innerWidth < 1024) {
+            return;
+          } 
+        /* 반드시 if문을 거친 후에 리셋이 이루어져야만 함. */
+        resetAnimation();
         function openMenu() {
+          /* active 검사를 열렸을 때 하는 것으로 이동 */
+          if (pcAllMenu.classList.contains("active")) {
+            return;
+          }
           pcAllMenu.classList.add("active");
           pcAllMenu.animate(
             [
@@ -155,7 +163,7 @@ const pcNav = {
               },
             ],
             {
-              duration: 500,
+              duration: 300,
               easing: "ease-out",
               fill: "forwards",
             },
@@ -181,7 +189,7 @@ const pcNav = {
             },
           ],
           {
-            duration: 500,
+            duration: 300,
             easing: "ease-out",
             fill: "forwards",
           },
@@ -192,7 +200,7 @@ const pcNav = {
         closeFix.onfinish = () => {
           pcAllMenu.classList.remove("active");
           /* 마찬가지로 닫을 때 cancel */
-          pcAllMenu.getAnimations().forEach((anim) => anim.cancel());
+          resetAnimation();
         };
       }
       closeMenu();

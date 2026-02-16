@@ -12,45 +12,6 @@ main img {
 }
 
 /* --- section 1 ---  */
-.story-slide {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--bg-color__white);
-}
-.story-slide .more-btn {
-  width: fit-content;
-  left: auto;
-  transform: none;
-}
-.story-image__swiperSub,
-.story-text__swiperSub {
-  flex: 50%;
-  border-radius: 20px;
-  overflow: hidden;
-}
-.story-text__swiperSub p {
-  color: var(--font-color__gray);
-}
-.story-image__swiperSub {
-  aspect-ratio: 1 / 1;
-}
-.story-text__swiperSub {
-  height: auto;
-  padding: 30px 40px 30px 40px;
-  min-height: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.story-image__swiperSub img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  will-change: contents;
-}
 .story-intro__title {
   text-align: center;
   margin-bottom: 50px;
@@ -64,14 +25,64 @@ main img {
   font-size: 1.8rem;
 }
 .story-slide-container {
-  position: static;
+  position: relative;
+}
+/* pagination */
+.story-slide-container .story-pagination {
+  position: absolute;
+  /* 모바일/태블릿에서는 이미지가 상단(flex-direction: column)에 있으므로 */
+  /* 이미지 높이에 맞춰 위쪽으로 끌어올립니다. */
+  top: auto;
+  left: 50%;
+  width: auto;
+  z-index: 10; /* 이미지보다 위에 보이게 설정 */
+  background-color: yellow;
+  width: 100%;
+}
+.story-slide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color__white);
+}
+.story-image__swiperSub,
+.story-text__swiperSub {
+  flex: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.story-text__swiperSub p {
+  color: var(--font-color__gray);
+  margin-top: 0.4em;
+}
+.story-image__swiperSub {
+  aspect-ratio: 1 / 1;
+}
+.story-text__swiperSub {
+  height: auto;
+  padding: 30px 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.story-image__swiperSub img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.story-slideAll .more-btn {
+  width: 100%;
+  margin-top: 1.2em;
+}
+.story-slide-container {
 }
 .story-slideAll {
-  position: relative;
-  padding-bottom: 40px;
 }
+
 .story-pagination {
-  position: absolute;
 }
 
 /* --- section 2 --- */
@@ -162,10 +173,6 @@ main img {
   }
 
   /* --- section 1 --- */
-  .story-slide {
-    flex-direction: row;
-    aspect-ratio: 2 / 1;
-  }
 
   /* --- section 2 --- */
   .recommend-slide-wrapper {
@@ -226,6 +233,13 @@ main img {
   .story-slide-container {
     position: relative;
   }
+  .story-slideAll .more-btn {
+    width: fit-content;
+  }
+  .story-image__swiperSub {
+    /* background-color: blue; */
+    position: relative;
+  }
   .story-slide-container .story-btn-next,
   .story-slide-container .story-btn-prev {
     position: absolute;
@@ -244,30 +258,31 @@ main img {
   }
   /* pagination */
   .story-slide-container .story-pagination {
-    width: fit-content;
     position: absolute;
-    /* 기존 swiper 속성 해제해야 함. top, left 해제 */
-    left: auto;
+    /* top 초기화(기본 swiper 상쇄) */
     top: auto;
+    /* 이미지 위치에 맞춰 0부터 시작 -> 50%으로 정확히 정렬 */
+    left: 0;
+    width: 50%;
+
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 30px;
-    right: 100px;
-    bottom: 30px;
     font-size: 18px;
-    gap: 5px;
   }
   .story-slide-container .swiper-pagination-current {
     color: var(--active-color__red);
     font-weight: 600;
   }
-  .story-slide-container .story-pagination .story-image__swiperSub,
+  .story-image__swiperSub,
   .story-text__swiperSub {
     width: 50%;
   }
   .story-text__swiperSub {
     text-align: left;
     align-items: stretch;
+    padding: 0 50px;
   }
   .story-text__swiperSub h3 {
     font-size: 2.4rem;

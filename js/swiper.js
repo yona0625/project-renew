@@ -79,7 +79,7 @@ const story_slide = new Swiper(".story-slide-container", {
     type: "bullets",
     renderBullet: function (index, className) {
       /* 똑같이 common-dot으로 제어하기 위해 추가 */
-      return `<span class="${className} brandSlide2-dot common-dot"></span>`;
+      return `<span class="${className} storySlide-dot common-dot"></span>`;
     },
   },
   breakpoints: {
