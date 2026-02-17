@@ -1,3 +1,10 @@
+/* tab 무한 루프 해제 관련 */
+.swiper-slide:not(.swiper-slide-visible) a,
+.swiper-slide:not(.swiper-slide-visible) button,
+.swiper-slide:not(.swiper-slide-visible) input {
+  visibility: hidden;
+}
+
 /* swiper pagination dot */
 .common-dot {
   /* 기본 swiper dot에 0.2정도로 되어있기에 opacity: 1로 해야 함. */

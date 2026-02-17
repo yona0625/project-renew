@@ -30,20 +30,23 @@ main img {
 /* pagination */
 .story-slide-container .story-pagination {
   position: absolute;
-  /* 모바일/태블릿에서는 이미지가 상단(flex-direction: column)에 있으므로 */
-  /* 이미지 높이에 맞춰 위쪽으로 끌어올립니다. */
-  top: auto;
-  left: 50%;
-  width: auto;
-  z-index: 10; /* 이미지보다 위에 보이게 설정 */
-  background-color: yellow;
-  width: 100%;
+  z-index: 10;
+  bottom: auto;
+  top: 0;
+  left: 0;
+  /* ★ top과 height에 쓰는 %는 부모 요소의 높이를 기준으로 계산하는데, 
+  margin/padding은 부모 요소의 '너비'를 기준으로 계산함.
+  이미지 영역에 페이지네이션을 배치할 건데, 이미지가 1 / 1 이므로 margin으로 100%를 주면 이미지의 맨 밑에 붙게 됨. 이 상태에서 calc로 살짝 올리면 fluid 반응형에서도 위치가 고정된다. (40px로 살짝 조정) */
+  margin-top: calc(100% - 40px);
+  /* background-color: green; */
+  
 }
 .story-slide {
   width: 100%;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color__white);
+  position: relative;
 }
 .story-image__swiperSub,
 .story-text__swiperSub {
@@ -150,11 +153,13 @@ main img {
 }
 .card-text__sub3 p {
   color: var(--font-color__gray);
+  margin-top: 0.4em;
 }
 .card-text__sub3 .more-btn {
   border: 1px solid transparent;
   border: 1px solid var(--border-color__gray);
   gap: 5px;
+  margin-top: 1.2em;
 }
 .card-text__sub3 .more-btn svg {
   width: 15px;
@@ -252,6 +257,7 @@ main img {
     height: 30px;
     /* 잘 안 눌리는 걸 방지하기 위해 5 부여 */
     z-index: 5;
+    color: var(--font-color__black);
   }
   .story-slide-container .story-btn-prev {
     right: 60px;
@@ -260,16 +266,15 @@ main img {
   .story-slide-container .story-pagination {
     position: absolute;
     /* top 초기화(기본 swiper 상쇄) */
-    top: auto;
     /* 이미지 위치에 맞춰 0부터 시작 -> 50%으로 정확히 정렬 */
+    bottom: auto;
+    z-index: 10;
     left: 0;
+    top: 0;
     width: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    font-size: 18px;
+    /* 모바일에서는 1 / 1이니까 100%를 주었는데, pc는 2 / 1 이니 50%을 줘야 함. */
+    margin-top: calc(50% - 40px);
+    /* background-color: yellow; */
   }
   .story-slide-container .swiper-pagination-current {
     color: var(--active-color__red);
@@ -325,12 +330,13 @@ main img {
     width: fit-content;
     left: auto;
     transform: none;
+    margin-top: 1.5em;
   }
   .content-item .card-text__sub3 h3 {
     font-size: 2rem;
   }
   .content-item .card-text__sub3 p {
     font-size: 1.6rem;
-    margin-top: 1.2rem;
+    margin-top: 0.4rem;
   }
 }

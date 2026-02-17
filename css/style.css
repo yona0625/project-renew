@@ -32,9 +32,7 @@ main {
 
 .visual-btn-prev,
 .visual-btn-next {
-  color: var(--font-color__white);
-  width: 60px;
-  height: 60px;
+  display: none;
 }
 .visual-pagination {
   transform: translateY(-8px);
@@ -75,7 +73,7 @@ main {
 .feature-inner .more-btn,
 .visual-slide .more-btn,
 .promo-story-inner .more-btn {
- margin-top: 1.2em;
+  margin-top: 1.2em;
 }
 /* --- section 1 --- */
 .feature-inner {
@@ -172,8 +170,22 @@ main {
     font-size: 1.5rem;
   }
   /* --- main --- */
-  .main-slide-container {
+  .visual-slide-container {
     height: 600px;
+  }
+  .visual-btn-prev,
+  .visual-btn-next {
+    color: var(--font-color__white);
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    display: block;
+  }
+  .visual-slide-container .visual-btn-prev {
+    left: 20px;
+  }
+  .visual-slide-container .visual-btn-prev {
+    right: 20px;
   }
   .visual-text h1 {
     font-size: 4.5rem;

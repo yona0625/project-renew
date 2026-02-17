@@ -39,6 +39,8 @@ function commonSwiper(name) {
     slidesPerView: 3,
     spaceBetween: 15,
     loop: true,
+    /* tab 이동 시 무한 갇힘 해제 */
+    watchSlidesProgress: true,
     observer: true,
     observeParents: true,
 

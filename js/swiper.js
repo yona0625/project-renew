@@ -23,17 +23,14 @@ const mainSwiper = new Swiper(".visual-slide-container", {
     prevEl: ".visual-btn-prev",
   },
   breakpoints: {
-    360: {
-      navigation: {
-        enabled: false,
-      },
-    },
+  
   },
   on: {
     resize: function () {
       this.loopFix();
       this.slideToLoop(0, 0);
       this.update();
+      
     },
   },
 });
@@ -84,6 +81,7 @@ const story_slide = new Swiper(".story-slide-container", {
   },
   breakpoints: {
     1024: {
+      /* css 제어로 바꿔볼 것 */
       navigation: {
         enabled: true,
       },
