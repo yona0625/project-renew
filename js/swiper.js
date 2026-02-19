@@ -22,24 +22,24 @@ const mainSwiper = new Swiper(".visual-slide-container", {
     nextEl: ".visual-btn-next",
     prevEl: ".visual-btn-prev",
   },
-  breakpoints: {
-  
-  },
+  breakpoints: {},
   on: {
     resize: function () {
       this.loopFix();
       this.slideToLoop(0, 0);
       this.update();
-      
     },
   },
 });
 
 /* [3] 서브 슬라이드(1): brandList */
 const brandList_slide = new Swiper(".brandList-slide-container", {
-  slidesPerView: 3,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   spaceBetween: 20,
   loop: false,
+  /* tab 이동 시 무한 갇힘 해제 */
+  watchSlidesProgress: true,
 
   navigation: {
     nextEl: ".brandList-btn-next",
@@ -47,12 +47,13 @@ const brandList_slide = new Swiper(".brandList-slide-container", {
   },
 
   breakpoints: {
-    360: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
     768: {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+    },
+    1024: {
       slidesPerView: 3,
+      slidesPerGroup: 1,
     },
   },
 });

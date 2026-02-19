@@ -1,15 +1,5 @@
 /* 모바일 기본 스타일 */
 
-/* --- main --- */
-main {
-  width: 100%;
-  height: 600px;
-}
-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* --- section 1 ---  */
 .story-intro__title {
@@ -31,15 +21,14 @@ main img {
 .story-slide-container .story-pagination {
   position: absolute;
   z-index: 10;
-  bottom: auto;
   top: 0;
   left: 0;
+  bottom: auto;
   /* ★ top과 height에 쓰는 %는 부모 요소의 높이를 기준으로 계산하는데, 
   margin/padding은 부모 요소의 '너비'를 기준으로 계산함.
   이미지 영역에 페이지네이션을 배치할 건데, 이미지가 1 / 1 이므로 margin으로 100%를 주면 이미지의 맨 밑에 붙게 됨. 이 상태에서 calc로 살짝 올리면 fluid 반응형에서도 위치가 고정된다. (40px로 살짝 조정) */
   margin-top: calc(100% - 40px);
   /* background-color: green; */
-  
 }
 .story-slide {
   width: 100%;
@@ -54,10 +43,6 @@ main img {
   border-radius: 20px;
   overflow: hidden;
 }
-.story-text__swiperSub p {
-  color: var(--font-color__gray);
-  margin-top: 0.4em;
-}
 .story-image__swiperSub {
   aspect-ratio: 1 / 1;
 }
@@ -71,6 +56,10 @@ main img {
   align-items: center;
   text-align: center;
 }
+.story-text__swiperSub p {
+  color: var(--font-color__gray);
+  margin-top: 0.4em;
+}
 .story-image__swiperSub img {
   width: 100%;
   height: 100%;
@@ -79,13 +68,6 @@ main img {
 .story-slideAll .more-btn {
   width: 100%;
   margin-top: 1.2em;
-}
-.story-slide-container {
-}
-.story-slideAll {
-}
-
-.story-pagination {
 }
 
 /* --- section 2 --- */
@@ -117,11 +99,11 @@ main img {
 }
 .content-item {
   display: flex;
+  flex-direction: column;
   width: 100%;
   border: 1px solid var(--border-color__white);
   border-radius: 20px;
   overflow: hidden;
-  flex-direction: column;
 }
 .content-item + .content-item {
   margin-top: 20px;
@@ -156,7 +138,6 @@ main img {
   margin-top: 0.4em;
 }
 .card-text__sub3 .more-btn {
-  border: 1px solid transparent;
   border: 1px solid var(--border-color__gray);
   gap: 5px;
   margin-top: 1.2em;
@@ -176,8 +157,6 @@ main img {
     padding: 0 40px;
     max-width: 1023px;
   }
-
-  /* --- section 1 --- */
 
   /* --- section 2 --- */
   .recommend-slide-wrapper {
@@ -231,19 +210,35 @@ main img {
     font-size: 1.2em;
     font-size: 1.8rem;
   }
+  .story-slide-container {
+    position: relative;
+  }
   .story-slide {
     flex-direction: row;
     aspect-ratio: 2 / 1;
   }
-  .story-slide-container {
-    position: relative;
-  }
-  .story-slideAll .more-btn {
-    width: fit-content;
+  .story-image__swiperSub,
+  .story-text__swiperSub {
+    width: 50%;
   }
   .story-image__swiperSub {
     /* background-color: blue; */
     position: relative;
+  }
+  .story-text__swiperSub {
+    text-align: left;
+    align-items: stretch;
+    padding: 0 50px;
+  }
+  .story-text__swiperSub h3 {
+    font-size: 2.4rem;
+  }
+  .story-text__swiperSub p {
+    font-size: 1.8rem;
+    margin-top: 1.2rem;
+  }
+  .story-slideAll .more-btn {
+    width: fit-content;
   }
   .story-slide-container .story-btn-next,
   .story-slide-container .story-btn-prev {
@@ -274,33 +269,21 @@ main img {
     width: 50%;
     /* 모바일에서는 1 / 1이니까 100%를 주었는데, pc는 2 / 1 이니 50%을 줘야 함. */
     margin-top: calc(50% - 40px);
-    /* background-color: yellow; */
   }
   .story-slide-container .swiper-pagination-current {
     color: var(--active-color__red);
     font-weight: 600;
   }
-  .story-image__swiperSub,
-  .story-text__swiperSub {
-    width: 50%;
-  }
-  .story-text__swiperSub {
-    text-align: left;
-    align-items: stretch;
-    padding: 0 50px;
-  }
-  .story-text__swiperSub h3 {
-    font-size: 2.4rem;
-  }
-  .story-text__swiperSub p {
-    font-size: 1.8rem;
-    margin-top: 1.2rem;
-  }
+
   /* --- section 2 --- */
   .recommend-slide-container {
     width: 100%;
     margin-left: 0;
     left: auto;
+  }
+  .recommend-slide {
+    /* 미세 변경 */
+    height: clamp(480px, 45vw, 550px);
   }
   .recommend-slide div:first-child {
     height: 52%;
@@ -308,13 +291,10 @@ main img {
   .recommend-slide div:last-child {
     height: 48%;
   }
-  .reco-text p {
-    margin-top: 0.5em;
+  .recommend-text__swiperMain p {
+    margin-top: 0.4em;
   }
-  .recommend-slide {
-    /* 미세 변경 */
-    height: clamp(480px, 45vw, 550px);
-  }
+
   /* --- section 3 --- */
   .more-content .content-item {
     max-height: 300px;

@@ -1,0 +1,186 @@
+/* 모바일 기본 스타일 */
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* --- section 1 --- */
+.brandAll-title {
+  text-align: center;
+  margin-bottom: 50px;
+  p {
+    color: var(--font-color__gray);
+  }
+  @media (min-width: 1024px) {
+    h3 {
+      font-size: 2.4rem;
+    }
+    p {
+      font-size: 1.8rem;
+      margin-top: 0.2em;
+    }
+  }
+}
+.brand-tab-menu {
+  width: 100%;
+  margin-bottom: 50px;
+
+  /* pc */
+  @media (min-width: 1024px) {
+    @include flex-center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border: 1px solid transparent;
+  }
+  /* li로 시작하는 것 안에 넣으면 안 됨(주의) */
+  /* 작동하면 '나머지 li'를 다 이렇게 작동해 */
+  &.active li {
+    max-height: 200px;
+    /* 펼쳐질 때 여백이 있어야 깔끔함 */
+    opacity: 1;
+  }
+  li {
+    text-align: left;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    position: relative;
+
+    /* pc */
+    @media (min-width: 1024px) {
+    //   height: 50px;
+      max-height: none;
+      opacity: 1;
+      text-align: center;
+      min-width: 150px;
+      border-radius: 30px;
+      padding: 0 12px;
+      border: 1px solid var(--border-color__white);
+    }
+    a {
+      display: block;
+      padding: 10px;
+      margin-left: 5px;
+      transition: 0.3s;
+      color: var(--border-color__gray);
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    /* li '이거 하나만' 작동 */
+    &.active {
+      /* ★ max로 주어야지 그보다 높이가 작아도 딱 알맞게 컴이 계산함. (auto는 transition 안 먹힘) */
+      max-height: 80px;
+      opacity: 1;
+      border: 1px solid var(--border-color__white);
+      a {
+        color: var(--active-color__red);
+        font-weight: 500;
+      }
+      /* svg */
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &::after {
+      content: "\f105";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      color: var(--font-color__black);
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+
+      /* pc */
+      @media (min-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+}
+/* tab */
+.brand-item {
+  display: grid;
+  /* 각 tab 묶음이 아니라 전체 영역에 그리드-배치를 해서 1줄에 2개씩 균등하게 배치되지 않는 경우를 해결 */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.brand-tab {
+  background-color: var(--bg-color__white);
+  display: none;
+  & + & {
+    margin-top: 20px;
+  }
+  &.active {
+    /* 여기서 contents를 주어야 하는데, 왜냐면 tab끼리 나눠놓은 걸 합쳤을 때 생기는 빈 공간을 빠짐없이 채워야 하기 때문 */
+    display: contents;
+    /* content를 준 순간부터 레이아웃이 벗어나므로 center는 불필요 */
+    /* justify-content: center;
+    align-items: center; */
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .item {
+    @include flex-center;
+    border: 1px solid var(--border-color__white);
+    background-color: var(--bg-color__white);
+    border-radius: 20px;
+    aspect-ratio: 1 / 1;
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+}
+
+/* === media query === */
+/* tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  main {
+    height: 500px;
+  }
+  section {
+    padding: 0 40px;
+    max-width: 1023px;
+  }
+  /* tab */
+  .brand-tab {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .brand-tab-menu li {
+    height: 50px;
+  }
+}
+/* pc */
+@media (min-width: 1024px) {
+  #container {
+    width: 100%;
+  }
+  main {
+    height: 500px;
+  }
+  section {
+    max-width: 1280px;
+    padding: 0 80px;
+  }
+}

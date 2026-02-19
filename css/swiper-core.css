@@ -1,9 +1,5 @@
-/* tab 무한 루프 해제 관련 */
-.swiper-slide:not(.swiper-slide-visible) a,
-.swiper-slide:not(.swiper-slide-visible) button,
-.swiper-slide:not(.swiper-slide-visible) input {
-  visibility: hidden;
-}
+/* --- swiper tab 이동 무한루프 해제 --- */
+/* 삭제함. */
 
 /* swiper pagination dot */
 .common-dot {

@@ -1,22 +1,12 @@
 /* 모바일 기본 스타일 */
 
-/* --- main --- */
-main {
-  width: 100%;
-  height: 600px;
-}
-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 /* --- section 1 --- */
 .brandAll-title {
   text-align: center;
   margin-bottom: 50px;
 }
-.brandAll-title span {
+.brandAll-title p {
   color: var(--font-color__gray);
 }
 .brand-tab-menu {
@@ -100,11 +90,25 @@ main img {
   align-items: center;
   aspect-ratio: 1 / 1;
 }
+.brand-tab .item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.brand-tab .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 .brand-tab.active {
   /* 여기서 contents를 주어야 하는데, 왜냐면 tab끼리 나눠놓은 걸 합쳤을 때 생기는 빈 공간을 빠짐없이 채워야 하기 때문 */
   display: contents;
-  justify-content: center;
-  align-items: center;
+  /* content를 준 순간부터 레이아웃이 벗어나므로 center는 불필요 */
+  /* justify-content: center;
+  align-items: center; */
 }
 
 /* === media query === */
@@ -112,8 +116,6 @@ main img {
 @media (min-width: 768px) and (max-width: 1023px) {
   main {
     height: 500px;
-  }
-  main img {
   }
   section {
     padding: 0 40px;
@@ -124,7 +126,7 @@ main img {
     grid-template-columns: repeat(3, 1fr);
   }
   .brand-tab-menu li {
-    height: 50px;
+    height: 50px; /* ok(scss) */
   }
 }
 /* pc */
@@ -141,17 +143,17 @@ main img {
   }
   /* tab */
   .brand-item {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* ok */
   }
   .brandAll-title h3 {
-    font-size: 2.4rem;
+    font-size: 2.4rem; /* ok */
   }
-  .brandAll-title span {
+  .brandAll-title p {
     font-size: 1.8rem;
-    margin-top: 1.2em;
+    margin-top: 0.2em; /* ok */
   }
   .brand-tab {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* ok */
   }
   .brand-tab-menu {
     display: flex;
@@ -159,7 +161,7 @@ main img {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
-    border: 1px solid transparent;
+    border: 1px solid transparent; /* ok */
   }
   .brand-tab-menu li {
     max-height: none;
@@ -168,10 +170,10 @@ main img {
     min-width: 150px;
     border-radius: 30px;
     padding: 0 12px;
-    border: 1px solid #e5e5e5;
+    border: 1px solid var(--border-color__white); /* ok */
   }
   /* svg */
   .brand-tab-menu li::after {
-    display: none;
+    display: none; /* ok */
   }
 }
