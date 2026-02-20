@@ -8,6 +8,9 @@
 .brandAll-title p {
   color: var(--font-color__gray);
 }
+.brandAll-title {
+  /* pc */
+}
 @media (min-width: 1024px) {
   .brandAll-title h3 {
     font-size: 2.4rem;
@@ -21,19 +24,6 @@
 .brand-tab-menu {
   width: 100%;
   margin-bottom: 50px;
-  /* pc */
-}
-@media (min-width: 1024px) {
-  .brand-tab-menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    border: 1px solid transparent;
-  }
-}
-.brand-tab-menu {
   /* li로 시작하는 것 안에 넣으면 안 됨(주의) */
   /* 작동하면 '나머지 li'를 다 이렇게 작동해 */
 }
@@ -112,6 +102,19 @@
     display: none;
   }
 }
+.brand-tab-menu {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .brand-tab-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    border: 1px solid transparent;
+  }
+}
 
 /* tab */
 .brand-item {
@@ -119,6 +122,7 @@
   /* 각 tab 묶음이 아니라 전체 영역에 그리드-배치를 해서 1줄에 2개씩 균등하게 배치되지 않는 경우를 해결 */
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  /* pc */
 }
 @media (min-width: 1024px) {
   .brand-item {
@@ -139,11 +143,6 @@
   /* content를 준 순간부터 레이아웃이 벗어나므로 center는 불필요 */
   /* justify-content: center;
   align-items: center; */
-}
-@media (min-width: 1024px) {
-  .brand-tab {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
 .brand-tab .item {
   display: flex;
@@ -167,6 +166,14 @@
   -o-object-fit: contain;
      object-fit: contain;
   display: block;
+}
+.brand-tab {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .brand-tab {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* === media query === */

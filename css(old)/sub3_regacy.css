@@ -1,6 +1,5 @@
 /* 모바일 기본 스타일 */
 
-
 /* --- section 1 ---  */
 .story-intro__title {
   text-align: center;
@@ -160,34 +159,34 @@
 
   /* --- section 2 --- */
   .recommend-slide-wrapper {
-    margin-top: 50px;
+    margin-top: 50px; /* ok */
   }
   .recommend-slide {
-    height: clamp(640px, 70vw, 720px);
+    height: clamp(640px, 70vw, 720px); /* ok */
   }
   .recommend-slide div:first-child {
-    height: 60%;
+    height: 60%; /* ok */
   }
   .recommend-slide div:last-child {
-    height: 40%;
+    height: 40%; /* ok */
   }
 
   /* --- section 3 --- */
   .content-item {
     aspect-ratio: 4 / 1;
     flex-direction: row;
-    min-height: 200px;
+    min-height: 200px; /* ok */
   }
   .content-item + .content-item {
-    margin-top: 20px;
+    margin-top: 20px; /* ok */
   }
   .content-item .card-text__sub3 {
-    text-align: left;
+    text-align: left; /* ok */
   }
   .card-text__sub3 .more-btn {
     width: fit-content;
     left: auto;
-    transform: none;
+    transform: none; /* ok */
   }
 }
 /* pc */
@@ -204,41 +203,41 @@
   }
   /* --- section 1 --- */
   .story-intro__title h3 {
-    font-size: 2.4rem;
+    font-size: 2.4rem; /* ok */
   }
   .story-intro__title span {
     font-size: 1.2em;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* ok */
   }
   .story-slide-container {
-    position: relative;
+    position: relative; /* ok */
   }
   .story-slide {
     flex-direction: row;
-    aspect-ratio: 2 / 1;
+    aspect-ratio: 2 / 1; /* ok */
   }
   .story-image__swiperSub,
   .story-text__swiperSub {
-    width: 50%;
+    width: 50%; /* ok */
   }
   .story-image__swiperSub {
     /* background-color: blue; */
-    position: relative;
+    position: relative; /* ok */
   }
   .story-text__swiperSub {
     text-align: left;
     align-items: stretch;
-    padding: 0 50px;
+    padding: 0 50px; /* ok */
   }
   .story-text__swiperSub h3 {
-    font-size: 2.4rem;
+    font-size: 2.4rem; /* ok */
   }
   .story-text__swiperSub p {
     font-size: 1.8rem;
-    margin-top: 1.2rem;
+    margin-top: 1.2rem; /* ok */
   }
   .story-slideAll .more-btn {
-    width: fit-content;
+    width: fit-content; /* ok */
   }
   .story-slide-container .story-btn-next,
   .story-slide-container .story-btn-prev {
@@ -252,10 +251,10 @@
     height: 30px;
     /* 잘 안 눌리는 걸 방지하기 위해 5 부여 */
     z-index: 5;
-    color: var(--font-color__black);
+    color: var(--font-color__black); /* ok */
   }
   .story-slide-container .story-btn-prev {
-    right: 60px;
+    right: 60px; /* ok */
   }
   /* pagination */
   .story-slide-container .story-pagination {
@@ -268,55 +267,55 @@
     top: 0;
     width: 50%;
     /* 모바일에서는 1 / 1이니까 100%를 주었는데, pc는 2 / 1 이니 50%을 줘야 함. */
-    margin-top: calc(50% - 40px);
+    margin-top: calc(50% - 40px); /* ok */
   }
   .story-slide-container .swiper-pagination-current {
     color: var(--active-color__red);
-    font-weight: 600;
+    font-weight: 600; /* ok */
   }
 
   /* --- section 2 --- */
   .recommend-slide-container {
     width: 100%;
     margin-left: 0;
-    left: auto;
+    left: auto; /* ok */
   }
   .recommend-slide {
     /* 미세 변경 */
-    height: clamp(480px, 45vw, 550px);
+    height: clamp(480px, 45vw, 550px); /* ok */
   }
   .recommend-slide div:first-child {
-    height: 52%;
+    height: 52%; /* ok */
   }
   .recommend-slide div:last-child {
-    height: 48%;
+    height: 48%; /* ok */
   }
   .recommend-text__swiperMain p {
-    margin-top: 0.4em;
+    margin-top: 0.4em; /* ok */
   }
 
   /* --- section 3 --- */
   .more-content .content-item {
-    max-height: 300px;
+    max-height: 300px; /* ok */
   }
   .content-item {
     aspect-ratio: 4 / 1;
-    flex-direction: row;
+    flex-direction: row; /* ok */
   }
   .content-item .card-text__sub3 {
-    text-align: left;
+    text-align: left; /* ok */
   }
   .card-text__sub3 .more-btn {
     width: fit-content;
     left: auto;
     transform: none;
-    margin-top: 1.5em;
+    margin-top: 1.5em; /* ok */
   }
   .content-item .card-text__sub3 h3 {
-    font-size: 2rem;
+    font-size: 2rem; /* ok */
   }
   .content-item .card-text__sub3 p {
     font-size: 1.6rem;
-    margin-top: 0.4rem;
+    margin-top: 0.4rem; /* ok */
   }
 }

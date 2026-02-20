@@ -115,11 +115,11 @@ section + section {
     max-width: 1023px;
   }
   .move-btn ul {
-    flex-direction: row;
+    flex-direction: row; /* ok */
   }
   .resource .card-text__main,
   .water .card-text__main {
-    min-height: clamp(300px, 25vw, 600px);
+    min-height: clamp(300px, 25vw, 600px); /* ok */
   }
 }
 /* pc */
@@ -138,14 +138,14 @@ section + section {
   .resource .more-btn,
   .water .more-btn,
   .community .more-btn {
-    margin-top: 1.2em;
+    margin-top: 1.2em; /* ok */
   }
 
   /* --- section 1 --- */
   .future-intro p {
-    margin-top: 0.8em;
+    margin-top: 0.8em; /* ok */
   }
   .move-btn ul {
-    flex-direction: row;
+    flex-direction: row; /* ok */
   }
 }
