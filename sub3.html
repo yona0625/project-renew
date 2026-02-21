@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="코카-콜라의 마케팅 캠페인, 모델 인터뷰, 비하인드 화보 등 브랜드 스토리를 소개합니다.">
     <title>Coca-cola sub3</title>
     <!-- font -->
     <link
@@ -16,14 +17,14 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
     />
     <!-- reset & layout css -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="scss/css/reset.css" />
+    <link rel="stylesheet" href="scss/layout.css" />
     <!-- swiper css -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/swiper-core.css" />
+    <link rel="stylesheet" href="scss/css/swiper-core.css" />
     <!-- custom css -->
     <link rel="stylesheet" href="scss/css/sub3.css" />
 
@@ -37,11 +38,11 @@
   <body>
     <div id="container">
       <!-- header -->
-      <header>
+       <header>
         <!-- logo -->
         <div class="logo-img">
           <a href="/index.html">
-            <img src="images/main-logo.png" alt="" />
+            <img src="images/main-logo.png" alt="코카-콜라 홈으로 이동" />
           </a>
         </div>
         <!-- nav -->
@@ -62,7 +63,7 @@
                 </span>
               </a>
             </li>
-            <li class="on">
+            <li>
               <a href="/sub3.html"> 
                 <span>
                   Discover
@@ -79,7 +80,7 @@
           </ul>
         </nav>
         <!-- trigger(mobile) -->
-        <div class="trigger">
+        <div class="trigger" role="button" tabindex="0" aria-label="모바일 메뉴 열기">
           <span></span>
           <span></span>
           <span></span>
@@ -87,49 +88,72 @@
         <!-- 전체 메뉴 -->
         <div class="all-menu">
           <div class="exit-btn">
-            <img src="" alt="" />
           </div>
           <div class="all-menu-content">
             <ul class="first-menu">
               <li>
-                <a href="sub1.html"> Brands </a>
+                <a href="sub1.html">
+                  Brands
+                </a>
               </li>
               <li>
-                <a href="#none"> Our Company </a>
+                <a href="#none">
+                  Our Company
+                </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub2.html"> Coca-cola Company </a>
+                    <a href="sub2.html" aria-haspopup="true">
+                      Coca-cola Company
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Since 1886 </a>
+                    <a href="#none">
+                      Since 1886
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#none"> Discover </a>
+                <a href="#none" aria-haspopup="true">
+                  Discover
+                </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub3.html"> Brand Story </a>
+                    <a href="sub3.html">
+                      Brand Story
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Coke & Meal </a>
+                    <a href="#none">
+                      Coke & Meal
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Originals </a>
+                    <a href="#none">
+                      Originals
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Opener </a>
+                    <a href="#none">
+                      Opener
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Creations </a>
+                    <a href="#none">
+                      Creations
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> CokePLAY App </a>
+                    <a href="#none">
+                      CokePLAY App
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="sub4.html"> Sustainability </a>
+                <a href="sub4.html" aria-haspopup="true">
+                  Sustainability
+                </a>
               </li>
             </ul>
           </div>
@@ -137,16 +161,25 @@
       </header>
       <!-- main -->
       <main>
+        <!-- sr -->
+        <h1 class="sr-only">
+          코카-콜라 브랜드 스토리 소개 페이지
+        </h1>
         <picture>
           <source media="(min-width: 768px)" srcset="images/test4.png" />
-          <img src="images/test.png" alt="" />
+          <img src="images/test.png" alt="" fetchpriority="high" />
         </picture>
       </main>
       
       <!-- === section 1 === -->
       <section class="story-intro">
+        <h2 class="sr-only">
+          코카-콜라 브랜드 스토리
+        </h2>
         <div class="story-intro__title">
-          <h3>Brand story</h3>
+          <h3>
+            Brand story
+          </h3>
           <p>
             코카-콜라, 환타, 스프라이트 등 다양한 코카-콜라사 브랜드의 마케팅
             캠페인, 모델 인터뷰, 비하인드 화보 등 재미있고 흥미진진한 브랜드
@@ -169,7 +202,11 @@
                     Best Coke Ever? Yes! 코카-콜라 앰배서더로 선정된 뷔가 전하는
                     이야기, 지금 만나보세요.
                   </p>
-                    <a href="#none" class="more-btn"> 더 보기 </a>
+                    <a href="#none" class="more-btn">
+                      <span>
+                        더 보기
+                      </span>
+                    </a>
                 </div>
               </div>
               <!-- 2 -->
@@ -183,7 +220,11 @@
                     Best Coke Ever? Yes! 코카-콜라 앰배서더로 선정된 뷔가 전하는
                     이야기, 지금 만나보세요.
                   </p>
-                    <a href="#none" class="more-btn"> 더 보기 </a>
+                    <a href="#none" class="more-btn">
+                      <span>
+                        더 보기
+                      </span>
+                    </a>
                 </div>
               </div>
               <!-- 3 -->
@@ -197,11 +238,15 @@
                     Best Coke Ever? Yes! 코카-콜라 앰배서더로 선정된 뷔가 전하는
                     이야기, 지금 만나보세요.
                   </p>
-                    <a href="#none" class="more-btn"> 더 보기 </a>
+                    <a href="#none" class="more-btn">
+                      <span>
+                        더 보기
+                      </span>
+                    </a>
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination story-pagination"></div>
+            <div class="swiper-pagination story-pagination" role="group" aria-label="슬라이드 이동 페이지네이션"></div>
             <div class="swiper-button-prev story-btn-prev">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                 <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
@@ -225,7 +270,9 @@
 
       <!-- === section 2 === -->
       <section class="recommend">
-        <h2>추천 콘텐츠</h2>
+        <h2>
+          추천 콘텐츠
+        </h2>
         <div class="swiper recommend-slide-container">
           <div class="swiper-wrapper recommend-slide-wrapper">
             <!-- Slides -->
@@ -235,13 +282,17 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="recommend-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니
+                </h3>
                 <p>
                   코카-콜라와 피치스 도원의 우주적 컬래버레이션! 힙스터들의
                   성지, 성수동 피치스 도원에 우주에서 온 코카-콜라가 착륙했다.
                 </p>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -257,13 +308,17 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="recommend-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니
+                </h3>
                 <p>
                   코카-콜라와 피치스 도원의 우주적 컬래버레이션! 힙스터들의
                   성지, 성수동 피치스 도원에 우주에서 온 코카-콜라가 착륙했다.
                 </p>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -279,13 +334,17 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="recommend-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니
+                </h3>
                 <p>
                   코카-콜라와 피치스 도원의 우주적 컬래버레이션! 힙스터들의
                   성지, 성수동 피치스 도원에 우주에서 온 코카-콜라가 착륙했다.
                 </p>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -296,24 +355,32 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination recommend-pagination"></div>
+          <div class="swiper-pagination recommend-pagination" role="group" aria-label="슬라이드 이동 페이지네이션"></div>
         </div>
       </section>
 
       <!-- === section 3 === -->
       <section class="more-content">
-        <h2>더 많은 콘텐츠</h2>
+        <h2>
+          더 많은 콘텐츠
+        </h2>
         <!-- 1 -->
         <div class="content-item">
           <div class="card-image__sub3">
             <img src="images/more-image.png" alt="" />
           </div>
           <div class="card-text__sub3">
-            <h3>콜라를 못 만들게 했더니 환타가 탄생했습니다</h3>
-            <p>코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기</p>
+            <h3>
+              콜라를 못 만들게 했더니 환타가 탄생했습니다
+            </h3>
+            <p>
+              코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기
+            </p>
             <a href="#none" class="more-btn">
-                <span> 더 보기 </span>
-              </a>
+              <span>
+                더 보기
+              </span>
+            </a>
           </div>
         </div>
         <!-- 2 -->
@@ -322,10 +389,17 @@
             <img src="images/more-image.png" alt="" />
           </div>
           <div class="card-text__sub3">
-            <h3>콜라를 못 만들게 했더니 환타가 탄생했습니다</h3>
-            <p>코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기</p>
-              <a href="#none" class="more-btn"> 더 보기 </a>
-          
+            <h3>
+              콜라를 못 만들게 했더니 환타가 탄생했습니다
+            </h3>
+            <p>
+              코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기
+            </p>
+              <a href="#none" class="more-btn">
+                <span>
+                  더 보기
+                </span>
+              </a>
           </div>
         </div>
         <!-- 3 -->
@@ -334,10 +408,17 @@
             <img src="images/more-image.png" alt="" />
           </div>
           <div class="card-text__sub3">
-            <h3>콜라를 못 만들게 했더니 환타가 탄생했습니다</h3>
-            <p>코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기</p>
-              <a href="#none" class="more-btn"> 더 보기 </a>
-          
+            <h3>
+              콜라를 못 만들게 했더니 환타가 탄생했습니다
+            </h3>
+            <p>
+              코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기
+            </p>
+              <a href="#none" class="more-btn">
+                <span>
+                  더 보기
+                </span>
+              </a>
           </div>
         </div>
         <!-- 4 -->
@@ -346,76 +427,105 @@
             <img src="images/more-image.png" alt="" />
           </div>
           <div class="card-text__sub3">
-            <h3>콜라를 못 만들게 했더니 환타가 탄생했습니다</h3>
-            <p>코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기</p>
-              <a href="#none" class="more-btn"> 더 보기 </a>
-        
+            <h3>
+              콜라를 못 만들게 했더니 환타가 탄생했습니다
+            </h3>
+            <p>
+              코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기
+            </p>
+              <a href="#none" class="more-btn">
+                <span>
+                  더 보기
+                </span>
+              </a>
           </div>
         </div>
       </section>
 
       <!-- top 버튼 -->
-      <div class="top-btn">
-        <img src="images/top-btn-image.png" alt="top-btn-image" />
+      <div class="top-btn" role="button" tabindex="0" aria-label="페이지 최상단으로 이동">
+        <img src="images/top-btn-image.png" alt="" aria-hidden="true" />
       </div>
       <!-- footer -->
       <footer>
         <div class="footer-wrapper">
           <div class="footer-logo">
-            <img src="images/footer-logo.png" alt="footer-logo" />
+            <img src="images/footer-logo.png" alt="코카-콜라 푸터 로고" />
           </div>
           <div class="footer-content">
             <!-- == 1 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 소개 </a>
+                <a href="#none">
+                  소개
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 기업 소개 </a>
+                <a href="#none">
+                  기업 소개
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 히스토리 </a>
+                <a href="#none">
+                  히스토리
+                </a>
               </li>
               <!-- 4 -->
               <li>
-                <a href="#none"> 채용 </a>
+                <a href="#none">
+                  채용
+                </a>
               </li>
             </ul>
             <!-- == 2 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 도움이 필요하세요? </a>
+                <a href="#none">
+                  도움이 필요하세요?
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 사이트맵 </a>
+                <a href="#none">
+                  사이트맵
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 고객 안내 </a>
+                <a href="#none">
+                  고객 안내
+                </a>
               </li>
             </ul>
             <!-- == 3 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 법적 고지 </a>
+                <a href="#none">
+                  법적 고지
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 이용 약관 </a>
+                <a href="#none">
+                  이용 약관
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 쿠키 정책 </a>
+                <a href="#none">
+                  쿠키 정책
+                </a>
               </li>
               <!-- 4 -->
               <li>
-                <a href="#none"> 쿠키 설정 </a>
+                <a href="#none">
+                  쿠키 설정
+                </a>
               </li>
             </ul>
             <!-- icon -->
@@ -423,45 +533,41 @@
               <li class="footer-location">
                 <a href="#none">
                   <img
-                    src="images/footer-icon-location.png"
-                    alt="footer-location-image"
-                  />
-                  <span> 한국 </span>
+                    src="images/footer-icon-location.png" alt="" aria-hidden="true" />
+                  <span>
+                    한국
+                  </span>
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 유튜브 바로가기">
                   <img
-                    src="images/footer-icon-youtube.png"
-                    alt="footer-icon-youtube"
-                  />
+                    src="images/footer-icon-youtube.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
-                  <img src="images/footer-icon-x.png" alt="footer-icon-x" />
+                <a href="#none" aria-label="코카-콜라 공식 X(트위터) 바로가기">
+                  <img src="images/footer-icon-x.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 인스타 바로가기">
                   <img
-                    src="images/footer-icon-insta.png"
-                    alt="footer-icon-insta"
-                  />
+                    src="images/footer-icon-insta.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 페이스북 바로가기">
                   <img
-                    src="images/footer-icon-facebook.png"
-                    alt="footer-icon-facebook"
-                  />
+                    src="images/footer-icon-facebook.png" alt="" aria-hidden="true" />
                 </a>
               </li>
             </ul>
           </div>
           <div class="footer-copy">
-            <span> © 2026 The Coca‑Cola Company. 판권 소유 </span>
+            <span>
+              © 2026 The Coca‑Cola Company. 판권 소유
+            </span>
           </div>
         </div>
       </footer>

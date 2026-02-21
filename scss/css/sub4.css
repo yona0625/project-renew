@@ -22,8 +22,8 @@ section + section {
   font-size: 1.8rem;
 }
 
-.water-title h3,
-.community-title h3 {
+.water-title h2,
+.community-title h2 {
   font-size: 2.4rem;
 }
 
@@ -98,6 +98,11 @@ section + section {
   padding: 8px 40px;
 }
 
+.resource h2 {
+  text-align: center;
+  margin-bottom: 1.2em;
+}
+
 /* --- section 3 --- */
 .water {
   width: 100%;
@@ -119,7 +124,7 @@ section + section {
   box-sizing: border-box;
 }
 .promo-aws h2 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
 .promo-aws p {
   margin-top: 1.2rem;
@@ -144,6 +149,9 @@ section + section {
   margin-bottom: 1.2em;
   font-size: 2.4rem;
 }
+.sustain-title h2 {
+  font-size: 2.4rem;
+}
 
 .resource .card-text__main,
 .water .card-text__main {
@@ -166,13 +174,6 @@ section + section {
     padding: 0 40px;
     max-width: 1023px;
   }
-  .move-btn ul {
-    flex-direction: row;
-  }
-  .resource .card-text__main,
-  .water .card-text__main {
-    min-height: clamp(300px, 25vw, 600px);
-  }
 }
 /* pc */
 @media (min-width: 1024px) {
@@ -185,18 +186,5 @@ section + section {
   section {
     max-width: 1280px;
     padding: 0 80px;
-  }
-  /* common */
-  .resource .more-btn,
-  .water .more-btn,
-  .community .more-btn {
-    margin-top: 1.2em;
-  }
-  /* --- section 1 --- */
-  .future-intro p {
-    margin-top: 0.8em;
-  }
-  .move-btn ul {
-    flex-direction: row;
   }
 }/*# sourceMappingURL=sub4.css.map */

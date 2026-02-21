@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="코카-콜라는 지속 가능한 미래를 위해 노력합니다.">
     <title>Coca-cola sub4</title>
     <!-- font -->
     <link
@@ -16,14 +17,14 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
     />
     <!-- reset & layout css -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="scss/css/reset.css" />
+    <link rel="stylesheet" href="scss/layout.css" />
     <!-- swiper css -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/swiper-core.css" />
+    <link rel="stylesheet" href="scss/css/swiper-core.css" />
     <!-- custom css -->
     <link rel="stylesheet" href="scss/css/sub4.css" />
 
@@ -41,7 +42,7 @@
         <!-- logo -->
         <div class="logo-img">
           <a href="/index.html">
-            <img src="images/main-logo.png" alt="" />
+            <img src="images/main-logo.png" alt="코카-콜라 홈으로 이동" />
           </a>
         </div>
         <!-- nav -->
@@ -69,7 +70,7 @@
                 </span>
               </a>
             </li>
-            <li class="on">
+            <li>
               <a href="/sub4.html">
                 <span>
                   Sustainability
@@ -79,7 +80,7 @@
           </ul>
         </nav>
         <!-- trigger(mobile) -->
-        <div class="trigger">
+        <div class="trigger" role="button" tabindex="0" aria-label="모바일 메뉴 열기">
           <span></span>
           <span></span>
           <span></span>
@@ -87,49 +88,72 @@
         <!-- 전체 메뉴 -->
         <div class="all-menu">
           <div class="exit-btn">
-            <img src="" alt="" />
           </div>
           <div class="all-menu-content">
             <ul class="first-menu">
               <li>
-                <a href="sub1.html"> Brands </a>
+                <a href="sub1.html">
+                  Brands
+                </a>
               </li>
               <li>
-                <a href="#none"> Our Company </a>
+                <a href="#none">
+                  Our Company
+                </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub2.html"> Coca-cola Company </a>
+                    <a href="sub2.html" aria-haspopup="true">
+                      Coca-cola Company
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Since 1886 </a>
+                    <a href="#none">
+                      Since 1886
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#none"> Discover </a>
+                <a href="#none" aria-haspopup="true">
+                  Discover
+                </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub3.html"> Brand Story </a>
+                    <a href="sub3.html">
+                      Brand Story
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Coke & Meal </a>
+                    <a href="#none">
+                      Coke & Meal
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Originals </a>
+                    <a href="#none">
+                      Originals
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Opener </a>
+                    <a href="#none">
+                      Opener
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Creations </a>
+                    <a href="#none">
+                      Creations
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> CokePLAY App </a>
+                    <a href="#none">
+                      CokePLAY App
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="sub4.html"> Sustainability </a>
+                <a href="sub4.html" aria-haspopup="true">
+                  Sustainability
+                </a>
               </li>
             </ul>
           </div>
@@ -137,12 +161,19 @@
       </header>
       <!-- main -->
       <main>
-        <h1 class="sr-only">코카콜라 공식 홈페이지</h1>
-        <img src="images/test4.png" alt="" />
+        <h1 class="sr-only">
+          코카-콜라 지속 가능한 미래 소개 페이지
+        </h1>
+        <picture>
+          <source media="(min-width: 768px)" srcset="images/test4.png" />
+          <img src="images/test.png" alt="" fetchpriority="high" />
+        </picture>
       </main>
       <!-- === section 1 === -->
       <section class="future-intro">
-        <h2>지속 가능한 미래</h2>
+        <h2>
+          지속 가능한 미래
+        </h2>
         <p>
           코카-콜라는 지속 가능한 미래를 위해 노력하고 있습니다. 지속 가능한
           방식의 비즈니스를 통해 우리의 삶과 지역 사회에 긍정적인 변화를
@@ -151,13 +182,19 @@
         <div class="move-btn">
           <ul>
             <li>
-              <a href="#resource"> 자원 순환 </a>
+              <a href="#resource">
+                자원 순환
+              </a>
             </li>
             <li>
-              <a href="#water"> 물 환원 </a>
+              <a href="#water">
+                물 환원
+              </a>
             </li>
             <li>
-              <a href="#community"> 커뮤니티 </a>
+              <a href="#community">
+                커뮤니티
+              </a>
             </li>
           </ul>
         </div>
@@ -165,6 +202,9 @@
 
       <!-- === section 2 === -->
       <section class="resource" id="resource">
+        <h2>
+          자원 순환을 통한 지속 가능성
+        </h2>
         <!-- card -->
         <div class="resource-wrapper">
           <div class="card-item__main">
@@ -172,7 +212,9 @@
               <img src="images/image.png" alt="이미지 1" />
             </div>
             <div class="card-text__main">
-              <h3>한 번 더 사용되는 플라스틱, 원더플 캠페인</h3>
+              <h3>
+                한 번 더 사용되는 플라스틱, 원더플 캠페인
+              </h3>
               <p>
                 2020년부터 진행하고 있는 원더플(ONETHEPL) 캠페인은 ‘한 번(ONE)
                 더(THE) 사용되는 플라스틱(PL)’과 ‘원더풀(Wonderful)’이라는
@@ -183,7 +225,9 @@
                 있다.
               </p>
               <a href="#none" class="more-btn">
-                <span> 시즌 6 알아보기 </span>
+                <span>
+                  시즌 6 알아보기
+                </span>
               </a>
             </div>
           </div>
@@ -198,9 +242,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="resource-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니1</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니1
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -216,9 +264,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="resource-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니2</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니2
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -234,9 +286,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="resource-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니3</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니3
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -247,14 +303,16 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination resource-pagination"></div>
+          <div class="swiper-pagination resource-pagination" role="group" aria-label="슬라이드 이동 페이지네이션"></div>
         </div>
       </section>
 
       <!-- === section 3 === -->
       <section class="water" id="water">
         <div class="water-title">
-          <h3>코카-콜라 물 환원 프로젝트</h3>
+          <h2>
+            코카-콜라 물 환원 프로젝트
+          </h2>
           <p>
             코카-콜라는 2007년부터 전 세계에서 생산하는 모든 제품과 제조
             과정에서 사용한 물의 총량을 각 지역사회의 필요에 맞게 다양한
@@ -268,7 +326,9 @@
               <img src="images/image.png" alt="이미지 1" />
             </div>
             <div class="card-text__main">
-              <h3>물 순환을 위해 ‘숲 가꾸기’가 중요한 이유</h3>
+              <h3>
+                물 순환을 위해 ‘숲 가꾸기’가 중요한 이유
+              </h3>
               <p>
                 한국 코카-콜라는 '숲 가꾸기를 통한 물 순환 확대 파트너십'을
                 체결하고, 여주 지역 숲을 대상으로 물 순환 강화와 탄소흡수 확대를
@@ -277,7 +337,9 @@
                 물과 숲이 어떤 관계인 거죠?"
               </p>
               <a href="#none" class="more-btn">
-                <span> 자세히 알아보기 </span>
+                <span>
+                  자세히 알아보기
+                </span>
               </a>
             </div>
           </div>
@@ -292,9 +354,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="water-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -310,9 +376,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="water-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -328,9 +398,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="water-text__swiperMain">
-                <h3>달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니</h3>
+                <h3>
+                  달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -341,10 +415,12 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination water-pagination"></div>
+          <div class="swiper-pagination water-pagination" role="group" aria-label="슬라이드 이동 페이지네이션"></div>
         </div>
         <div class="promo-aws">
-          <h2>국제수자원관리동맹</h2>
+          <h2>
+            국제수자원관리동맹
+          </h2>
           <p>
             코카-콜라는 국제수자원관리 동맹(AWS: Alliance for Water
             Stewardship)을 통해 지역 수자원 지속가능성 향상에 기여하고자
@@ -357,7 +433,9 @@
             활동을 촉진합니다.
           </p>
           <a href="#none" class="more-btn">
-            <span> AWS 이해관계자 공시 </span>
+            <span>
+              AWS 이해관계자 공시
+            </span>
           </a>
         </div>
       </section>
@@ -365,7 +443,9 @@
       <!-- === section 4 === -->
       <section class="community" id="community">
         <div class="community-title">
-          <h3>커뮤니티 활동</h3>
+          <h2>
+            커뮤니티 활동
+          </h2>
           <p>
             코카-콜라는 지역사회와 함께 성장하기 위한 발판을 마련하고, 지역사회
             구성원들이 건강하고 행복한 삶을 살 수 있도록 다양한 프로그램을
@@ -382,9 +462,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="community-text__swiperMain">
-                <h3>치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill</h3>
+                <h3>
+                  치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -400,9 +484,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="community-text__swiperMain">
-                <h3>치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill</h3>
+                <h3>
+                  치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -418,9 +506,13 @@
                 <img src="images/image2.png" alt="" />
               </div>
               <div class="community-text__swiperMain">
-                <h3>치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill</h3>
+                <h3>
+                  치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill
+                </h3>
                 <a href="#none" class="more-btn">
-                  <span> 더 보기 </span>
+                  <span>
+                    더 보기
+                  </span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                     <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
                     <path
@@ -431,93 +523,121 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination community-pagination"></div>
+          <div class="swiper-pagination community-pagination" role="group" aria-label="슬라이드 이동 페이지네이션"></div>
         </div>
         <!-- card -->
         <div class="sustain-wrapper">
           <div class="sustain-title">
-            <h3>글로벌 지속 가능성</h3>
+            <h2>
+              글로벌 지속 가능성
+            </h2>
           </div>
           <div class="card-item__main">
             <div class="card-image__main">
               <img src="images/image.png" alt="이미지 1" />
             </div>
             <div class="card-text__main">
-              <h3>Our Sustainability Progress</h3>
+              <h3>
+                Our Sustainability Progress
+              </h3>
               <p>
                 수자원, 패키지, 기후, 농업 등 지속가능성 분야의 최신 업데이트를
                 제공합니다. 
               </p>
               <a href="#none" class="more-btn">
-                <span> 더 알아보기 </span>
+                <span>
+                  더 알아보기
+                </span>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- top 버튼 -->
-      <div class="top-btn">
-        <img src="images/top-btn-image.png" alt="top-btn-image" />
+       <!-- top 버튼 -->
+      <div class="top-btn" role="button" tabindex="0" aria-label="페이지 최상단으로 이동">
+        <img src="images/top-btn-image.png" alt="" aria-hidden="true" />
       </div>
       <!-- footer -->
       <footer>
         <div class="footer-wrapper">
           <div class="footer-logo">
-            <img src="images/footer-logo.png" alt="footer-logo" />
+            <img src="images/footer-logo.png" alt="코카-콜라 푸터 로고" />
           </div>
           <div class="footer-content">
             <!-- == 1 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 소개 </a>
+                <a href="#none">
+                  소개
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 기업 소개 </a>
+                <a href="#none">
+                  기업 소개
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 히스토리 </a>
+                <a href="#none">
+                  히스토리
+                </a>
               </li>
               <!-- 4 -->
               <li>
-                <a href="#none"> 채용 </a>
+                <a href="#none">
+                  채용
+                </a>
               </li>
             </ul>
             <!-- == 2 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 도움이 필요하세요? </a>
+                <a href="#none">
+                  도움이 필요하세요?
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 사이트맵 </a>
+                <a href="#none">
+                  사이트맵
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 고객 안내 </a>
+                <a href="#none">
+                  고객 안내
+                </a>
               </li>
             </ul>
             <!-- == 3 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 법적 고지 </a>
+                <a href="#none">
+                  법적 고지
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 이용 약관 </a>
+                <a href="#none">
+                  이용 약관
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 쿠키 정책 </a>
+                <a href="#none">
+                  쿠키 정책
+                </a>
               </li>
               <!-- 4 -->
               <li>
-                <a href="#none"> 쿠키 설정 </a>
+                <a href="#none">
+                  쿠키 설정
+                </a>
               </li>
             </ul>
             <!-- icon -->
@@ -525,45 +645,41 @@
               <li class="footer-location">
                 <a href="#none">
                   <img
-                    src="images/footer-icon-location.png"
-                    alt="footer-location-image"
-                  />
-                  <span> 한국 </span>
+                    src="images/footer-icon-location.png" alt="" aria-hidden="true" />
+                  <span>
+                    한국
+                  </span>
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 유튜브 바로가기">
                   <img
-                    src="images/footer-icon-youtube.png"
-                    alt="footer-icon-youtube"
-                  />
+                    src="images/footer-icon-youtube.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
-                  <img src="images/footer-icon-x.png" alt="footer-icon-x" />
+                <a href="#none" aria-label="코카-콜라 공식 X(트위터) 바로가기">
+                  <img src="images/footer-icon-x.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 인스타 바로가기">
                   <img
-                    src="images/footer-icon-insta.png"
-                    alt="footer-icon-insta"
-                  />
+                    src="images/footer-icon-insta.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 페이스북 바로가기">
                   <img
-                    src="images/footer-icon-facebook.png"
-                    alt="footer-icon-facebook"
-                  />
+                    src="images/footer-icon-facebook.png" alt="" aria-hidden="true" />
                 </a>
               </li>
             </ul>
           </div>
           <div class="footer-copy">
-            <span> © 2026 The Coca‑Cola Company. 판권 소유 </span>
+            <span>
+              © 2026 The Coca‑Cola Company. 판권 소유
+            </span>
           </div>
         </div>
       </footer>

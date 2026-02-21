@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="코카-콜라의 다양한 브랜드 상품을 소개합니다.">
     <title>Coca-cola sub1</title>
     <!-- font -->
     <link
@@ -16,14 +17,14 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
     />
     <!-- reset & layout css -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="scss/css/reset.css" />
+    <link rel="stylesheet" href="scss/layout.css" />
     <!-- swiper css -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="css/swiper-core.css" />
+    <link rel="stylesheet" href="scss/css/swiper-core.css" />
     <!-- custom css -->
     <link rel="stylesheet" href="scss/css/sub1.css" />
 
@@ -40,14 +41,14 @@
         <!-- logo -->
         <div class="logo-img">
           <a href="/index.html">
-            <img src="images/main-logo.png" alt="" />
+            <img src="images/main-logo.png" alt="코카-콜라 홈으로 이동" />
           </a>
         </div>
         <!-- nav -->
         <nav>
           <!-- 개별 메뉴 -->
           <ul class="main-menu">
-            <li class="on">
+            <li>
               <a href="/sub1.html">
                 <span>
                   Brands
@@ -78,7 +79,7 @@
           </ul>
         </nav>
         <!-- trigger(mobile) -->
-        <div class="trigger">
+        <div class="trigger" role="button" tabindex="0" aria-label="모바일 메뉴 열기">
           <span></span>
           <span></span>
           <span></span>
@@ -86,62 +87,92 @@
         <!-- 전체 메뉴 -->
         <div class="all-menu">
           <div class="exit-btn">
-            <img src="" alt="" />
           </div>
           <div class="all-menu-content">
             <ul class="first-menu">
               <li>
-                <a href="sub1.html"> Brands </a>
+                <a href="sub1.html">
+                  Brands
+                </a>
               </li>
               <li>
-                <a href="#none"> Our Company </a>
+                <a href="#none">
+                  Our Company
+                </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub2.html"> Coca-cola Company </a>
+                    <a href="sub2.html" aria-haspopup="true">
+                      Coca-cola Company
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Since 1886 </a>
+                    <a href="#none">
+                      Since 1886
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#none"> Discover </a>
+                <a href="#none" aria-haspopup="true">
+                  Discover
+                </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub3.html"> Brand Story </a>
+                    <a href="sub3.html">
+                      Brand Story
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Coke & Meal </a>
+                    <a href="#none">
+                      Coke & Meal
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Originals </a>
+                    <a href="#none">
+                      Originals
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Opener </a>
+                    <a href="#none">
+                      Opener
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> Creations </a>
+                    <a href="#none">
+                      Creations
+                    </a>
                   </li>
                   <li>
-                    <a href="#none"> CokePLAY App </a>
+                    <a href="#none">
+                      CokePLAY App
+                    </a>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="sub4.html"> Sustainability </a>
+                <a href="sub4.html" aria-haspopup="true">
+                  Sustainability
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </header>
       <main>
+        <!-- sr -->
+        <h1 class="sr-only">
+          코카-콜라 브랜드 제품 소개 페이지
+        </h1>
         <picture>
           <source media="(min-width: 768px)" srcset="images/test4.png" />
-          <img src="images/test.png" alt="" />
+          <img src="images/test.png" alt="" fetchpriority="high" />
         </picture>
       </main>
       <!-- === section 1 === -->
       <section class="brandAll">
+        <h2 class="sr-only">
+          코카-콜라 브랜드 제품 소개
+        </h2>
         <div class="brandAll-title">
           <h3>
             Brands
@@ -150,44 +181,44 @@
             분류 기준을 선택하세요
           </p>
         </div>
-        <ul class="brand-tab-menu">
-          <li class="active arrow-tab" data-alt="brand-tab1">
-            <a href="#none">
+        <ul class="brand-tab-menu" role="tablist">
+          <li class="active arrow-tab" data-alt="brand-tab1" role="presentation">
+            <a href="#none" role="tab" aria-selected="true" aria-controls="brand-tab1" id="tab1">
               <span>
                 모든 브랜드
               </span>
             </a>
           </li>
-          <li data-alt="brand-tab2">
-            <a href="#none">
+          <li data-alt="brand-tab2" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab2" id="tab2">
               <span>
                 Sparkling Soft Drinks
               </span>
             </a>
           </li>
-          <li data-alt="brand-tab3">
-            <a href="#none">
+          <li data-alt="brand-tab3" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab3" id="tab3">
               <span>
                 Sports Drinks & Hydration
               </span>
             </a>
           </li>
-          <li data-alt="brand-tab4">
-            <a href="#none">
+          <li data-alt="brand-tab4" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab4" id="tab4">
               <span>
                 Coffees
               </span>
             </a>
           </li>
-          <li data-alt="brand-tab5">
-            <a href="#none">
+          <li data-alt="brand-tab5" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab5" id="tab5">
               <span>
                 Juices
               </span>
             </a>
           </li>
-          <li data-alt="brand-tab6">
-            <a href="#none">
+          <li data-alt="brand-tab6" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab6" id="tab6">
               <span>
                 Teas
               </span>
@@ -196,228 +227,214 @@
         </ul>
         <div class="brand-item">
           <!-- tab 1  -->
-          <div class="brand-tab active" id="brand-tab1">
-            <!-- <div class="item">
-              <a href="#none">
-                <img src="/images/brand_coca.webp" alt="">
-              </a>
-            </div>
-            <div class="item">
-               <a href="#none">
-                <img src="/images/brand_sprite.webp" alt="">
-              </a>
-            </div>
-            <div class="item">
-               <a href="#none">
-                <img src="/images/brand_fanta.webp" alt="">
-              </a>
-            </div>
-            <div class="item">
-               <a href="#none">
-                <img src="/images/brand_dr-pepper.webp" alt="">
-              </a>
-            </div>
-            <div class="item">
-               <a href="#none">
-                <img src="/images/brand_canada-dry.webp" alt="">
-              </a>
-            </div>
-            <div class="item">
-               <a href="#none">
-                <img src="/images/brand_sunny10.webp" alt="">
-              </a>
-            </div>
-            <div class="item">
-               <div class="item">
-               <a href="#none">
-                <img src="/images/brand_crushed-pear.webp" alt="">
-              </a>
-            </div>
-            </div> -->
+          <div class="brand-tab active" role="tabpanel" id="brand-tab1" aria-labelledby="tab1">
           </div>
           <!-- tab 2 -->
-          <div class="brand-tab" id="brand-tab2">
+          <div class="brand-tab" role="tabpanel" id="brand-tab2" aria-labelledby="tab2">
             <div class="item">
                 <a href="#none">
-                <img src="/images/brand_coca.webp" alt="">
+                <img src="/images/brand_coca.webp" alt="코카-콜라 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                 <a href="#none">
-                <img src="/images/brand_sprite.webp" alt="">
+                <img src="/images/brand_sprite.webp" alt="스프라이트 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                 <a href="#none">
-                <img src="/images/brand_fanta.webp" alt="">
+                <img src="/images/brand_fanta.webp" alt="환타 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                 <a href="#none">
-                <img src="/images/brand_dr-pepper.webp" alt="">
+                <img src="/images/brand_dr-pepper.webp" alt="닥터 페퍼 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                 <a href="#none">
-                <img src="/images/brand_canada-dry.webp" alt="">
+                <img src="/images/brand_canada-dry.webp" alt="캐나다 드라이 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                 <a href="#none">
-                <img src="/images/brand_sunny10.webp" alt="">
+                <img src="/images/brand_sunny10.webp" alt="써니텐 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                 <a href="#none">
-                <img src="/images/brand_crushed-pear.webp" alt="">
+                <img src="/images/brand_crushed-pear.webp" alt="갈아만든 배 브랜드 소개 바로가기">
               </a>
             </div>
           </div>
           <!-- tab 3 -->
-          <div class="brand-tab" id="brand-tab3">
+          <div class="brand-tab" role="tabpanel" id="brand-tab3" aria-labelledby="tab3">
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_powerade.webp" alt="">
+                <img src="/images/brand_powerade.webp" alt="파워에이드 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_toreta.webp" alt="">
+                <img src="/images/brand_toreta.webp" alt="토레타 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_seagram.webp" alt="">
+                <img src="/images/brand_seagram.webp" alt="씨그램 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_pyungchangsoo.webp" alt="">
+                <img src="/images/brand_pyungchangsoo.webp" alt="평창수 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_vio.webp" alt="">
+                <img src="/images/brand_vio.webp" alt="휘오 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_vitaminwater.webp" alt="">
+                <img src="/images/brand_vitaminwater.webp" alt="글라소 비타민 워터 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_ulim-water.webp" alt="">
+                <img src="/images/brand_ulim-water.webp" alt="휘오 울림 워터 브랜드 소개 바로가기">
               </a>
             </div>
           </div>
           <!-- tab 4 -->
-          <div class="brand-tab" id="brand-tab4">
+          <div class="brand-tab" role="tabpanel" id="brand-tab4" aria-labelledby="tab4">
             <div class="item">
               <a href="#none">
-                <img src="/images/brand_georgia.webp" alt="">
+                <img src="/images/brand_georgia.webp" alt="조지아 커피 브랜드 소개 바로가기">
               </a>
             </div>
           </div>
           <!-- tab 5 -->
-          <div class="brand-tab" id="brand-tab5">
+          <div class="brand-tab" role="tabpanel" id="brand-tab5" aria-labelledby="tab5">
             <div class="item">
                <a href="#none">
-                <img src="/images/brand_minute-maid.webp" alt="">
+                <img src="/images/brand_minute-maid.webp" alt="미닛메이드 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                <a href="#none">
-                <img src="/images/brand_cocopalm.webp" alt="">
+                <img src="/images/brand_cocopalm.webp" alt="코코팜 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                <a href="#none">
-                <img src="/images/brand_crushed-pear.webp" alt="">
+                <img src="/images/brand_crushed-pear.webp" alt="갈아만든 배 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                <a href="#none">
-                <img src="/images/brand_fruitvillage.webp" alt="">
+                <img src="/images/brand_fruitvillage.webp" alt="과일촌 브랜드 소개 바로가기">
               </a>
             </div>
           </div>
           <!-- div 6 -->
-          <div class="brand-tab" id="brand-tab6">
+          <div class="brand-tab" role="tabpanel" id="brand-tab6" aria-labelledby="tab6">
             <div class="item">
                <a href="#none">
-                <img src="/images/brand_w-tea.webp" alt="">
+                <img src="/images/brand_w-tea.webp" alt="태양의 식후 비법 W차 브랜드 소개 바로가기">
               </a>
             </div>
             <div class="item">
                <a href="#none">
-                <img src="/images/brand_sun-mate.webp" alt="">
+                <img src="/images/brand_sun-mate.webp" alt="태양의 마테차 브랜드 소개 바로가기">
               </a>
             </div>
         </div>
       </section>
+
       <!-- top 버튼 -->
-      <div class="top-btn">
-        <img src="images/top-btn-image.png" alt="top-btn-image" />
+      <div class="top-btn" role="button" tabindex="0" aria-label="페이지 최상단으로 이동">
+        <img src="images/top-btn-image.png" alt="" aria-hidden="true" />
       </div>
       <!-- footer -->
       <footer>
         <div class="footer-wrapper">
           <div class="footer-logo">
-            <img src="images/footer-logo.png" alt="footer-logo" />
+            <img src="images/footer-logo.png" alt="코카-콜라 푸터 로고" />
           </div>
           <div class="footer-content">
             <!-- == 1 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 소개 </a>
+                <a href="#none">
+                  소개
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 기업 소개 </a>
+                <a href="#none">
+                  기업 소개
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 히스토리 </a>
+                <a href="#none">
+                  히스토리
+                </a>
               </li>
               <!-- 4 -->
               <li>
-                <a href="#none"> 채용 </a>
+                <a href="#none">
+                  채용
+                </a>
               </li>
             </ul>
             <!-- == 2 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 도움이 필요하세요? </a>
+                <a href="#none">
+                  도움이 필요하세요?
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 사이트맵 </a>
+                <a href="#none">
+                  사이트맵
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 고객 안내 </a>
+                <a href="#none">
+                  고객 안내
+                </a>
               </li>
             </ul>
             <!-- == 3 == -->
             <ul>
               <!-- 1 -->
               <li class="footer-menu">
-                <a href="#none"> 법적 고지 </a>
+                <a href="#none">
+                  법적 고지
+                </a>
               </li>
               <!-- 2 -->
               <li>
-                <a href="#none"> 이용 약관 </a>
+                <a href="#none">
+                  이용 약관
+                </a>
               </li>
               <!-- 3 -->
               <li>
-                <a href="#none"> 쿠키 정책 </a>
+                <a href="#none">
+                  쿠키 정책
+                </a>
               </li>
               <!-- 4 -->
               <li>
-                <a href="#none"> 쿠키 설정 </a>
+                <a href="#none">
+                  쿠키 설정
+                </a>
               </li>
             </ul>
             <!-- icon -->
@@ -425,45 +442,41 @@
               <li class="footer-location">
                 <a href="#none">
                   <img
-                    src="images/footer-icon-location.png"
-                    alt="footer-location-image"
-                  />
-                  <span> 한국 </span>
+                    src="images/footer-icon-location.png" alt="" aria-hidden="true" />
+                  <span>
+                    한국
+                  </span>
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 유튜브 바로가기">
                   <img
-                    src="images/footer-icon-youtube.png"
-                    alt="footer-icon-youtube"
-                  />
+                    src="images/footer-icon-youtube.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
-                  <img src="images/footer-icon-x.png" alt="footer-icon-x" />
+                <a href="#none" aria-label="코카-콜라 공식 X(트위터) 바로가기">
+                  <img src="images/footer-icon-x.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 인스타 바로가기">
                   <img
-                    src="images/footer-icon-insta.png"
-                    alt="footer-icon-insta"
-                  />
+                    src="images/footer-icon-insta.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 페이스북 바로가기">
                   <img
-                    src="images/footer-icon-facebook.png"
-                    alt="footer-icon-facebook"
-                  />
+                    src="images/footer-icon-facebook.png" alt="" aria-hidden="true" />
                 </a>
               </li>
             </ul>
           </div>
           <div class="footer-copy">
-            <span> © 2026 The Coca‑Cola Company. 판권 소유 </span>
+            <span>
+              © 2026 The Coca‑Cola Company. 판권 소유
+            </span>
           </div>
         </div>
       </footer>

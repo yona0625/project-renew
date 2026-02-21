@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="코카-콜라 공식 홈페이지에 오신 것을 환영합니다.">
     <title>Coca-cola</title>
     <!-- font -->
     <link
@@ -40,7 +41,7 @@
         <!-- logo -->
         <div class="logo-img">
           <a href="/index.html">
-            <img src="images/main-logo.png" alt="코카-콜라 홈" />
+            <img src="images/main-logo.png" alt="코카-콜라 홈으로 이동" />
           </a>
         </div>
         <!-- nav -->
@@ -78,7 +79,7 @@
           </ul>
         </nav>
         <!-- trigger(mobile) -->
-        <div class="trigger" role="button" aria-label="모바일 메뉴 열기" aria-expanded="false">
+        <div class="trigger" role="button" tabindex="0" aria-label="모바일 메뉴 열기">
           <span></span>
           <span></span>
           <span></span>
@@ -86,7 +87,6 @@
         <!-- 전체 메뉴 -->
         <div class="all-menu">
           <div class="exit-btn">
-            <img src="" alt="" />
           </div>
           <div class="all-menu-content">
             <ul class="first-menu">
@@ -101,7 +101,7 @@
                 </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub2.html">
+                    <a href="sub2.html" aria-haspopup="true">
                       Coca-cola Company
                     </a>
                   </li>
@@ -113,7 +113,7 @@
                 </ul>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-haspopup="true">
                   Discover
                 </a>
                 <ul class="second-menu">
@@ -150,7 +150,7 @@
                 </ul>
               </li>
               <li>
-                <a href="sub4.html">
+                <a href="sub4.html" aria-haspopup="true">
                   Sustainability
                 </a>
               </li>
@@ -161,7 +161,7 @@
       <main>
         <!-- sr -->
         <h1 class="sr-only">
-          코카콜라 공식 홈페이지
+          코카-콜라 공식 홈페이지
         </h1>
         <!-- main slide(visual) -->
         <div class="swiper visual-slide-container">
@@ -174,20 +174,20 @@
                     media="(min-width: 768px)"
                     srcset="images/test4.png"
                   />
-                  <img src="images/test.png" alt="나의 미식 파트너 코카-콜라" />
+                  <img src="images/test.png" alt="나의 미식 파트너 코카-콜라" fetchpriority="high"/>
                 </picture>
               </div>
               <div class="visual-text">
-                <h1>
+                <h2>
                   나의 미식 파트너, 코카-콜라
-                </h1>
+                </h2>
                 <p>
                   오늘을 제대로 즐기기 위해 필요한 건?
                   <span class="br">
                     맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!
                   </span>
                 </p>
-                <a href="#none" class="more-btn" aria-label="coke & meal 알아보기 더 보기 버튼">
+                <a href="#none" class="more-btn">
                   <span>
                     coke & meal 알아보기
                   </span>
@@ -215,7 +215,7 @@
                     맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!
                   </span>
                 </p>
-                <a href="#none" class="more-btn" aria-label="coke & meal 알아보기 더 보기 버튼">
+                <a href="#none" class="more-btn">
                   <span>
                     coke & meal 알아보기
                   </span>
@@ -243,7 +243,7 @@
                     맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!
                   </span>
                 </p>
-                <a href="#none" class="more-btn" aria-label="coke & meal 알아보기 더 보기 버튼">
+                <a href="#none" class="more-btn">
                   <span>
                     coke & meal 알아보기
                   </span>
@@ -251,7 +251,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-pagination visual-pagination" role="group" aria-label="슬라이드 이동 페이지네이션" aria-live="polite"></div>
+          <div class="swiper-pagination visual-pagination" role="group" aria-label="슬라이드 이동 페이지네이션"></div>
           <div class="swiper-button-prev visual-btn-prev" aria-label="이전 슬라이드">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
               <!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
@@ -272,6 +272,9 @@
       </main>
       <!-- === section 1 === -->
       <section class="feature">
+        <h2 class="sr-only">
+          코카-콜라 메인 소개
+        </h2>
         <div class="feature-inner">
           <!-- 1 -->
           <div class="card-item__main">
@@ -323,6 +326,9 @@
 
       <!-- === section 2 === -->
       <section class="promo-story">
+        <h2 class="sr-only">
+          코카-콜라 프로모션 소개
+        </h2>
         <div class="promo-story-inner">
           <div>
             <h2>
@@ -434,7 +440,7 @@
             <div class="swiper-wrapper brandList-slide-wrapper">
               <div class="swiper-slide brandList-slide">
                 <a href="#none">
-                  <img src="images/brand_coca.webp" alt="코카콜라 브랜드 로고">
+                  <img src="images/brand_coca.webp" alt="코카-콜라 브랜드 로고">
                 </a>
               </div>
               <div class="swiper-slide brandList-slide">
@@ -478,14 +484,14 @@
       </section>
 
       <!-- top 버튼 -->
-      <div class="top-btn">
-        <img src="images/top-btn-image.png" alt="탑 버튼 화살표 이미지" />
+      <div class="top-btn" role="button" tabindex="0" aria-label="페이지 최상단으로 이동">
+        <img src="images/top-btn-image.png" alt="" aria-hidden="true" />
       </div>
       <!-- footer -->
       <footer>
         <div class="footer-wrapper">
           <div class="footer-logo">
-            <img src="images/footer-logo.png" alt="코카콜라 푸터 로고" />
+            <img src="images/footer-logo.png" alt="코카-콜라 푸터 로고" />
           </div>
           <div class="footer-content">
             <!-- == 1 == -->
@@ -568,33 +574,33 @@
               <li class="footer-location">
                 <a href="#none">
                   <img
-                    src="images/footer-icon-location.png" alt="코카콜라 푸터 위치 로고" />
+                    src="images/footer-icon-location.png" alt="" aria-hidden="true" />
                   <span>
                     한국
                   </span>
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 유튜브 바로가기">
                   <img
-                    src="images/footer-icon-youtube.png" alt="코카콜라 푸터 유튜브 아이콘" />
+                    src="images/footer-icon-youtube.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
-                  <img src="images/footer-icon-x.png" alt="코카콜라 푸터 엑스 아이콘" />
+                <a href="#none" aria-label="코카-콜라 공식 X(트위터) 바로가기">
+                  <img src="images/footer-icon-x.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 인스타 바로가기">
                   <img
-                    src="images/footer-icon-insta.png" alt="코카콜라 푸터 인스타 아이콘" />
+                    src="images/footer-icon-insta.png" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
-                <a href="#none">
+                <a href="#none" aria-label="코카-콜라 공식 페이스북 바로가기">
                   <img
-                    src="images/footer-icon-facebook.png" alt="코카콜라 푸터 페이스북 아이콘" />
+                    src="images/footer-icon-facebook.png" alt="" aria-hidden="true" />
                 </a>
               </li>
             </ul>

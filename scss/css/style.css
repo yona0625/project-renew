@@ -41,11 +41,11 @@
   z-index: 100;
   color: var(--font-color__white);
 }
-.visual-slide-container .visual-text h1 {
+.visual-slide-container .visual-text h2 {
   font-size: 3.5rem;
 }
 @media (min-width: 1024px) {
-  .visual-slide-container .visual-text h1 {
+  .visual-slide-container .visual-text h2 {
     font-size: 4.5rem;
   }
 }
