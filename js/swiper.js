@@ -25,8 +25,6 @@ const mainSwiper = new Swiper(".visual-slide-container", {
   breakpoints: {},
   on: {
     resize: function () {
-      this.loopFix();
-      this.slideToLoop(0, 0);
       this.update();
     },
   },
@@ -89,11 +87,7 @@ const story_slide = new Swiper(".story-slide-container", {
     },
   },
   on: {
-    breakpoints: function () {
-      /* 슬라이드 흔들림 방지 */
-      this.loopFix();
-      this.slideToLoop(0, 0);
-      /* 이미지가 렌더링 속도를 못 따라오고 튀는 현상 방지 */
+    resize: function () {
       this.update();
     },
   },

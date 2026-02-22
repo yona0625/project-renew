@@ -44,14 +44,23 @@ section + section {
 .future-intro {
   text-align: center;
 }
+.future-intro h2 {
+  font-size: 2.4rem;
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .future-intro h2 {
+    font-size: 2.4rem;
+  }
+}
 .future-intro p {
   color: var(--font-color__gray);
-  margin-top: 0.4em;
+  margin-top: 0.2em;
   /* pc */
 }
 @media (min-width: 1024px) {
   .future-intro p {
-    margin-top: 0.8em;
+    font-size: 1.8rem;
   }
 }
 

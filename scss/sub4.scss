@@ -47,12 +47,19 @@ section + section {
 /* --- section 1 --- */
 .future-intro {
   text-align: center;
-  p {
-    color: var(--font-color__gray);
-    margin-top: 0.4em;
+  h2 {
+    font-size: 2.4rem;
     /* pc */
     @media (min-width: 1024px) {
-      margin-top: 0.8em;
+      font-size: 2.4rem;
+    }
+  }
+  p {
+    color: var(--font-color__gray);
+    margin-top: 0.2em;
+    /* pc */
+    @media (min-width: 1024px) {
+      font-size: 1.8rem;
     }
   }
 }

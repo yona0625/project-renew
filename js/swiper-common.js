@@ -36,7 +36,7 @@ function commonSwiper(name) {
   /* === 2. 새로운 스와이퍼 생성 === */
   /* ${name}으로 받아오는 slideContainer에 적용해야 함 */
   const newSwiper = new Swiper(slideContainer, {
-    slidesPerView: 3,
+    slidesPerView: 1.2,
     spaceBetween: 15,
     loop: true,
     /* tab 이동 시 무한 갇힘 해제 */
@@ -78,43 +78,59 @@ function commonSwiper(name) {
         });
       },
 
-      /* 인덱스 테스트 용 콘솔 */
-      // slideChangeTransitionEnd: function () {
-      //   savedIdx = this.realIndex;
-      //   console.log("안전하게 저장된 인덱스:", savedIdx);
-      // },
-
       resize: function () {
-        this.loopFix();
-        this.slideToLoop(0, 0);
         this.update();
       },
-      // breakpoints: function () {
-      //   this.loopFix();
-      //   this.slideToLoop(0, 0);
-      //   this.update();
-      // },
     },
 
     // breakpoints
+    /* 각자 구간에서 다 써줘야 안정적으로 돌아감. */
     breakpoints: {
       360: {
         centeredSlides: true,
         initialSlide: 0,
-        slidesPerView: 3,
+        slidesPerView: 1.2,
+        slidesPerGroup: 1,
+      },
+      /* 타블렛 <-> pc 양 방향 스위칭을 위해 768에서도 명시적 기입하는 게 좋음. */
+      768: {
+        centeredSlides: true,
+        slidesPerView: 1.2,
         slidesPerGroup: 1,
       },
       1024: {
         centeredSlides: false,
-        slidesPerView: 3,
+        spaceBetween: 20,
+        slidesPerView: 'auto',
+        slidesPerGroup: 1,
+        initialSlide: 0,
       },
     },
   });
 
-  /* resize 안정화 -> window로 위임 */
-  window.addEventListener("resize", () => {
-    if (newSwiper) {
-      newSwiper.update();
-    }
-  });
+  /* === 3. swiper slide 전체 영역 클릭 이벤트 === */
+  const cardClick = () => {
+    slideContainer.addEventListener("click", (e) => {
+      if (window.innerWidth > 1023) return;
+
+      /* 클릭 요소에서 가장 가까운 슬라이드 찾기 */
+      const findSlide = e.target.closest(".c-slide");
+      if (!findSlide) return;
+
+      /* 슬라이드 내부의 더보기 링크 버튼 찾기 */
+      const findMoreBtn = findSlide.querySelector(".more-btn");
+      if (!findMoreBtn) return;
+
+      // [테스트용] 클릭이 됐는지 확인하는 용도
+      /* 만약 더보기를 누르지 않았다면, 기존 e의 배경 기본 동작을 막고(init) js로 click을 심어줌. 그럼 더보기를 누른다면? if문에서 벗어나기 때문에 그냥 원래대로의 버튼 클릭이 이루어짐. */
+      console.log(`${name} 슬라이드의 카드 클릭`);
+      if (!e.target.closest(".more-btn")) {
+        e.preventDefault();
+
+        // 실제 버튼 클릭 트리거
+        findMoreBtn.click();
+      }
+    });
+  };
+  cardClick();
 }

@@ -49,6 +49,9 @@
     font-size: 4.5rem;
   }
 }
+.visual-slide-container .visual-text h2 .br {
+  margin-top: -0.2em;
+}
 .visual-slide-container .visual-text p {
   margin-top: 0.3em;
 }
