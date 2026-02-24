@@ -34,6 +34,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 
 .card-text__sub {
@@ -352,9 +353,6 @@
 @media (min-width: 1024px) {
   #container {
     width: 100%;
-  }
-  main {
-    height: 500px;
   }
   section {
     max-width: 1280px;

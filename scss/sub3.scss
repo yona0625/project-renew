@@ -119,6 +119,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
   /* pc */
   @media (min-width: 1024px) {
@@ -187,38 +188,8 @@
     }
   }
   &-slide {
-    height: clamp(600px, 10vw, 800px);
     p {
       margin-top: 0.2em;
-    }
-    div:first-child {
-      /* tablet */
-      @media (min-width: 768px) and (max-width: 1023px) {
-        height: 60%;
-      }
-      /* pc */
-      @media (min-width: 1024px) {
-        height: 52%;
-      }
-    }
-    div:last-child {
-      /* tablet */
-      @media (min-width: 768px) and (max-width: 1023px) {
-        height: 40%;
-      }
-      /* pc */
-      @media (min-width: 1024px) {
-        height: 48%;
-      }
-    }
-    /* tablet */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      height: clamp(640px, 70vw, 720px);
-    }
-    /* pc */
-    @media (min-width: 1024px) {
-      /* 미세 변경 */
-      height: clamp(480px, 45vw, 550px);
     }
   }
 }
@@ -227,11 +198,20 @@
   height: 50%;
 }
 .recommend-text__swiperMain {
+  min-height: clamp(270px, 30vw, 320px);
   p {
     /* pc */
     @media (min-width: 1024px) {
       margin-top: 0.4em;
     }
+  }
+  /* tablet */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    min-height: clamp(150px, 30vw, 200px);
+  }
+  /* pc */
+  @media (min-width: 1024px) {
+    min-height: clamp(100px, 30vw, 220px);
   }
 }
 /* --- section 3 --- */
@@ -316,6 +296,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
   }
 }
 .card-text__sub3 {
@@ -364,9 +345,6 @@
 @media (min-width: 1024px) {
   #container {
     width: 100%;
-  }
-  main {
-    height: 500px;
   }
   section {
     max-width: 1280px;

@@ -274,8 +274,9 @@ nav li.on a {
 }
 
 .card-image__main {
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   min-height: 0;
+  overflow: hidden;
 }
 
 .card-text__main {
@@ -311,10 +312,6 @@ nav li.on a {
   color: var(--font-color__gray);
   /* 텍스트가 많아도 버튼을 1.2em만큼 밑으로 밀어내기 위해 */
   margin-bottom: 1.2em;
-}
-
-.card-text__main .more-btn {
-  /* margin-top: auto; */
 }
 
 /* ------- footer ------- */

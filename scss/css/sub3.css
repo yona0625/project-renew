@@ -145,6 +145,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 .story-image__swiperSub {
   /* pc */
@@ -234,68 +235,40 @@
     margin-top: 50px;
   }
 }
-.recommend-slide {
-  height: clamp(600px, 10vw, 800px);
-}
 .recommend-slide p {
   margin-top: 0.2em;
 }
-.recommend-slide div:first-child {
-  /* tablet */
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .recommend-slide div:first-child {
-    height: 60%;
-  }
-}
-.recommend-slide div:first-child {
-  /* pc */
-}
-@media (min-width: 1024px) {
-  .recommend-slide div:first-child {
-    height: 52%;
-  }
-}
-.recommend-slide div:last-child {
-  /* tablet */
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .recommend-slide div:last-child {
-    height: 40%;
-  }
-}
-.recommend-slide div:last-child {
-  /* pc */
-}
-@media (min-width: 1024px) {
-  .recommend-slide div:last-child {
-    height: 48%;
-  }
-}
-.recommend-slide {
-  /* tablet */
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  .recommend-slide {
-    height: clamp(640px, 70vw, 720px);
-  }
-}
-.recommend-slide {
-  /* pc */
-}
-@media (min-width: 1024px) {
-  .recommend-slide {
-    /* 미세 변경 */
-    height: clamp(480px, 45vw, 550px);
-  }
+
+.recommend-image__swiperMain,
+.recommend-text__swiperMain {
+  height: 50%;
 }
 
+.recommend-text__swiperMain {
+  min-height: clamp(270px, 30vw, 320px);
+}
 .recommend-text__swiperMain p {
   /* pc */
 }
 @media (min-width: 1024px) {
   .recommend-text__swiperMain p {
     margin-top: 0.4em;
+  }
+}
+.recommend-text__swiperMain {
+  /* tablet */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .recommend-text__swiperMain {
+    min-height: clamp(150px, 30vw, 200px);
+  }
+}
+.recommend-text__swiperMain {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .recommend-text__swiperMain {
+    min-height: clamp(100px, 30vw, 220px);
   }
 }
 
@@ -411,6 +384,7 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 
 .card-text__sub3 {
@@ -465,9 +439,6 @@
 @media (min-width: 1024px) {
   #container {
     width: 100%;
-  }
-  main {
-    height: 500px;
   }
   section {
     max-width: 1280px;

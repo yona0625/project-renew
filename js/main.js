@@ -74,7 +74,7 @@ const mobileNav = {
       }
       /* 함수로 분리 */
       function openMenu() {
-        // 메뉴가 열릴 때 본문 스크롤 금지
+        // 메뉴가 열릴 때 본문 스크롤 금지 - (1)
         document.body.style.overflow = "hidden";
         const openFix = mobileMenu.animate(
           [
@@ -98,6 +98,8 @@ const mobileNav = {
         };
       }
       function closeMenu() {
+        /* ★★★★★ 메뉴가 닫히면 다시 스크롤 허용 - (2) */
+        document.body.style.overflow = "";
         const closeFix = mobileMenu.animate(
           [
             {
@@ -141,10 +143,10 @@ const pcNav = {
       item.addEventListener("mouseenter", function () {
         /* mouseenter/leave로 바뀌면서 인식 영역이 갈리므로 enter, leave 부분에 각자 1024 이하 구문을 넣어주는 게 안전함. */
         /* 1024 미만이거나, 이미 메뉴가 열려있다면 중단(다른 대표메뉴를 커서에 대어도 열리는 게 계속 발생하지 않도록) */
-        
+
         if (window.innerWidth < 1024) {
-            return;
-          } 
+          return;
+        }
         /* 반드시 if문을 거친 후에 리셋이 이루어져야만 함. */
         resetAnimation();
         function openMenu() {
