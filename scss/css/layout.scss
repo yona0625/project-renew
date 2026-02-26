@@ -1,14 +1,11 @@
-@charset "UTF-8";
 main {
   width: 100%;
   height: 600px;
 }
-
 main img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 /* ----------- top btn ---------- */
@@ -27,7 +24,6 @@ main img {
   transition: 0.3s;
   cursor: pointer;
 }
-
 .more-btn {
   background-color: var(--bg-color__white);
   /* background-color: red; */
@@ -41,11 +37,9 @@ main img {
   position: relative;
   border: 1px solid #333333;
 }
-
 .more-btn a {
   color: #000000;
 }
-
 /* 오른쪽 배치(명시적 기입) */
 .c-slide .more-btn {
   position: absolute;
@@ -55,19 +49,16 @@ main img {
   bottom: 30px;
   gap: 5px;
 }
-
 /* 100%를 채워야 하는 구역 */
 .card-item__main .more-btn {
   width: 100%;
 }
-
 #container {
   width: 100%;
   /* overflow-x: hidden; */
   overflow-x: clip;
   background-color: var(--bg-color__white);
 }
-
 section {
   width: 100%;
   min-width: 375px;
@@ -76,11 +67,9 @@ section {
   padding: 0 20px;
   margin-top: 100px;
 }
-
 section > div {
   margin: 0 auto;
 }
-
 /* header */
 header {
   width: 100%;
@@ -94,12 +83,10 @@ header {
   justify-content: space-between;
   z-index: 100;
 }
-
 .logo-img {
   width: 185px;
   height: 100%;
 }
-
 .logo-img a {
   display: flex;
   justify-content: center;
@@ -107,12 +94,9 @@ header {
   width: 100%;
   height: 100%;
 }
-
 .logo-img img {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
-
 /* nav */
 nav {
   /* background-color: hotpink; */
@@ -120,24 +104,20 @@ nav {
   margin-right: auto;
   display: none;
 }
-
 nav ul {
   display: flex;
 }
-
 nav li {
   height: 100%;
   width: 185px;
   text-align: center;
 }
-
 nav li a {
   text-decoration: none;
   color: var(--font-color__black);
   font-size: 20px;
   font-weight: 600;
 }
-
 /* on */
 nav li.on a {
   color: var(--active-color__red);
@@ -154,16 +134,13 @@ nav li.on a {
   right: 0;
   transform: translateX(100%);
 }
-
 .all-menu-content {
   margin-top: 50px;
 }
-
 .first-menu {
   padding: 20px;
   font-weight: 600;
 }
-
 .first-menu > li > a {
   display: flex;
   align-items: center;
@@ -171,7 +148,6 @@ nav li.on a {
   padding: 5px 0;
   font-size: 18px;
 }
-
 .first-menu > li:nth-child(2) > a::after,
 .first-menu > li:nth-child(3) > a::after {
   content: "\f105";
@@ -180,39 +156,33 @@ nav li.on a {
   margin-left: 8px;
   font-size: 14px;
 }
-
 .first-menu a {
   text-decoration: none;
   color: var(--font-color__black);
   font-size: 18px;
   line-height: 30px;
 }
-
 .second-menu {
   font-weight: 400;
   max-height: 0;
   overflow: hidden;
   transition: 0.3s;
 }
-
 .second-menu a {
   font-size: 15px;
   color: #4a4a4a;
 }
-
 .exit-btn {
   width: 50px;
   height: 50px;
   position: absolute;
   right: 0;
   top: 0;
-  background: url("../images/close-btn-image.png") center center no-repeat;
+  background: url("/images/close-btn-image.png") center center no-repeat;
 }
-
 .all-menu.active {
   transform: translateX(0);
 }
-
 /* trigger */
 .trigger {
   width: 25px;
@@ -222,7 +192,6 @@ nav li.on a {
   cursor: pointer;
   /* background-color: red; */
 }
-
 .trigger span {
   width: 100%;
   background-color: var(--font-color__black);
@@ -230,36 +199,31 @@ nav li.on a {
   position: absolute;
   transition: 0.3s;
 }
-
 .trigger span:first-child {
   top: 0;
 }
-
 .trigger span:nth-child(2) {
   top: 50%;
   transform: translateY(-50%);
 }
-
 .trigger span:last-child {
   bottom: 0;
 }
-
 /* hover(active) */
 .trigger:hover span:first-child {
   transform: translateY(-50%) rotate(45deg);
   top: 50%;
 }
-
 .trigger:hover span:nth-child(2) {
   display: none;
 }
-
 .trigger:hover span:last-child {
   transform: translateY(50%) rotate(-45deg);
   bottom: 50%;
 }
 
 /* 메인&서브 4의 card */
+
 .card-item__main {
   /* 실제 flex 역할 */
   display: flex;
@@ -272,13 +236,10 @@ nav li.on a {
 .card-item__main + .card-item__main {
   margin-top: 50px;
 }
-
 .card-image__main {
   aspect-ratio: 1 / 1;
   min-height: 0;
-  overflow: hidden;
 }
-
 .card-text__main {
   padding: 30px 20px 30px 20px;
   box-sizing: border-box;
@@ -287,24 +248,19 @@ nav li.on a {
   flex-direction: column;
   min-height: clamp(260px, 25vw, 400px);
 }
-
 .card-image__main,
 .card-text__main {
   background-color: var(--bg-color__white);
   width: 100%;
 }
-
 .card-image__main img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-
 .card-text__main h3 {
   font-size: 2rem;
 }
-
 .card-text__main p {
   margin-top: 0.4em;
   font-size: 1.5rem;
@@ -313,8 +269,11 @@ nav li.on a {
   /* 텍스트가 많아도 버튼을 1.2em만큼 밑으로 밀어내기 위해 */
   margin-bottom: 1.2em;
 }
-
+.card-text__main .more-btn {
+  /* margin-top: auto; */
+}
 /* ------- footer ------- */
+
 footer {
   margin-top: 150px;
   width: 100%;
@@ -322,14 +281,12 @@ footer {
   background-color: black;
   padding: 80px 40px;
 }
-
 .footer-wrapper {
   width: 100%;
   max-width: 1120px;
   margin: 0 auto;
   height: 100%;
 }
-
 .footer-content {
   margin-top: 40px;
   height: 100%;
@@ -338,29 +295,23 @@ footer {
   position: relative;
   flex-wrap: wrap;
 }
-
 .footer-content ul {
   width: 160px;
 }
-
 .footer-content li {
   line-height: 1.8;
 }
-
 .footer-content a {
   color: #ffffff;
 }
-
 .footer-content li:not(.footer-menu) {
   font-size: 15px;
 }
-
 .footer-menu {
   font-size: 18px;
   margin-bottom: 12px;
   font-weight: 600;
 }
-
 .footer-icon {
   color: #ffffff;
   width: 100%;
@@ -372,7 +323,6 @@ footer {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-
 /* a 밑에 이미지가 있으므로 그걸 중앙 정렬하려면 li말고 a를 flex해야 함 */
 .footer-location a {
   border: 1px solid #ffffff;
@@ -383,17 +333,14 @@ footer {
   align-items: center;
   gap: 10px;
 }
-
 .footer-location {
   width: 100%;
   flex-basis: 100%;
 }
-
 .footer-location img {
   width: 20px;
   height: 20px;
 }
-
 .footer-icon li:not(.footer-location) a {
   width: 40px;
   height: 40px;
@@ -404,14 +351,11 @@ footer {
   align-items: center;
   margin-top: 20px;
 }
-
 .footer-icon li:not(.footer-location) a img {
   width: 25px;
   height: 25px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
-
 /* copyright */
 .footer-copy {
   display: block;
@@ -419,11 +363,9 @@ footer {
   text-align: left;
   margin-top: 30px;
 }
-
 .footer-copy span {
   font-size: 15px;
 }
-
 /* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -524,6 +466,7 @@ footer {
     /* background-color: var(--bg-color__white); */
     background-color: rgba(255, 255, 255, 0.9);
     /* 뒷 배경 블러 */
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-left: 1px solid transparent;
     border-bottom: 1px solid var(--border-color__white);
@@ -541,6 +484,7 @@ footer {
     /* background-color: red; */
     /* 30이 한계인데 이걸 어떻게 하지? */
   }
+
   .all-menu-content {
     margin-top: 0;
     height: 100%;
@@ -576,6 +520,8 @@ footer {
     transition: none;
     padding: 0; /* ok */
   }
+  .all-menu-content li {
+  }
   .second-menu {
     /* 아코디언때 쓴건데 빼도 동작은 함 pc라서 */
     max-height: none; /* ok */
@@ -590,19 +536,19 @@ footer {
   }
   .second-menu > li > a {
     color: #4a4a4a;
-    font-size: 18px; /* ok */
+    font-size: 18px;/* ok */
   }
   .top-btn {
     /* 최소로 창을 줄일 때는 right: 80을 유지하다가 1280을 넘어가면 더이상 밖으로 안 빠져나가도록 max값을 함 */
     /* 1280이 전체 컨테이너지만, 패딩 160을 제외하면 1120이고 이걸 절반으로 하면 560 */
     /* 560만 빼면 컨테이너 끝에 붙지만 pc로 최대 넓이일 때 살짝 오른쪽으로 가야하므로 100px만큼 더 뺌 */
-    right: max(80px, 50% - 560px - 100px);
+    right: max(80px, (50% - 560px) - 100px);
     bottom: 40px; /* ok */
   }
   /* 세로 배치 */
   .card-item__main {
     flex-direction: row;
-    aspect-ratio: 2/1;
+    aspect-ratio: 2 / 1;
     border: none; /* ok */
   }
   .more-btn::after {
@@ -634,7 +580,6 @@ footer {
   }
   .card-text__main .more-btn {
     /* margin-top: 2em; */
-    width: -moz-fit-content;
     width: fit-content; /* ok */
   }
   /* footer */
@@ -655,4 +600,4 @@ footer {
   .footer-copy {
     text-align: right; /* ok */
   }
-}/*# sourceMappingURL=layout.css.map */
+}

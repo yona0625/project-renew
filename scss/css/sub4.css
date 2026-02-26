@@ -95,9 +95,11 @@ section + section {
   background-color: var(--bg-color__white);
   /* hover */
 }
-.move-btn li:hover {
-  background-color: var(--active-color__gray);
-  border: 1px solid var(--border-color__white);
+@media (min-width: 1024px) {
+  .move-btn li:hover {
+    background-color: var(--active-color__gray);
+    border: 1px solid var(--border-color__white);
+  }
 }
 .move-btn li a {
   text-decoration: none;

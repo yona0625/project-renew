@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* font test */
+/* font */
 body {
   font-family:
     "Pretendard Variable",
@@ -60,7 +60,6 @@ a {
   display: block;
 }
 
-/* media query */
 /* tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   html {
@@ -70,7 +69,6 @@ a {
 /* pc */
 @media (min-width: 1024px) {
   html {
-    /* 16px * 0.625 = 10px, 기본 폰트는 16px인데 0.625면 10px이 됨. */
     font-size: 62.5%;
   }
 }

@@ -86,9 +86,11 @@ section + section {
     transition: 0.3s;
     background-color: var(--bg-color__white);
     /* hover */
-    &:hover {
-      background-color: var(--active-color__gray);
-      border: 1px solid var(--border-color__white);
+    @media (min-width: 1024px) {
+      &:hover {
+        background-color: var(--active-color__gray);
+        border: 1px solid var(--border-color__white);
+      }
     }
     a {
       text-decoration: none;
