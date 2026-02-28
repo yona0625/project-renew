@@ -54,7 +54,6 @@
 }
 .visual-slide-container .visual-text p {
   margin-top: 0.3em;
-  color: var(--font-color__semiwhite);
 }
 @media (min-width: 1024px) {
   .visual-slide-container .visual-text p {
@@ -92,7 +91,6 @@
   height: 100%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
   z-index: 1;
-  /* 더 보기 버튼이 가려지지 않게 제외 */
   pointer-events: none;
 }
 .visual-image img {
@@ -227,23 +225,4 @@
   height: 50px;
   background-color: var(--bg-color__white);
   color: var(--font-color__black);
-}
-
-/* ===== media query ===== */
-/* tablet */
-@media (min-width: 768px) and (max-width: 1023px) {
-  section {
-    padding: 0 40px;
-    max-width: 1023px;
-  }
-}
-/* pc */
-@media (min-width: 1024px) {
-  #container {
-    width: 100%;
-  }
-  section {
-    max-width: 1280px;
-    padding: 0 80px;
-  }
 }/*# sourceMappingURL=style.css.map */

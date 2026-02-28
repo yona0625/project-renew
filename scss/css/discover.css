@@ -1,0 +1,425 @@
+@charset "UTF-8";
+/* 모바일 기본 스타일 */
+/* --- section 1 ---  */
+.story-intro__title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.story-intro__title h2 {
+  font-size: 2.4rem;
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-intro__title h2 {
+    font-size: 2.4rem;
+  }
+}
+.story-intro__title p {
+  color: var(--font-color__gray);
+  margin-top: 0.2em;
+  font-size: 1.8rem;
+}
+.story-intro__title span {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-intro__title span {
+    font-size: 1.8rem;
+  }
+}
+
+.story-slide {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color__white);
+  position: relative;
+}
+.story-slide-container {
+  position: relative;
+}
+.story-slide-container .swiper-pagination-current {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-slide-container .swiper-pagination-current {
+    color: var(--active-color__red);
+    font-weight: 600;
+  }
+}
+.story-slide-container {
+  /* pagination */
+}
+.story-slide-container .story-pagination {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: auto;
+  /* ★ top과 height에 쓰는 %는 부모 요소의 높이를 기준으로 계산하는데, 
+    margin/padding은 부모 요소의 '너비'를 기준으로 계산함.
+    이미지 영역에 페이지네이션을 배치할 건데, 이미지가 1 / 1 이므로 margin으로 100%를 주면 이미지의 맨 밑에 붙게 됨. 이 상태에서 calc로 살짝 올리면 fluid 반응형에서도 위치가 고정된다. (40px로 살짝 조정) */
+  margin-top: calc(100% - 40px);
+  /* background-color: green; */
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-slide-container .story-pagination {
+    position: absolute;
+    /* top 초기화(기본 swiper 상쇄) */
+    /* 이미지 위치에 맞춰 0부터 시작 -> 50%으로 정확히 정렬 */
+    bottom: auto;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 50%;
+    /* 모바일에서는 1 / 1이니까 100%를 주었는데, pc는 2 / 1 이니 50%을 줘야 함. */
+    margin-top: calc(50% - 40px);
+  }
+}
+.story-slide-container .story-btn-prev,
+.story-slide-container .story-btn-next {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-slide-container .story-btn-prev,
+  .story-slide-container .story-btn-next {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    /* 기존 swiper 속성 해제해야 함. top, left 해제 */
+    top: auto;
+    left: auto;
+    width: 30px;
+    height: 30px;
+    /* 잘 안 눌리는 걸 방지하기 위해 5 부여 */
+    z-index: 5;
+    color: var(--font-color__black);
+  }
+}
+.story-slide-container .story-btn-prev {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-slide-container .story-btn-prev {
+    right: 60px;
+  }
+}
+.story-slide-container {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-slide-container {
+    position: relative;
+  }
+}
+.story-slide {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-slide {
+    flex-direction: row;
+    aspect-ratio: 2/1;
+  }
+}
+
+.story-image__swiperSub,
+.story-text__swiperSub {
+  flex: 50%;
+  border-radius: 20px;
+  overflow: hidden;
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-image__swiperSub,
+  .story-text__swiperSub {
+    width: 50%;
+  }
+}
+
+.story-image__swiperSub {
+  aspect-ratio: 1/1;
+}
+.story-image__swiperSub img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.story-image__swiperSub {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-image__swiperSub {
+    position: relative;
+  }
+}
+
+.story-text__swiperSub {
+  height: auto;
+  padding: 30px 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.story-text__swiperSub p {
+  color: var(--font-color__gray);
+  margin-top: 0.4em;
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-text__swiperSub p {
+    font-size: 1.8rem;
+    margin-top: 1.2rem;
+  }
+}
+.story-text__swiperSub {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-text__swiperSub {
+    text-align: left;
+    align-items: stretch;
+    padding: 0 50px;
+  }
+}
+.story-text__swiperSub h3 {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-text__swiperSub h3 {
+    font-size: 2.4rem;
+  }
+}
+
+.story-slideAll .more-btn {
+  width: 100%;
+  margin-top: 1.2em;
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .story-slideAll .more-btn {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+/* --- section 2 --- */
+.recommend {
+  width: 100%;
+  overflow: hidden;
+}
+.recommend h2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+.recommend-slide-container {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .recommend-slide-container {
+    width: 100%;
+    margin-left: 0;
+    left: auto;
+  }
+}
+.recommend-slide-wrapper {
+  /* tablet */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .recommend-slide-wrapper {
+    margin-top: 50px;
+  }
+}
+.recommend-slide p {
+  margin-top: 0.2em;
+}
+
+.recommend-image__swiperMain,
+.recommend-text__swiperMain {
+  height: 50%;
+}
+
+.recommend-text__swiperMain {
+  min-height: clamp(270px, 30vw, 320px);
+}
+.recommend-text__swiperMain p {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .recommend-text__swiperMain p {
+    margin-top: 0.4em;
+  }
+}
+.recommend-text__swiperMain {
+  /* tablet */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .recommend-text__swiperMain {
+    min-height: clamp(150px, 30vw, 200px);
+  }
+}
+.recommend-text__swiperMain {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .recommend-text__swiperMain {
+    min-height: clamp(100px, 30vw, 220px);
+  }
+}
+
+/* --- section 3 --- */
+.more-content {
+  text-align: center;
+}
+.more-content h2 {
+  margin-bottom: 1.5em;
+}
+.more-content .content-item {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .more-content .content-item {
+    max-height: 300px;
+  }
+}
+
+.content-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--border-color__white);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.content-item + .content-item {
+  margin-top: 20px;
+  /* tablet */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .content-item + .content-item {
+    margin-top: 20px;
+  }
+}
+.content-item .card-text__sub3 .more-btn {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .content-item .card-text__sub3 .more-btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    left: auto;
+    transform: none;
+    margin-top: 1.5em;
+  }
+}
+.content-item .card-text__sub3 h3 {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .content-item .card-text__sub3 h3 {
+    font-size: 2rem;
+  }
+}
+.content-item .card-text__sub3 p {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .content-item .card-text__sub3 p {
+    font-size: 1.6rem;
+    margin-top: 0.4rem;
+  }
+}
+.content-item .card-text__sub3 {
+  /* tablet */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .content-item .card-text__sub3 {
+    text-align: left;
+  }
+}
+.content-item .card-text__sub3 {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .content-item .card-text__sub3 {
+    text-align: left;
+  }
+}
+.content-item {
+  /* tablet */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .content-item {
+    aspect-ratio: 4/1;
+    flex-direction: row;
+    min-height: 250px;
+  }
+}
+.content-item {
+  /* pc */
+}
+@media (min-width: 1024px) {
+  .content-item {
+    aspect-ratio: 4/1;
+    flex-direction: row;
+  }
+}
+
+/* 안에 들어간 이미지 크기로 인해 높이가 달라지는 걸 방지 */
+.card-image__sub3,
+.card-text__sub3 {
+  height: 100%;
+}
+
+.card-image__sub3 {
+  aspect-ratio: 1/1;
+}
+.card-image__sub3 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.card-text__sub3 {
+  background-color: var(--bg-color__white);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+}
+.card-text__sub3 h3 {
+  font-weight: 600;
+}
+.card-text__sub3 p {
+  color: var(--font-color__gray);
+  margin-top: 0.4em;
+}
+.card-text__sub3 .more-btn {
+  border: 1px solid var(--border-color__gray);
+  gap: 5px;
+  margin-top: 1.2em;
+}
+.card-text__sub3 .more-btn svg {
+  width: 15px;
+  height: 15px;
+}
+.card-text__sub3 .more-btn {
+  /* tablet */
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card-text__sub3 .more-btn {
+    width: -moz-fit-content;
+    width: fit-content;
+    left: auto;
+    transform: none;
+  }
+}/*# sourceMappingURL=discover.css.map */

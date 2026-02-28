@@ -1,3 +1,5 @@
+import { initSwipers } from './swiper.js';
+
 /* === animation === */
 const NAV_ANIMATION = {
   DURATION: {
@@ -12,9 +14,8 @@ const NAV_ANIMATION = {
     fill: "forwards",
   },
   cancel: (target) => {
-    if (target)
-      target.getAnimations().forEach(anim => anim.cancel());
-  }
+    if (target) target.getAnimations().forEach((anim) => anim.cancel());
+  },
 };
 
 /* === 더 보기 클릭 시 상단 이동 방지 === */
@@ -31,7 +32,6 @@ const preventMoveTop = {
     });
   },
 };
-preventMoveTop.init();
 
 /* === nav === */
 /* ~tablet */
@@ -120,7 +120,6 @@ const mobileNav = {
     });
   },
 };
-mobileNav.init();
 /* PC */
 const pcNav = {
   init: function () {
@@ -186,7 +185,6 @@ const pcNav = {
     });
   },
 };
-pcNav.init();
 
 /* === sidebar(mobile) === */
 const mobileSidebar = {
@@ -213,7 +211,6 @@ const mobileSidebar = {
     });
   },
 };
-mobileSidebar.init();
 
 /* === tab menu( + accordion) === */
 const tabMenu = {
@@ -233,9 +230,9 @@ const tabMenu = {
         e.preventDefault();
 
         /* reset */
-        document.querySelectorAll(
-          ".brand-tab-menu li.active, .brand-tab.active"
-        ).forEach(target => target.classList.remove("active"));
+        document
+          .querySelectorAll(".brand-tab-menu li.active, .brand-tab.active")
+          .forEach((target) => target.classList.remove("active"));
         this.classList.add("active");
 
         /* tab active */
@@ -259,10 +256,6 @@ const tabMenu = {
     tabMenu.showAllTab(allTab, tab_content);
   },
 };
-/* tab 이미지 실행 */
-window.addEventListener("load", () => {
-  tabMenu.init();
-});
 
 /* === top button === */
 const gotoTop = {
@@ -284,4 +277,13 @@ const gotoTop = {
     });
   },
 };
-gotoTop.init();
+
+document.addEventListener("DOMContentLoaded", () => {
+  initSwipers();
+  preventMoveTop.init();
+  mobileNav.init();
+  pcNav.init();
+  mobileSidebar.init();
+  tabMenu.init();
+  gotoTop.init();
+});

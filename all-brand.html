@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="코카-콜라의 다양한 브랜드 상품을 소개합니다.">
+    <title>
+      브랜드 소개 - Coca Cola
+    </title>
+    <link rel="stylesheet" href="./scss/css/main.css">
+    <script type="module" src="./js/main.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <!-- logo -->
+        <div class="logo-img">
+          <a href="./index.html">
+            <img src="./images/common/main-logo.png" alt="코카-콜라 홈으로 이동" width="125" height="20" />
+          </a>
+        </div>
+        <!-- nav -->
+        <nav>
+          <!-- 개별 메뉴 -->
+          <ul class="main-menu">
+            <li class="on">
+              <a href="./all-brand.html">
+                <span>
+                  Brands
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="./company.html">
+                <span>
+                  Our Company
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="./discover.html"> 
+                <span>
+                  Discover
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="./sustainability.html">
+                <span>
+                  Sustainability
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- trigger(mobile) -->
+        <div class="trigger" role="button" tabindex="0" aria-label="모바일 메뉴 열기">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!-- 전체 메뉴 -->
+        <div class="all-menu">
+          <div class="exit-btn">
+          </div>
+          <div class="all-menu-content">
+            <ul class="first-menu">
+              <li>
+                <a href="./all-brand.html">
+                  Brands
+                </a>
+              </li>
+              <li class="menu-more">
+                <a href="#none">
+                  Our Company
+                </a>
+                <ul class="second-menu">
+                  <li>
+                    <a href="./company.html" aria-haspopup="true">
+                      Coca-cola Company
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#none">
+                      Since 1886
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="menu-more">
+                <a href="#none" aria-haspopup="true">
+                  Discover
+                </a>
+                <ul class="second-menu">
+                  <li>
+                    <a href="./discover.html">
+                      Brand Story
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#none">
+                      Coke & Meal
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#none">
+                      Originals
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#none">
+                      Opener
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#none">
+                      Creations
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#none">
+                      CokePLAY App
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="./sustainability.html" aria-haspopup="true">
+                  Sustainability
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- sr -->
+        <h1 class="sr-only">
+          코카-콜라 브랜드 제품 소개 페이지
+        </h1>
+        <picture>
+          <source media="(min-width: 768px)" srcset="./images/sub/all-brand/pc__visual-brand.webp" />
+          <img src="./images/sub/all-brand/m__visual-brand.webp" alt="" fetchpriority="high" width="375" height="550" />
+        </picture>
+      </main>
+      <!-- === section 1 === -->
+      <section class="brandAll">
+        <h2 class="sr-only">
+          코카-콜라 브랜드 제품 소개
+        </h2>
+        <div class="brandAll-title">
+          <h3>
+            Brands
+          </h3>
+          <p>
+            분류 기준을 선택하세요
+          </p>
+        </div>
+        <ul class="brand-tab-menu" role="tablist">
+          <li class="active arrow-tab" data-alt="brand-tab1" role="presentation">
+            <a href="#none" role="tab" aria-selected="true" aria-controls="brand-tab1" id="tab1">
+              <span>
+                모든 브랜드
+              </span>
+            </a>
+          </li>
+          <li data-alt="brand-tab2" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab2" id="tab2">
+              <span>
+                Sparkling Soft Drinks
+              </span>
+            </a>
+          </li>
+          <li data-alt="brand-tab3" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab3" id="tab3">
+              <span>
+                Sports Drinks & Hydration
+              </span>
+            </a>
+          </li>
+          <li data-alt="brand-tab4" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab4" id="tab4">
+              <span>
+                Coffees
+              </span>
+            </a>
+          </li>
+          <li data-alt="brand-tab5" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab5" id="tab5">
+              <span>
+                Juices
+              </span>
+            </a>
+          </li>
+          <li data-alt="brand-tab6" role="presentation">
+            <a href="#none" role="tab" aria-selected="false" aria-controls="brand-tab6" id="tab6">
+              <span>
+                Teas
+              </span>
+            </a>
+          </li>
+        </ul>
+        <div class="brand-item">
+          <!-- tab 1  -->
+          <div class="brand-tab active" role="tabpanel" id="brand-tab1" aria-labelledby="tab1">
+          </div>
+          <!-- tab 2 -->
+          <div class="brand-tab" role="tabpanel" id="brand-tab2" aria-labelledby="tab2">
+            <div class="item">
+                <a href="#none">
+                <img src="./images/sub/all-brand/brand_coca-cola.webp" alt="코카-콜라 브랜드 소개 바로가기" width="500" height="180">
+              </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                <img src="./images/sub/all-brand/brand_sprite.webp" alt="스프라이트 브랜드 소개 바로가기" width="750" height="269">
+              </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                <img src="./images/sub/all-brand/brand_fanta.webp" alt="환타 브랜드 소개 바로가기" width="748" height="537">
+              </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                <img src="./images/sub/all-brand/brand_dr-pepper.webp" alt="닥터 페퍼 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                <img src="./images/sub/all-brand/brand_canada-dry.webp" alt="캐나다 드라이 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                <img src="./images/sub/all-brand/brand_sunny10.webp" alt="써니텐 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+                <a href="#none">
+                <img src="./images/sub/all-brand/brand_crushed-pear.webp" alt="갈아만든 배 브랜드 소개 바로가기" width="800" height="800">
+              </a>
+            </div>
+          </div>
+          <!-- tab 3 -->
+          <div class="brand-tab" role="tabpanel" id="brand-tab3" aria-labelledby="tab3">
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_powerade.webp" alt="파워에이드 브랜드 소개 바로가기" width="360" height="108">
+              </a>
+            </div>
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_toreta.webp" alt="토레타 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_seagram.webp" alt="씨그램 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_pyungchangsoo.webp" alt="평창수 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_vio.webp" alt="휘오 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_vitaminwater.webp" alt="글라소 비타민 워터 브랜드 소개 바로가기" width="360" height="101">
+              </a>
+            </div>
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_ulim-water.webp" alt="휘오 울림 워터 브랜드 소개 바로가기" width="360" height="360">
+              </a>
+            </div>
+          </div>
+          <!-- tab 4 -->
+          <div class="brand-tab" role="tabpanel" id="brand-tab4" aria-labelledby="tab4">
+            <div class="item">
+              <a href="#none">
+                <img src="./images/sub/all-brand/brand_georgia.webp" alt="조지아 커피 브랜드 소개 바로가기" width="360" height="360">
+              </a>
+            </div>
+          </div>
+          <!-- tab 5 -->
+          <div class="brand-tab" role="tabpanel" id="brand-tab5" aria-labelledby="tab5">
+            <div class="item">
+               <a href="#none">
+                <img src="./images/sub/all-brand/brand_minute-maid.webp" alt="미닛메이드 브랜드 소개 바로가기" width="800" height="800">
+              </a>
+            </div>
+            <div class="item">
+               <a href="#none">
+                <img src="./images/sub/all-brand/brand_cocopalm.webp" alt="코코팜 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+               <a href="#none">
+                <img src="./images/sub/all-brand/brand_crushed-pear.webp" alt="갈아만든 배 브랜드 소개 바로가기" width="800" height="800">
+              </a>
+            </div>
+            <div class="item">
+               <a href="#none">
+                <img src="./images/sub/all-brand/brand_fruitvillage.webp" alt="과일촌 브랜드 소개 바로가기" width="360" height="360">
+              </a>
+            </div>
+          </div>
+          <!-- div 6 -->
+          <div class="brand-tab" role="tabpanel" id="brand-tab6" aria-labelledby="tab6">
+            <div class="item">
+               <a href="#none">
+                <img src="./images/sub/all-brand/brand_w-tea.webp" alt="태양의 식후 비법 W차 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+            <div class="item">
+               <a href="#none">
+                <img src="./images/sub/all-brand/brand_sun-mate.webp" alt="태양의 마테차 브랜드 소개 바로가기" width="360" height="400">
+              </a>
+            </div>
+        </div>
+      </section>
+
+      <!-- top 버튼 -->
+      <div class="top-btn" role="button" tabindex="0" aria-label="페이지 최상단으로 이동">
+        <img src="./images/common/top-btn-image.png" alt="" width="24" height="24" aria-hidden="true" />
+      </div>
+      <!-- footer -->
+      <footer>
+        <div class="footer-wrapper">
+          <div class="footer-logo">
+            <img src="./images/common/footer-logo.png" width="249" height="40" alt="코카-콜라 푸터 로고" />
+          </div>
+          <div class="footer-content">
+            <!-- == 1 == -->
+            <ul>
+              <!-- 1 -->
+              <li class="footer-menu">
+                <a href="#none">
+                  소개
+                </a>
+              </li>
+              <!-- 2 -->
+              <li>
+                <a href="#none">
+                  기업 소개
+                </a>
+              </li>
+              <!-- 3 -->
+              <li>
+                <a href="#none">
+                  히스토리
+                </a>
+              </li>
+              <!-- 4 -->
+              <li>
+                <a href="#none">
+                  채용
+                </a>
+              </li>
+            </ul>
+            <!-- == 2 == -->
+            <ul>
+              <!-- 1 -->
+              <li class="footer-menu">
+                <a href="#none">
+                  도움이 필요하세요?
+                </a>
+              </li>
+              <!-- 2 -->
+              <li>
+                <a href="#none">
+                  사이트맵
+                </a>
+              </li>
+              <!-- 3 -->
+              <li>
+                <a href="#none">
+                  고객 안내
+                </a>
+              </li>
+            </ul>
+            <!-- == 3 == -->
+            <ul>
+              <!-- 1 -->
+              <li class="footer-menu">
+                <a href="#none">
+                  법적 고지
+                </a>
+              </li>
+              <!-- 2 -->
+              <li>
+                <a href="#none">
+                  이용 약관
+                </a>
+              </li>
+              <!-- 3 -->
+              <li>
+                <a href="#none">
+                  쿠키 정책
+                </a>
+              </li>
+              <!-- 4 -->
+              <li>
+                <a href="#none">
+                  쿠키 설정
+                </a>
+              </li>
+            </ul>
+            <!-- icon -->
+            <ul class="footer-icon">
+              <li class="footer-location">
+                <a href="#none">
+                  <img
+                    src="./images/common/footer-icon-location.webp" width="30" height="30" alt="" aria-hidden="true" />
+                  <span>
+                    한국
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#none" aria-label="코카-콜라 공식 유튜브 바로가기">
+                  <img
+                    src="./images/common/footer-icon-youtube.webp" width="30" height="30" alt="" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a href="#none" aria-label="코카-콜라 공식 X(트위터) 바로가기">
+                  <img src="./images/common/footer-icon-x.webp" width="30" height="30" alt="" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a href="#none" aria-label="코카-콜라 공식 인스타 바로가기">
+                  <img
+                    src="./images/common/footer-icon-insta.webp" width="30" height="30" alt="" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a href="#none" aria-label="코카-콜라 공식 페이스북 바로가기">
+                  <img
+                    src="./images/common/footer-icon-facebook.webp" width="30" height="30" alt="" aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-copy">
+            <span>
+              © 2026 The Coca‑Cola Company. 판권 소유
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

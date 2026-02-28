@@ -1,5 +1,5 @@
 /* === 공통 swiper === */
-function commonSwiper(name) {
+export function commonSwiper(name) {
   const slideContainer = document.querySelector(`.${name}-slide-container`);
   if (!slideContainer) return;
 

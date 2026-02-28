@@ -4,12 +4,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* font */
 body {
-  font-family: "Pretendard Variable", Pretendard, -apple-system, sans-serif;
+  font-family:
+    "Pretendard Variable",
+    Pretendard,
+    -apple-system,
+    sans-serif;
 }
-
 :root {
   --bg-color__white: #ffffff;
   --bg-color__sub: #f5f5f5;
@@ -26,29 +28,24 @@ html {
   scroll-behavior: smooth;
   font-size: 70%;
 }
-
 body {
   font-size: 1.6rem;
   line-height: 1.4;
   letter-spacing: -0.025em;
 }
-
 ul,
 li {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 p {
   margin: 0;
   padding: 0;
 }
-
 a {
   text-decoration: none;
 }
-
 .sr-only {
   position: absolute;
   overflow: hidden;
@@ -59,7 +56,6 @@ a {
   border: 0;
   clip: rect(0, 0, 0, 0);
 }
-
 .br {
   display: block;
 }
@@ -75,4 +71,4 @@ a {
   html {
     font-size: 62.5%;
   }
-}/*# sourceMappingURL=reset.css.map */
+}

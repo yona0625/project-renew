@@ -4,39 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="코카-콜라 공식 홈페이지에 오신 것을 환영합니다.">
-    <title>Coca-cola</title>
-
+    <title>
+      Coca Cola
+    </title>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    /> -->
-    <!-- reset & layout css -->
-    <link rel="stylesheet" href="scss/css/reset.css" />
-    <link rel="stylesheet" href="scss/css/layout.css" />
-    <!-- swiper css -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="scss/css/swiper-core.css" />
-    <!-- custom css -->
-    <link rel="stylesheet" href="scss/css/style.css" />
+    <link rel="stylesheet" href="./scss/css/main.css">
 
-    <!-- swiper js  -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
-    <script src="js/swiper-common.js" defer></script>
-    <script src="js/swiper.js" defer></script>
-    <!-- custom js -->
-    <script src="js/main.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
   </head>
   <body>
     <div id="container">
       <header>
         <!-- logo -->
         <div class="logo-img">
-          <a href="/index.html">
-            <img src="images/main-logo.png" alt="코카-콜라 홈으로 이동" width="125" height="20"/>
+          <a href="./index.html">
+            <img src="./images/common/main-logo.png" alt="코카-콜라 홈으로 이동" width="125" height="20"/>
           </a>
         </div>
         <!-- nav -->
@@ -44,28 +31,28 @@
           <!-- 개별 메뉴 -->
           <ul class="main-menu">
             <li>
-              <a href="/sub1.html">
+              <a href="./all-brand.html">
                 <span>
                   Brands
                 </span>
               </a>
             </li>
             <li>
-              <a href="/sub2.html">
+              <a href="./company.html">
                 <span>
                   Our Company
                 </span>
               </a>
             </li>
             <li>
-              <a href="/sub3.html"> 
+              <a href="./discover.html"> 
                 <span>
                   Discover
                 </span>
               </a>
             </li>
             <li>
-              <a href="/sub4.html">
+              <a href="./sustainability.html">
                 <span>
                   Sustainability
                 </span>
@@ -86,17 +73,17 @@
           <div class="all-menu-content">
             <ul class="first-menu">
               <li>
-                <a href="sub1.html">
+                <a href="./all-brand.html">
                   Brands
                 </a>
               </li>
-              <li>
+              <li class="menu-more">
                 <a href="#none">
                   Our Company
                 </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub2.html" aria-haspopup="true">
+                    <a href="./company.html" aria-haspopup="true">
                       Coca-cola Company
                     </a>
                   </li>
@@ -107,13 +94,13 @@
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="menu-more">
                 <a href="#none" aria-haspopup="true">
                   Discover
                 </a>
                 <ul class="second-menu">
                   <li>
-                    <a href="sub3.html">
+                    <a href="./discover.html">
                       Brand Story
                     </a>
                   </li>
@@ -145,7 +132,7 @@
                 </ul>
               </li>
               <li>
-                <a href="sub4.html" aria-haspopup="true">
+                <a href="./sustainability.html" aria-haspopup="true">
                   Sustainability
                 </a>
               </li>
@@ -167,9 +154,9 @@
                 <picture>
                   <source
                     media="(min-width: 768px)"
-                    srcset="images/visual_cokeandmeal.webp"
+                    srcset="./images/main/pc__visual-cokeandmeal.webp"
                   />
-                  <img src="images/m__visual-cokeandmeal.webp" alt="코카-콜라 제품을 보여주는 전경" width="375" height="550" fetchpriority="high"/>
+                  <img src="./images/main/m__visual-cokeandmeal.webp" alt="코카-콜라 제품을 보여주는 전경" width="375" height="550" fetchpriority="high"/>
                 </picture>
               </div>
               <div class="visual-text">
@@ -195,9 +182,9 @@
                 <picture>
                   <source
                     media="(min-width: 768px)"
-                    srcset="images/visual_market.webp"
+                    srcset="./images/main/pc__visual-market.webp"
                   />
-                  <img src="images/m__visual-market.webp"alt="코카-콜라와 신흥시장의 콜라보를 보여주는 전경" width="375" height="550" loading="lazy"/>
+                  <img src="./images/main/m__visual-market.webp" alt="코카-콜라와 신흥시장의 콜라보를 보여주는 전경" width="375" height="550" loading="lazy"/>
                 </picture>
               </div>
               <div class="visual-text">
@@ -223,9 +210,9 @@
                 <picture>
                   <source
                     media="(min-width: 768px)"
-                    srcset="images/visual_cokemeal.webp"
+                    srcset="./images/main/pc__visual-cokemeal.webp"
                   />
-                  <img src="images/m__visual-cokemeal.webp" alt="코카-콜라" width="375" height="550" loading="lazy"/>
+                  <img src="./images/main/m__visual-cokemeal.webp" alt="코카-콜라" width="375" height="550" loading="lazy"/>
                 </picture>
               </div>
               <div class="visual-text">
@@ -251,9 +238,9 @@
                 <picture>
                   <source
                     media="(min-width: 768px)"
-                    srcset="images/visual_survey.webp"
+                    srcset="./images/main/pc__visual-survey.webp"
                   />
-                  <img src="images/m__visual-survey.webp" alt="코카-콜라" width="375" height="550" loading="lazy"/>
+                  <img src="./images/main/m__visual-survey.webp" alt="코카-콜라" width="375" height="550" loading="lazy"/>
                 </picture>
               </div>
               <div class="visual-text">
@@ -279,9 +266,9 @@
                 <picture>
                   <source
                     media="(min-width: 768px)"
-                    srcset="images/visual_restaurant.webp"
+                    srcset="./images/main/pc__visual-restaurant.webp"
                   />
-                  <img src="images/m__visual-restaurant.webp" alt="햄버거와 함께 놓인 코카-콜라" width="375" height="550" loading="lazy"/>
+                  <img src="./images/main/m__visual-restaurant.webp" alt="햄버거와 함께 놓인 코카-콜라" width="375" height="550" loading="lazy"/>
                 </picture>
               </div>
               <div class="visual-text">
@@ -310,9 +297,9 @@
                 <picture>
                   <source
                     media="(min-width: 768px)"
-                    srcset="images/visual_meet.webp"
+                    srcset="./images/main/pc__visual-meet.webp"
                   />
-                  <img src="images/m__visual-meet.webp" width="375" height="550" alt="보라색 조명 아래 얼음과 함께 놓인 코카-콜라" loading="lazy"/>
+                  <img src="./images/main/m__visual-meet.webp" width="375" height="550" alt="보라색 조명 아래 얼음과 함께 놓인 코카-콜라" loading="lazy"/>
                 </picture>
               </div>
               <div class="visual-text">
@@ -361,7 +348,7 @@
           <!-- 1 -->
           <div class="card-item__main">
             <div class="feature-image__card card-image__main">
-              <img src="images/card_cokemagic.webp" width="333" height="333" alt="노란 배경에 코카-콜라를 들고 있는 손" />
+              <img src="./images/main/card_cokemagic.webp" width="333" height="333" alt="노란 배경에 코카-콜라를 들고 있는 손" />
             </div>
             <div class="feature-text__card card-text__main">
                 <h3>
@@ -384,7 +371,7 @@
           <!-- 2 -->
           <div class="card-item__main is-reverse">
             <div class="feature-image__card card-image__main">
-              <img src="images/card_future.webp" width="333" height="333" alt="자연의 풍경에서 보여지는 코카-콜라" />
+              <img src="./images/main/card_future.webp" width="333" height="333" alt="자연의 풍경에서 보여지는 코카-콜라" />
             </div>
             <div class="feature-text__card card-text__main">
                 <h3>
@@ -443,7 +430,7 @@
              <!-- 1 -->
             <div class="swiper-slide pick-slide">
               <div class="pick-image__swiperMain">
-                <img src="images/snapshot_dr-pepper.webp" width="308" height="308" alt="바닥에 놓인 닥터페퍼" />
+                <img src="./images/main/snapshot_dr-pepper.webp" width="308" height="308" alt="바닥에 놓인 닥터페퍼" />
               </div>
               <div class="pick-text__swiperMain">
                 <h3>
@@ -465,7 +452,7 @@
             <!-- 2 -->
             <div class="swiper-slide pick-slide">
               <div class="pick-image__swiperMain">
-                <img src="images/snapshot_sprite.webp" width="308" height="308" alt="사람의 손에 쥐어진 sprite" />
+                <img src="./images/main/snapshot_sprite.webp" width="308" height="308" alt="사람의 손에 쥐어진 sprite" />
               </div>
               <div class="pick-text__swiperMain">
                 <h3>
@@ -487,7 +474,7 @@
             <!-- 3 -->
             <div class="swiper-slide pick-slide">
               <div class="pick-image__swiperMain">
-                <img src="images/snapshot_powerade.webp" width="308" height="308" alt="푸른 배경에 놓인 파워에이드 드링크" />
+                <img src="./images/main/snapshot_powerade.webp" width="308" height="308" alt="푸른 배경에 놓인 파워에이드 드링크" />
               </div>
               <div class="pick-text__swiperMain">
                 <h3>
@@ -523,22 +510,22 @@
             <div class="swiper-wrapper brandList-slide-wrapper">
               <div class="swiper-slide brandList-slide">
                 <a href="#none">
-                  <img src="images/brandslide_coca.webp" width="400" height="144" alt="코카-콜라 브랜드 로고">
+                  <img src="./images/main/brandslide_coca.webp" width="400" height="144" alt="코카-콜라 브랜드 로고">
                 </a>
               </div>
               <div class="swiper-slide brandList-slide">
                 <a href="#none">
-                  <img src="images/brandslide_sprite.webp" width="460" height="165" alt="스프라이트 브랜드 로고">
+                  <img src="./images/main/brandslide_sprite.webp" width="460" height="165" alt="스프라이트 브랜드 로고">
                 </a>
               </div>
               <div class="swiper-slide brandList-slide">
                 <a href="#none">
-                  <img src="images/brandslide_fanta.webp" width="460" height="330" alt="판타 브랜드 로고">
+                  <img src="./images/main/brandslide_fanta.webp" width="460" height="330" alt="판타 브랜드 로고">
                 </a>
               </div>
               <div class="swiper-slide brandList-slide">
                 <a href="#none">
-                  <img src="images/brandslide_dr-pepper.webp" width="360" height="400" alt="닥터 페퍼 브랜드 로고">
+                  <img src="./images/main/brandslide_dr-pepper.webp" width="360" height="400" alt="닥터 페퍼 브랜드 로고">
                 </a>
               </div>
             </div>
@@ -568,13 +555,13 @@
 
       <!-- top 버튼 -->
       <div class="top-btn" role="button" tabindex="0" aria-label="페이지 최상단으로 이동">
-        <img src="images/top-btn-image.png" width="24" height="24" alt="" aria-hidden="true" />
+        <img src="./images/common/top-btn-image.png" width="24" height="24" alt="" aria-hidden="true" />
       </div>
       <!-- footer -->
       <footer>
         <div class="footer-wrapper">
           <div class="footer-logo">
-            <img src="images/footer-logo.png" width="249" height="40" alt="코카-콜라 푸터 로고" />
+            <img src="./images/common/footer-logo.png" width="249" height="40" alt="코카-콜라 푸터 로고" />
           </div>
           <div class="footer-content">
             <!-- == 1 == -->
@@ -657,7 +644,7 @@
               <li class="footer-location">
                 <a href="#none">
                   <img
-                    src="images/footer-icon-location.webp" width="30" height="30" alt="" aria-hidden="true" />
+                    src="./images/common/footer-icon-location.webp" width="30" height="30" alt="" aria-hidden="true" />
                   <span>
                     한국
                   </span>
@@ -666,24 +653,24 @@
               <li>
                 <a href="#none" aria-label="코카-콜라 공식 유튜브 바로가기">
                   <img
-                    src="images/footer-icon-youtube.webp" width="30" height="30" alt="" aria-hidden="true" />
+                    src="./images/common/footer-icon-youtube.webp" width="30" height="30" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
                 <a href="#none" aria-label="코카-콜라 공식 X(트위터) 바로가기">
-                  <img src="images/footer-icon-x.webp" width="30" height="30" alt="" aria-hidden="true" />
+                  <img src="./images/common/footer-icon-x.webp" width="30" height="30" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
                 <a href="#none" aria-label="코카-콜라 공식 인스타 바로가기">
                   <img
-                    src="images/footer-icon-insta.webp" width="30" height="30" alt="" aria-hidden="true" />
+                    src="./images/common/footer-icon-insta.webp" width="30" height="30" alt="" aria-hidden="true" />
                 </a>
               </li>
               <li>
                 <a href="#none" aria-label="코카-콜라 공식 페이스북 바로가기">
                   <img
-                    src="images/footer-icon-facebook.webp" width="30" height="30" alt="" aria-hidden="true" />
+                    src="./images/common/footer-icon-facebook.webp" width="30" height="30" alt="" aria-hidden="true" />
                 </a>
               </li>
             </ul>
