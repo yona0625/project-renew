@@ -23,20 +23,71 @@
 ## 사용 기술
 - HTML5
 - JavaScript(Vanilla)
-- CSS3 (SCSS)
-- Swiper.js
+- CSS3 (SCSS): 반복되는 스타일 및 유지 보수 편의성을 위해 사용
+- Swiper.js: breakpoint별 슬라이드 개수/간격을 유연하게 대응하기 위해 사용
 
 ## 미리 보기(스크린샷)
+### [PC] - 총 5페이지 (메인/Brand/Our Company/Discover/Sustainbility) <br>
+<table>
+  <tr>
+    <td valign="top"><img src="./images/docs/screenshot_index.jpg" width="100%" alt="코카콜라 메인 화면 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_all-brand.jpg" width="100%" alt="코카콜라 brand 스크린샷"></td>
+  </tr>
+  <tr>
+    <td valign="top"><img src="./images/docs/screenshot_company.jpg" width="100%" alt="코카콜라 Our company 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_discover.jpg" width="100%" alt="코카콜라 Discover 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_sustainability.jpg" width="100%" alt="코카콜라 Sustainability 스크린샷"></td>
+  </tr>
+</table>
+
+### [반응형 예시] - 메인 페이지 <br>
+<table>
+  <tr>
+    <td valign="top"><img src="./images/docs/screenshot_index.jpg" width="100%" alt="코카콜라 메인 화면(PC) 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_index-tablet.jpg" width="100%" alt="코카콜라 메인 화면(타블렛) 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_index-mobile.jpg" width="100%" alt="코카콜라 메인 화면(모바일) 스크린샷"></td>
+  </tr>
+</table>
 
 ## 개발 기간
 - 2026년 1월 ~ 2026년 2월
 
 ## 어려웠던 점 & 해결 과정
+- swiper의 centeredSlides 버그: 화면 최대화 시 첫 슬라이드가 잘리는 문제 <br>
+해결: 작은 화면의 centeredSlides: true 설정이 큰 화면까지 상속되어 여백 과다 계산이 원인임을 파악, breakpoint별로 centeredSlides: false와 slidesPerView를 재정의하여 해결
+- 헤더의 sticky 미작동: overflow-x:hidden 영역 안에서 sticky가 동작하지 않는 문제 <br>
+해결: overflow가 실제 스크롤 기준을 자체(자신) 영역으로 좁혀버리는 것이 원인임을 파악, hidden을 clip으로 변경해 스크롤 생성을 막아 해결
+- 헤더 메뉴 반복 열림/닫힘: nav 메뉴 이동 시 열림/닫힘이 불안정하게 반복되는 문제 <br>
+해결: 각 열림/닫힘 조건을 개별 li가 아닌 헤더 전체 기준으로 통일하여 해결
 
 ## 파일 구조
+
+```
+RENEW/
+├── css/
+├── images/
+│   ├── common/
+│   ├── main/
+│   └── sub/
+│       ├── all-brand/
+│       ├── company/
+│       ├── discover/
+│       └── sustainability/
+├── js/
+├── scss/
+├── all-brand.html
+├── company.html
+├── discover.html
+├── index.html
+└── sustainability.html
+```
 
 ## 참고 자료
 
 ## 실행 방법
+```
+$ git clone https://github.com/yona0625/project-renew.git
+```
+이후 `index.html` 파일을 브라우저로 열어서 확인 가능합니다.
 
 
