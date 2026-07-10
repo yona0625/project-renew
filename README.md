@@ -27,25 +27,26 @@
 - Swiper.js: breakpoint별 슬라이드 개수/간격을 유연하게 대응하기 위해 사용
 
 ## 미리 보기(스크린샷)
-### [PC] - 총 5페이지 (메인/Brand/Our Company/Discover/Sustainbility) <br>
+### [PC, 1024px] - 총 5페이지 (메인 / Brand / Our Company / Discover / Sustainbility) <br>
 <table>
   <tr>
-    <td valign="top"><img src="./images/docs/screenshot_index.jpg" width="100%" alt="코카콜라 메인 화면 스크린샷"></td>
-    <td valign="top"><img src="./images/docs/screenshot_all-brand.jpg" width="100%" alt="코카콜라 brand 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_index.jpg" width="100%" alt="코카콜라 메인 화면"></td>
+    <td valign="top"><img src="./images/docs/screenshot_all-brand.jpg" width="100%" alt="코카콜라 brand"></td>
+      <td valign="top"><img src="./images/docs/screenshot_company.jpg" width="100%" alt="코카콜라 Our company"></td>
   </tr>
   <tr>
-    <td valign="top"><img src="./images/docs/screenshot_company.jpg" width="100%" alt="코카콜라 Our company 스크린샷"></td>
-    <td valign="top"><img src="./images/docs/screenshot_discover.jpg" width="100%" alt="코카콜라 Discover 스크린샷"></td>
-    <td valign="top"><img src="./images/docs/screenshot_sustainability.jpg" width="100%" alt="코카콜라 Sustainability 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_discover.jpg" width="100%" alt="코카콜라 Discover"></td>
+    <td valign="top"><img src="./images/docs/screenshot_sustainability.jpg" width="100%" alt="코카콜라 Sustainability"></td>
   </tr>
 </table>
 
 ### [반응형 예시] - 메인 페이지 <br>
+### (PC: 1024px, 타블렛: 768px, 모바일: 360px)
 <table>
   <tr>
-    <td valign="top"><img src="./images/docs/screenshot_index.jpg" width="100%" alt="코카콜라 메인 화면(PC) 스크린샷"></td>
-    <td valign="top"><img src="./images/docs/screenshot_index-tablet.jpg" width="100%" alt="코카콜라 메인 화면(타블렛) 스크린샷"></td>
-    <td valign="top"><img src="./images/docs/screenshot_index-mobile.jpg" width="100%" alt="코카콜라 메인 화면(모바일) 스크린샷"></td>
+    <td valign="top"><img src="./images/docs/screenshot_index.jpg" width="100%" alt="코카콜라 메인 화면(PC, 1024px)"></td>
+    <td valign="top"><img src="./images/docs/screenshot_index-tablet.jpg" width="100%" alt="코카콜라 메인 화면(타블렛, 768px)"></td>
+    <td valign="top"><img src="./images/docs/screenshot_index-mobile.jpg" width="100%" alt="코카콜라 메인 화면(모바일, 360px)"></td>
   </tr>
 </table>
 
@@ -53,11 +54,18 @@
 - 2026년 1월 ~ 2026년 2월
 
 ## 어려웠던 점 & 해결 과정
-- swiper의 centeredSlides 버그: 화면 최대화 시 첫 슬라이드가 잘리는 문제 <br>
+- **swiper의 centeredSlides 버그** <br>
+문제: 화면 최대화 시 첫 슬라이드가 잘리는 문제 <br>
 해결: 작은 화면의 centeredSlides: true 설정이 큰 화면까지 상속되어 여백 과다 계산이 원인임을 파악, breakpoint별로 centeredSlides: false와 slidesPerView를 재정의하여 해결
-- 헤더의 sticky 미작동: overflow-x:hidden 영역 안에서 sticky가 동작하지 않는 문제 <br>
-해결: overflow가 실제 스크롤 기준을 자체(자신) 영역으로 좁혀버리는 것이 원인임을 파악, hidden을 clip으로 변경해 스크롤 생성을 막아 해결
-- 헤더 메뉴 반복 열림/닫힘: nav 메뉴 이동 시 열림/닫힘이 불안정하게 반복되는 문제 <br>
+<br><br>
+
+- **헤더의 sticky 미작동** <br>
+문제: overflow-x:hidden 영역 안에서 sticky가 동작하지 않는 문제 <br>
+해결: overflow가 실제 스크롤 기준을 자체(자신) 영역으로 좁혀버리는 것이 원인임을 파악, hidden을 clip으로 변경해 스크롤 생성을 막아 해결 
+<br><br>
+
+- **헤더 메뉴 반복 열림/닫힘** <br>
+문제: nav 메뉴 이동 시 열림/닫힘이 불안정하게 반복되는 문제 <br>
 해결: 각 열림/닫힘 조건을 개별 li가 아닌 헤더 전체 기준으로 통일하여 해결
 
 ## 파일 구조
@@ -67,6 +75,7 @@ RENEW/
 ├── css/
 ├── images/
 │   ├── common/
+│   ├── docs/
 │   ├── main/
 │   └── sub/
 │       ├── all-brand/
