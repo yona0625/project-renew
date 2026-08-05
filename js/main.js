@@ -2,12 +2,6 @@ import { initSwipers } from './swiper.js';
 
 /* === animation === */
 const NAV_ANIMATION = {
-  DURATION: {
-    FAST: 150,
-    NORMAL: 300,
-    SLOW: 500,
-  },
-  EASE: "ease-out",
   OPTIONS: {
     duration: 300,
     easing: "ease-out",
@@ -18,20 +12,14 @@ const NAV_ANIMATION = {
   },
 };
 
-/* === 더 보기 클릭 시 상단 이동 방지 === */
-const preventMoveTop = {
-  init: function () {
-    this.preventMoveTop();
-  },
-  preventMoveTop: function () {
-    document.addEventListener("click", (e) => {
-      const anchor = e.target.closest('a[href="#none"]');
-      if (anchor) {
-        e.preventDefault();
-      }
-    });
-  },
-};
+/* === #none 이동 방지 === */
+function preventMoveTop() {
+  document.addEventListener("click", (e) => {
+    const anchor = e.target.closest('a[href="#none"]');
+    if (anchor) e.preventDefault();
+  });
+}
+
 
 /* === nav === */
 /* ~tablet */
@@ -69,14 +57,14 @@ const mobileNav = {
       const winW = window.innerWidth;
       if (winW > 1023) return;
       const trigger = e.target.closest(".trigger");
-      const realMenu = e.target.closest(".all-menu");
+      const menuArea = e.target.closest(".all-menu");
       const exitBtn = e.target.closest(".exit-btn");
       const menuOpen = mobileMenu.classList.contains("active");
 
       if (trigger) {
         mobileMenu.classList.add("active");
         openMenu();
-      } else if (menuOpen && (exitBtn || !realMenu)) {
+      } else if (menuOpen && (exitBtn || !menuArea)) {
         mobileMenu.classList.remove("active");
         closeMenu();
       }
@@ -280,7 +268,7 @@ const gotoTop = {
 
 document.addEventListener("DOMContentLoaded", () => {
   initSwipers();
-  preventMoveTop.init();
+  preventMoveTop();
   mobileNav.init();
   pcNav.init();
   mobileSidebar.init();
