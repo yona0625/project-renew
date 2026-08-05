@@ -1,4 +1,5 @@
 import { initSwipers } from './swiper.js';
+const isPC = () => window.innerWidth >= 1024;
 
 /* === animation === */
 const NAV_ANIMATION = {
@@ -47,15 +48,15 @@ const mobileNav = {
 
     /* resize */
     window.addEventListener("resize", () => {
-      const winW = window.innerWidth;
-      if (winW > 1023) {
+      /* 모바일 ~ 타블렛 로직 리셋 */
+      if (isPC()) {
         this.resetForPC();
       }
     });
 
     window.addEventListener("click", (e) => {
-      const winW = window.innerWidth;
-      if (winW > 1023) return;
+      if (isPC()) return;
+      /* 모바일 ~ 타블렛 */
       const trigger = e.target.closest(".trigger");
       const menuArea = e.target.closest(".all-menu");
       const exitBtn = e.target.closest(".exit-btn");
@@ -123,8 +124,8 @@ const pcNav = {
 
     pcNav.forEach((item) => {
       item.addEventListener("mouseenter", function () {
-        const winW = window.innerWidth;
-        if (winW < 1024) {
+
+        if (!isPC()) {
           return;
         }
         /* 순서 중요 */
@@ -150,8 +151,7 @@ const pcNav = {
       });
     });
     pcHeader.addEventListener("mouseleave", function () {
-      const winW = window.innerWidth;
-      if (winW < 1024) return;
+      if (!isPC()) return;
       function closeMenu() {
         const closeFix = pcAllMenu.animate(
           [
@@ -180,8 +180,7 @@ const mobileSidebar = {
     const firstMenuContainer = document.querySelector(".first-menu");
 
     firstMenuContainer.addEventListener("click", (e) => {
-      const winW = window.innerWidth;
-      if (winW > 1023) return;
+      if (isPC()) return;
 
       const firstMenu = e.target.closest(".first-menu > li");
       const secondMenu = firstMenu?.querySelector(".second-menu");
@@ -231,8 +230,8 @@ const tabMenu = {
         tabMenu.showAllTab(tabBtn, tab_content);
 
         /* accordion */
-        const winW = window.innerWidth;
-        if (winW < 1024) {
+
+        if (!isPC()) {
           this.parentElement.classList.toggle("active");
         }
       });
