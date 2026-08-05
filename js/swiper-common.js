@@ -1,3 +1,5 @@
+const isPC = () => window.innerWidth >= 1024;
+
 /* === 공통 swiper === */
 export function commonSwiper(name) {
   const slideContainer = document.querySelector(`.${name}-slide-container`);
@@ -6,6 +8,8 @@ export function commonSwiper(name) {
   slideContainer.classList.add("c-slide__container");
 
   const slideWrapper = slideContainer.querySelector(".swiper-wrapper");
+  if (!slideWrapper) return;
+
   const eachSlide = slideWrapper.querySelectorAll(".swiper-slide");
   const originalIndex = eachSlide.length;
 
@@ -20,7 +24,7 @@ export function commonSwiper(name) {
         findItem.classList.add(`c-slide-${item}__swiperMain`);
       }
     });
-    /* 복제 */
+    /* loop 옵션의 버퍼 부족으로 인한 끊김 방지 위해 슬라이드 수동 복제 */
     const slideClone = slide.cloneNode(true);
     slideWrapper.appendChild(slideClone);
   });
@@ -42,6 +46,7 @@ export function commonSwiper(name) {
       enabled: true,
       el: `.${name}-pagination`,
       clickable: true,
+      /* 수동 복제된 슬라이드 개수 기준으로 bullet 계산 */
       renderBullet: function (index, className) {
         if (index < originalIndex) {
           return `<span class="${className} ${name}-slideDot common-dot"></span>`;
@@ -95,7 +100,7 @@ export function commonSwiper(name) {
   /* === swiper 전체 영역 클릭 이벤트 === */
   const cardClick = () => {
     slideContainer.addEventListener("click", (e) => {
-      if (window.innerWidth > 1023) return;
+      if (isPC()) return;
 
       const findSlide = e.target.closest(".c-slide");
       if (!findSlide) return;
