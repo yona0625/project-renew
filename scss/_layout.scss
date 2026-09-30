@@ -205,13 +205,11 @@ nav {
     width: 100%;
     height: auto;
     top: 80px;
-    /* 모바일 bottom 해제 */
     bottom: auto;
     right: 0;
     opacity: 0;
     pointer-events: none;
     background-color: rgba(255, 255, 255, 0.9);
-    /* 뒷 배경 블러 */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-left: 1px solid transparent;
@@ -240,10 +238,7 @@ nav {
     padding: 5px 0;
     font-size: 18px;
     @media (min-width: 1024px) {
-      /* 전체 메뉴를 펼쳤을 때 서브만 보여야 하니 처음 메뉴는 숨겨야 함 */
       visibility: hidden;
-      /* visibility: visible; */
-      /* 근데 hidden만 하면 높이가 살아있으니, block화 해서 0으로 해야 li 공간은 유지하고 글자만 쏙 빠짐. */
       display: block;
       height: 0;
       transition: none;
@@ -556,7 +551,14 @@ footer {
   span {
     font-size: 15px;
   }
+  p {
+    margin-top: 15px;
+  }
   @media (min-width: 1024px) {
     text-align: right;
+    p {
+      margin-top: 30px;
+      text-align: center;
+    }
   }
 }

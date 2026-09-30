@@ -77,7 +77,6 @@ export function initSwipers() {
     },
     breakpoints: {
       1024: {
-        /* css 제어로 바꿔볼 것 */
         navigation: {
           enabled: true,
         },

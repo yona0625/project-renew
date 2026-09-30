@@ -1,9 +1,5 @@
-/* --- swiper tab 이동 무한루프 해제 --- */
-/* 삭제함. */
-
 /* swiper pagination dot */
 .common-dot {
-  /* 기본 swiper dot에 0.2정도로 되어있기에 opacity: 1로 해야 함. */
   opacity: 1;
   background-color: var(--font-color__gray);
   width: 10px;

@@ -45,22 +45,15 @@
       top: 0;
       left: 0;
       bottom: auto;
-      /* ★ top과 height에 쓰는 %는 부모 요소의 높이를 기준으로 계산하는데, 
-        margin/padding은 부모 요소의 '너비'를 기준으로 계산함.
-        이미지 영역에 페이지네이션을 배치할 건데, 이미지가 1 / 1 이므로 margin으로 100%를 주면 이미지의 맨 밑에 붙게 됨. 이 상태에서 calc로 살짝 올리면 fluid 반응형에서도 위치가 고정된다. (40px로 살짝 조정) */
       margin-top: calc(100% - 40px);
-      /* background-color: green; */
       /* pc */
       @media (min-width: 1024px) {
         position: absolute;
-        /* top 초기화(기본 swiper 상쇄) */
-        /* 이미지 위치에 맞춰 0부터 시작 -> 50%으로 정확히 정렬 */
         bottom: auto;
         z-index: 10;
         left: 0;
         top: 0;
         width: 50%;
-        /* 모바일에서는 1 / 1이니까 100%를 주었는데, pc는 2 / 1 이니 50%을 줘야 함. */
         margin-top: calc(50% - 40px);
       }
     }
@@ -71,12 +64,10 @@
         position: absolute;
         right: 30px;
         bottom: 30px;
-        /* 기존 swiper 속성 해제해야 함. top, left 해제 */
         top: auto;
         left: auto;
         width: 30px;
         height: 30px;
-        /* 잘 안 눌리는 걸 방지하기 위해 5 부여 */
         z-index: 5;
         color: var(--font-color__black);
       }
@@ -281,7 +272,6 @@
     flex-direction: row;
   }
 }
-/* 안에 들어간 이미지 크기로 인해 높이가 달라지는 걸 방지 */
 .card-image__sub3,
 .card-text__sub3 {
   height: 100%;

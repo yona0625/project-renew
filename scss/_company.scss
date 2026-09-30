@@ -1,4 +1,5 @@
 /* 모바일 기본 스타일 */
+
 /* card ui(sub) layout - common */
 .card-item__sub {
   border: 1px solid var(--border-color__white);
@@ -53,7 +54,6 @@
     margin-top: 0.4em;
     font-size: 1.5rem;
     line-height: 1.5;
-    /* 텍스트가 늘어나도 버튼과의 간격을 벌리기 위해 p에서 밀어냄 */
     margin-bottom: 1.2em;
     /* pc */
     @media (min-width: 1024px) {
